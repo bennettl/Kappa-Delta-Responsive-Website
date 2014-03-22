@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140320234150) do
     t.string   "member_type"
     t.string   "status"
     t.string   "password_digest"
+    t.string   "remember_token"
     t.string   "image"
     t.string   "headline"
     t.string   "first_name"

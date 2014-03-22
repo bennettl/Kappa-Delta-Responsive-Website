@@ -1,6 +1,7 @@
 class Member < ActiveRecord::Base
 	before_save { self.email = email.downcase }
-	
+	before_create :create_remember_token
+
 	# Association
 	has_many :jobs_created, class_name: 'Job', dependent: :destroy
 	has_many :events, dependent: :destroy
@@ -24,6 +25,16 @@ class Member < ActiveRecord::Base
 	# Handles password 
 	has_secure_password
 
+	# Create a random string 
+	def self.new_remember_token
+	    SecureRandom.urlsafe_base64
+	end
+
+	# Encrpty a string with SHA1
+	def self.encrypt(token)
+	    Digest::SHA1.hexdigest(token.to_s)
+	end
+
 	# Searches members base similar (LIKE) to search hash
 	def self.search(search)
 		if search
@@ -45,5 +56,12 @@ class Member < ActiveRecord::Base
 	# Returns full name
 	def name
 		"#{first_name} #{last_name}"
+	end
+
+	private
+
+	# Create a new remember token (encrptyed string)
+	def create_remember_token
+		self.remember_token = Member.encrypt(Member.new_remember_token)
 	end
 end

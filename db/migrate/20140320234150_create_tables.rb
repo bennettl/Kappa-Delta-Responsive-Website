@@ -6,7 +6,9 @@ class CreateTables < ActiveRecord::Migration
 		t.string :member_type # super admin, admin, normal
 		t.string :status # bod, officer, member
 		t.string :password_digest
-		# basic infor
+		# session
+		t.string :remember_token
+		# basic info
 		t.string :image #profile image
 		t.string :headline
 		t.string :first_name
@@ -28,6 +30,8 @@ class CreateTables < ActiveRecord::Migration
 		t.string :url_linkedIn
 		t.string :url_personal
 		t.timestamps
+		# indexes
+	 	# add_index :users, :remember_token
     end
 
     # Jobs

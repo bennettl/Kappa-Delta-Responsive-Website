@@ -15,4 +15,10 @@
 		<li><%= link_to 'Events', events_path %></li>
 		<li><%= link_to 'My Account', '#' %></li>
 	</ul>
+	<% if signed_in? %>
+		<div style="color: black;">HEY YOU IN MAN</div><br />
+	<% else  %>
+		<div style="color: black;">NOT SIGNED IN</div> <br />
+	<% end  %>
+
 </header>

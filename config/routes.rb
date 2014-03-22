@@ -1,18 +1,25 @@
 KappaDelta::Application.routes.draw do
 
-  # Routes to static pages
+  # Root
   root 'static_pages#home'
-  get 'history' => 'static_pages#history'
-  get 'contact' => 'static_pages#contact'
-  get 'donations' => 'static_pages#donations'
 
-  # Routes to resources
+  # Static pages
+  match 'history', to: 'static_pages#history', via: 'get'
+  match 'contact', to: 'static_pages#contact', via: 'get'
+  match 'donations', to: 'static_pages#donations', via: 'get'
+
+  # Sessions
+  match 'signin', to: 'sessions#new', via: 'get'
+  match 'signout', to: 'sessions#destroy', via: 'delete'
+
+  # Resources
   resources :members do
     get :autocomplete, :on => :collection
   end
   resources :jobs
   resources :events
   resources :news
+  resources :sessions, only: [:new, :create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

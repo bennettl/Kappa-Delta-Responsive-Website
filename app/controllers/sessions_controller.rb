@@ -1,4 +1,4 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
 	# Displays signin form
 	def new
 
@@ -8,15 +8,15 @@ class SessionController < ApplicationController
 	# Create a new session
 	def create
 		# Get Email and Password from params[:session]
-		user 		= User.find_by(email: params[:session][:email].downcase)
+		member 		= Member.find_by(email: params[:session][:email].downcase)
 		password 	= params[:session][:password]
 	
 		# Check for valid username and password		
-		if (user && user.authenticate(password))
+		if (member && member.authenticate(password))
 			# Sign user in and redirect user to profile page
-			sign_in(user)
+			sign_in(member)
 		    # Redirect the user back to a page previously saved in store_location if it exists
-            redirect_back_or(user)
+            redirect_back_or(member)
    		else
 			# Display error message
 			flash.now[:error] = 'This is not working'
