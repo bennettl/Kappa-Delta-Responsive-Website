@@ -1,0 +1,25 @@
+<ul id="titleList">
+	<li class="row">
+		<%= form_tag members_path, method: :get, id: :member_search do %>
+			<%
+				first_name 	= params[:first_name]
+				last_name 	= params[:last_name]
+				major 		= params[:major]
+				location 	= params[:location]
+				class_year 	= params[:class_year]
+				industry 	= params[:industry]
+				#sorting
+				direction 	= params[:direction]
+				sort_name 	= params[:sort]
+			%>
+			<%= hidden_field_tag "direction", direction %>
+			<%= hidden_field_tag "sort_name", sort_name %>
+			<div class="cell"><%= search_column 'First Name', 'first_name', first_name %></div>
+			<div class="cell"><%= search_column 'Last Name', 'last_name', last_name %></div>
+			<div class="cell"><%= search_column 'Major', 'major', major %></div>
+			<div class="cell"><%= search_column 'Location', 'location', location %></div>
+			<div class="cell"><%= search_column 'Class Year', 'class_year', class_year %></div>
+			<div class="cell"><%= search_column 'Industry', 'industry', industry %></div>
+		<% end %>
+	</li>
+</ul>

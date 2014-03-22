@@ -1,0 +1,20 @@
+<h1>Update Job</h1>
+<%= form_for @job do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<%= f.hidden_field :member_id %>
+	<%= f.text_field :title, value: @job.title, placeholder: :Title, autocomplete: :off %> <br />
+	<%= f.text_field :company, value: @job.company, placeholder: :Company %> <br />
+	<%= f.select :job_type, [['Internship', 'Internship'], ['Part Time', 'Part Time'], ['Full Time', 'Full Time'], ['Temporary', 'Temporary']] %> <br />
+	<%= f.text_field :location, value: @job.location, placeholder: :Location, autocomplete: :off %> <br />
+	<%= f.date_field :start_date, value: @job.start_date, placeholder: 'Start Date' %> <br />
+
+	<%= f.date_field :deadline, placeholder: :Deadline, autocomplete: :off %> <br />
+	<%= f.text_field :industry, value: @job.industry, placeholder: :Industry, autocomplete: :off %> <br />
+	<%= f.text_area :description, placeholder: :Description, value: @job.description %> <br />
+	<%= f.text_area :qualification, placeholder: :Qualification, value: @job.qualification %> <br />
+	<%= f.text_area :compensation, placeholder: :Compensation, value: @job.compensation %> <br />
+	<%= f.text_area :how_to_apply, placeholder: 'How To Apply', value: @job.how_to_apply %> <br />
+	<%= f.label :Hidden? %>
+	<%= f.check_box :hidden, value: @job.hidden %> <br />
+	<%= f.submit :Update %>
+<% end %>

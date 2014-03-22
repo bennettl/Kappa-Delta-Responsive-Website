@@ -1,0 +1,153 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+html, body, ul {
+  margin: 0;
+  padding: 0;
+  font: 12px Helvetica, sans-serif; }
+
+li {
+  list-style-type: none; }
+
+a {
+  color: #000000;
+  text-decoration: none; }
+
+/* Header */
+header {
+  width: 100%;
+  height: 180px;
+  background: #232b4d; }
+
+#logo {
+  display: block;
+  width: 240px;
+  height: 180px;
+  margin: 0 auto; }
+
+#topNav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #e6e6e6;
+  text-transform: uppercase; }
+  #topNav li {
+    float: left; }
+    #topNav li a {
+      padding: 5px 20px;
+      display: block;
+      transition: background 0.25s ease-in-out;
+      -webkit-transition: background 0.25s ease-in-out;
+      -moz-transition: background 0.25s ease-in-out; }
+      #topNav li a:hover {
+        background: #232B4D;
+        color: #FFFFFF; }
+
+#bottomNav {
+  background: none repeat scroll 0 0 #F7F7F7;
+  height: 20px;
+  margin: 0 auto;
+  padding: 12px 13%;
+  text-transform: uppercase; }
+  #bottomNav li {
+    float: left; }
+    #bottomNav li a {
+      padding: 5px 20px;
+      transition: background 0.25s ease-in-out;
+      -webkit-transition: background 0.25s ease-in-out;
+      -moz-transition: background 0.25s ease-in-out; }
+      #bottomNav li a:hover {
+        background: #232B4D;
+        color: #FFFFFF; }
+
+/* Footer */
+footer {
+  background: #e6e6e6;
+  clear: both;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%; }
+
+/* Body */
+#body {
+  width: 90%;
+  padding: 20px 0;
+  margin: 0 auto;
+  min-height: 500px;
+  clear: both; }
+
+/* User Listing */
+.search_column {
+  text-align: center; }
+
+#membersList li.row div.cell, #titleList li.row div.cell {
+  width: 16.4%;
+  border-right: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  float: left;
+  padding: 15px 0;
+  text-align: center; }
+  #membersList li.row div.cell a, #titleList li.row div.cell a {
+    display: block;
+    padding-right: 12px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    color: blue; }
+    #membersList li.row div.cell a.desc, #titleList li.row div.cell a.desc {
+      background-image: url(up_arrow.gif); }
+    #membersList li.row div.cell a.asc, #titleList li.row div.cell a.asc {
+      background-image: url(down_arrow.gif); }
+
+.pagination {
+  display: block;
+  clear: both;
+  padding-top: 23px; }
+  .pagination ul {
+    display: table;
+    margin: 0 auto; }
+  .pagination li {
+    display: table-cell;
+    float: left;
+    margin: 0 7px; }
+
+/* Autocomplete */
+.ui-menu {
+  width: 100px; }
+
+.ui-menu-item {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  color: #000000;
+  padding: 10px 10px;
+  cursor: pointer; }
+  .ui-menu-item:hover {
+    color: white;
+    background: #96B202; }
+
+.ui-helper-hidden-accessible {
+  display: none; }
+#basicInfo li {
+  clear: both;
+  height: 26px; }
+#basicInfo div {
+  float: left;
+  width: 100px; }
+
+.title {
+  text-transform: uppercase;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px; }
+
+.content {
+  padding-top: 15px;
+  margin-bottom: 20px; }

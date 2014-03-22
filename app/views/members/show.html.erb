@@ -1,0 +1,24 @@
+<% provide(:title, @member.name) %>
+<div><%= image_tag @member.image %></div>
+<h1><%= @member.name %></h1>
+<h1><%= @member.user_name %></h1>
+<div><%= @member.headline %></div>
+<div><%= @member.major %></div>
+<div><%= @member.location %></div>
+<div><%= @member.class_year %></div>
+<div><%= @member.industry %></div>
+<div>Summary</div>
+<div><%= @member.summary %></div>
+<div>Resume</div>
+<div><%= @member.url_resume %></div>
+<div>Contact</div>
+<div><%= @member.location %></div>
+<div><%= @member.address %></div>
+
+<div><%= @member.email %></div>
+<div><%= @member.phone %></div>
+<div>URLs</div>
+<div><%= link_to @member.url_facebook, @member.url_facebook, target: '_blank' %></div>
+<div><%= link_to @member.url_twitter, @member.url_twitter, target: '_blank' %></div>
+<div><%= link_to @member.url_linkedIn, @member.url_linkedIn, target: '_blank' %></div>
+<div><%= link_to @member.url_personal, @member.url_personal, target: '_blank' %></div>

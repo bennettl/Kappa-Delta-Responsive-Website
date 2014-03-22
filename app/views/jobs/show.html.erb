@@ -1,0 +1,53 @@
+<h1><%= @job.title %></h1>
+
+<div class="title">Basic Info</div>
+<ul id="basicInfo" class="content">
+	<li>
+		<div>Posted By</div>
+		<div><%= @job.member.first_name %></div>
+	</li>
+	<li>
+		<div>Company</div>
+		<div><%= @job.company %></div>
+	</li>
+	<li>
+		<div>Industry</div>
+		<div><%= @job.industry %></div>
+	</li>
+	<li>
+		<div>Job Type</div>
+		<div><%= @job.job_type %></div>
+	</li>
+	<li>
+		<div>Location</div>
+		<div><%= @job.location %></div>
+	</li>
+	<li>
+		<div>Start Date</div>
+		<div><%= @job.start_date %></div>
+	</li>
+	<li>
+		<div>Deadline</div>
+		<div><%= @job.deadline %></div>
+	</li>
+</ul>
+
+<div class="title">Description</div>
+<div class="content">
+	<%= @job.description %>
+</div>
+
+<div class="title">Qualification</div>
+<div class="content">
+	<%= @job.qualification %>
+</div>
+
+<div class="title">Compensation</div>
+<div class="content">
+	<%= @job.compensation %>
+</div>
+
+<div class="title">How To Apply</div>
+<div class="content">
+	<%= @job.how_to_apply %>
+</div>

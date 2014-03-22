@@ -1,0 +1,25 @@
+// Place all the styles related to the Jobs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#basicInfo{
+	li{
+		clear: both;
+		height: 26px;
+	}
+	div{
+		float: left;
+		width: 100px;
+	}
+}
+
+.title{
+	text-transform: uppercase;
+	border-bottom: 1px solid gray;
+	padding-bottom: 5px;
+}
+
+.content{
+	padding-top: 15px;
+	margin-bottom: 20px; 
+}

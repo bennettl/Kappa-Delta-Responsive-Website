@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= full_title(yield(:title)) %></title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+	  	<%= render 'layouts/header' %>
+		<% flash.each do |key, value| %>
+			<%= content_tag :div, value, class:"alert alert-#{key}" %>
+		<% end %>
+		<div id="body">
+			<%= yield %>
+		</div>
+	  	<%= render 'layouts/footer' %>
+	</div>
+<div style="clear: both; padding-top: 20px;">
+	<%= debug params %>
+</div>
+
+</body>
+</html>
