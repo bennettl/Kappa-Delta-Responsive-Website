@@ -1,3 +1,36 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ 
+ @mixin border-radius($radius){
+ 	-webkit-border-radius: $radius;
+ 	-moz-border-radius: $radius;
+ 	-ms-border-radius: $radius;
+	border-radius: $radius;
+ }
+
+#eventsList > li{
+	width: 48%;
+	float: left;
+	border-bottom: 1px solid #a0a0a0;
+	margin: 2% 2% 2% 0; 
+
+	.dateBox{
+		float: left;
+		background: none repeat scroll 0 0 #232B4D;
+		@include border-radius(6px);
+	    color: #FFFFFF;
+	    font-size: 17px;
+	    padding: 5px;
+	    text-align: center;
+	    width: 47px;
+	    margin-right: 15px;
+	}
+	.basicInfo{
+		padding-top: 7px;
+	}
+	.description{
+		clear: both;
+		padding-top: 15px;
+	}
+}

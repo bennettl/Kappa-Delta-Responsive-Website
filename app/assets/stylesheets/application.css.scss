@@ -121,9 +121,8 @@ header{
 /* Footer */
 
 footer{
-	background: #e6e6e6;
 	clear: both;
-	padding: 10px 0;
+	margin: 130px 0 0 0;
 	text-align: center;
 	width: 100%;
 }
@@ -140,7 +139,7 @@ footer{
 /* Listing */
 
 .listTitle{
-	font-size: 15px;
+	font-size: 18px;
 }
 
 .listBody{
@@ -149,6 +148,9 @@ footer{
 
 .search_column{
 	text-align: center;
+	padding: 5px;
+	@include border-radius(5px);
+	border: 1px solid #CACACA;
 }
 
 #membersList, #titleList{
@@ -203,7 +205,7 @@ footer{
 .pagination{
 	display: block;
 	clear: both;
-	padding-top: 23px;
+	padding-top: 50px;
 	ul{
 		display: table;
 		margin: 0 auto;

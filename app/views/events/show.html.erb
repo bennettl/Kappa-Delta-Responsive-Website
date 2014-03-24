@@ -1,3 +1,5 @@
-<h2><%= @event.title %></h2>
+<div class="mainTitleContainer">
+	<div class="mainTitle"><%= @event.title %></div>
+	<%= link_to 'Remove', @event, method: :delete, class: :remove %>
+</div>
 <div><%= @event.description %></div>
-<%= link_to 'Remove', @event, method: :delete %>

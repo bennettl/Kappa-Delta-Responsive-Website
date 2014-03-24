@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 	
 	# Display list of all events
 	def index
-		@events = Event.all
+		@events = Event.order('start_time DESC')
 	end
 
 	# Display an existing event
