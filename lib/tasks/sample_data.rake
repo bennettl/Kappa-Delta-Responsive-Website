@@ -126,7 +126,7 @@ namespace :db do
 			location 		= Faker::Address.city
 			start_time 		= random_date
 			end_time  		= random_date + 10
-			description 	= Faker::Lorem.paragraphs(5)
+			description 	= Faker::Lorem.paragraphs(5).join("\n\n")
 			member.events.create!(title: title, location: location, start_time: start_time, end_time: end_time, description: description)
 		end
 	end
@@ -138,8 +138,8 @@ namespace :db do
 		10.times do |n|
 			title 		= "News Title #{n}"
 			images		= ['profile.png', 'profile.png', 'profile.png']
-			summary 	= Faker::Lorem.paragraphs(5)
-			body 		= Faker::Lorem.paragraphs(10)
+			summary 	= Faker::Lorem.paragraphs(5).join("\n\n")
+			body 		= Faker::Lorem.paragraphs(10).join("\n\n")
 			member.news.create!(title: title, images: images, summary: summary, body: body)
 		end
 	end
