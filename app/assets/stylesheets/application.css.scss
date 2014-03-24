@@ -39,25 +39,25 @@ a {
 	&:hover{
 		color: #096baa;
 	}
-	&#back{
-		display: block;
-	    padding: 7px 0;
-	    text-align: center;
-	    width: 66px;
-	    @include border-radius(3px);
-	    margin-bottom: 10px;
-	    color: #818181;
-	    cursor: pointer;
-	    &:hover{
-	    	color: #000000;
-	    }
-	}
-	&.remove{
-		color: #AD3E3E;
-	    display: block;
-	    margin: 10px 10px;
-	    float: left;
-	}
+}
+a#back{
+	display: block;
+    padding: 7px 0;
+    text-align: center;
+    width: 66px;
+    @include border-radius(3px);
+    margin-bottom: 10px;
+    color: #818181;
+    cursor: pointer;
+    &:hover{
+    	color: #000000;
+    }
+}
+a.remove{
+	color: #AD3E3E;
+    display: block;
+    margin: 10px 10px;
+    float: left;
 }
 
 /* Inputs */
