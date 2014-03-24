@@ -39,14 +39,18 @@ class Member < ActiveRecord::Base
 	def self.search(search)
 		if search
 			# Parameters
-			first_name 	= search[:first_name]
-			last_name 	= search[:last_name]
-			major 		= search[:major]
-			location 	= search[:location]
-			class_year 	= search[:class_year]
-			industry 	= search[:industry]
+			query 	= []
+			query.push((search[:first_name].blank?) ? '' : "first_name LIKE '%#{search[:first_name]}%'")
+			query.push((search[:last_name].blank?) ? '' : "last_name LIKE '%#{search[:last_name]}%'")
+			query.push((search[:major].blank?) ? '' : "major LIKE '%#{search[:major]}%'")
+			query.push((search[:location].blank?) ? '' : "location LIKE '%#{search[:location]}%'")
+			query.push((search[:class_year].blank?) ? '' : "class_year LIKE '%#{search[:class_year]}%'")
+			query.push((search[:industry].blank?) ? '' : "industry LIKE '%#{search[:industry]}%'")
+
+			query.reject! {|q| q.empty? }
+
 			# Search for all fields
-			self.where('first_name LIKE ? AND last_name LIKE ? AND major LIKE ? AND location LIKE ? AND class_year LIKE ? and industry LIKE ?', "%#{first_name}%", "%#{last_name}%", "%#{major}%", "%#{location}%", "%#{class_year}%", "%#{industry}%")
+			self.where(query.join(' AND '))
 		else
 			# all users
 			scoped
