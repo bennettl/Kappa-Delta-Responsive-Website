@@ -39,7 +39,7 @@ a {
 	&:hover{
 		color: #096baa;
 	}
-	#back{
+	&#back{
 		display: block;
 	    padding: 7px 0;
 	    text-align: center;
@@ -52,7 +52,7 @@ a {
 	    	color: #000000;
 	    }
 	}
-	.remove{
+	&.remove{
 		color: #AD3E3E;
 	    display: block;
 	    margin: 10px 10px;
