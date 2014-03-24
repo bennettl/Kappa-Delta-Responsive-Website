@@ -17,7 +17,14 @@ class NewsController < ApplicationController
 
 	# Create a new news
 	def create
+		@news = News.new(news_params)
 
+		if @news.save
+			flash[:success] = "News successfully created"
+			redirect_to news_path(@news)
+		else
+			render 'show'
+		end
 	end
 
 	# Display form to update an existing news
@@ -27,12 +34,30 @@ class NewsController < ApplicationController
 
 	# Update an existing news
 	def update
+		@news = News.find(params[:id])
+
+		# If update is sucessful, redirect to news page, else, render the edit page
+		if @news.update_attributes(news_params)
+			flash[:success] = "News successfully updated"
+			redirect_to @news
+		else
+			render 'edit'
+		end
 
 	end
 
 	# Remove an existing news
 	def destroy
-
+		News.delete(params[:id])
+		flash[:success] = "News successfully destory"
+		redirect_to news_index_path
 	end
+
+	private
+
+		# Strong paramters
+		def news_params
+			params.require(:news).permit(:title, :images, :summary, :body)
+		end
 
 end

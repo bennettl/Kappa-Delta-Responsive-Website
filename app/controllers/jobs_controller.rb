@@ -1,5 +1,10 @@
 class JobsController < ApplicationController
 	
+	# List all jobs
+	def index
+		@jobs = Job.all
+	end
+
 	# Display form for creating a new job
 	def new
 		current_member = Member.first # needs to be replace with current member
@@ -11,7 +16,7 @@ class JobsController < ApplicationController
 		current_member = Member.first # needs to be replace with current member
 		@job = current_member.jobs_created.new(job_params)
 		if @job.save
-			redirect_to jobs_path
+			redirect_to @job
 		else
 			render 'new'
 		end
@@ -19,10 +24,20 @@ class JobsController < ApplicationController
 
 	# Display form for updating an existing job
 	def edit
+		@job = Job.find(params[:id])
 	end
 
 	# Update an existing job
 	def update
+		@job = Job.find(params[:id])
+
+		# If update is sucessful, redirect to job page, else render edit page
+		if @job.update_attributes(job_params)
+			flash[:success] = "Job Sucessfully Updated"
+			redirect_to @job
+		else
+			render 'edit'
+		end
 	end
 
 	# Show individual job
@@ -32,6 +47,9 @@ class JobsController < ApplicationController
 
 	# Destroy a job
 	def destroy
+		Job.delete(params[:id])
+		flash[:success] = "Job Sucessfully Destroy"
+		redirect_to jobs_path
 	end
 
 	private

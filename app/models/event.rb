@@ -1,7 +1,5 @@
 class Event < ActiveRecord::Base
-	# Serialization
-	serialize :description, JSON
-
+	
 	# Validation
 	validates :title, presence: true
 	validates :location, presence: true

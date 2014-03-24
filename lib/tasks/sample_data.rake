@@ -14,13 +14,13 @@ namespace :db do
 					password: 'qwerty2',
 					password_confirmation: 'qwerty2',
 					image: 'profile.png',
-					headline: Faker::Lorem.sentences(1).join(' '),
+					headline: Faker::Lorem.sentences(1).join("\n\n"),
 					first_name: 'Bennett',
 					last_name: 'Lee',
 					user_name: 'blee14',
 					class_year: '2014',
 					major: 'Business',
-					summary: Faker::Lorem.paragraphs(5).join(' '),
+					summary: Faker::Lorem.paragraphs(5).join("\n\n"),
 					url_resume: 'http://www.facebook.com',
 					location: 'Los Angeles',
 					address: 'My address',
@@ -94,10 +94,10 @@ namespace :db do
 			industry 		= random_industry
 			start_date 		= random_date
 			deadline 		= start_date + 10
-			description 	= Faker::Lorem.paragraphs(5).join(' ')
-			qualification 	= Faker::Lorem.paragraphs(3).join(' ')
-			compensation 	= Faker::Lorem.sentences(3).join(' ')
-			how_to_apply 	= Faker::Lorem.paragraphs(2).join(' ')
+			description 	= Faker::Lorem.paragraphs(5).join("\n\n")
+			qualification 	= Faker::Lorem.paragraphs(3).join("\n\n")
+			compensation 	= Faker::Lorem.sentences(3).join("\n\n")
+			how_to_apply 	= Faker::Lorem.paragraphs(2).join("\n\n")
 
 			# Each member will create that job
 			members.each do |member|

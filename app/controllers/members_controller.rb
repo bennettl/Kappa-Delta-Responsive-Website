@@ -33,10 +33,20 @@ class MembersController < ApplicationController
 
 	# Display form for updating an existing member
 	def edit
+		@member = Member.find(params[:id])
 	end
 
 	# Update an existing member
 	def update
+		@member = Member.find(params[:id])
+		
+		# If update is sucessful, redirect to member page, else render edit page
+		if @member.update_attributes(member_params_post)
+			flash[:success] = "Update is sucessful"
+			redirect_to @member
+		else
+			render 'edit'
+		end
 	end
 
 	# Destroy an existing member
@@ -62,9 +72,11 @@ class MembersController < ApplicationController
 	end
 
 	private
+		
 		def member_params_post
-			params.require(:user).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :location, :class_year, :industry, :password, :password_confirmation)
+			params.require(:member).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :location, :class_year, :industry, :password, :password_confirmation)
 		end
+
 		def member_params
 			params.permit(:first_name, :last_name, :major, :location, :class_year, :industry, :password, :password_confirmation)
 		end
