@@ -1,24 +1,25 @@
 <header>
 	<ul id="topNav">
-		<li><%= link_to 'History', history_path %></li>
-		<li><%= link_to 'News', news_index_path %></li>
-		<li><%= link_to 'Donations', donations_path %></li>
-		<li><%= link_to 'Contact', contact_path %></li>
+		<li><%= nav_link 'History', history_path %></li>
+		<li><%= nav_link 'News', news_index_path %></li>
+		<li><%= nav_link 'Donations', donations_path %></li>
+		<li><%= nav_link 'Contact', contact_path %></li>
 	</ul>
 	<%= link_to(image_tag('kdlogo.png', id: :logo), root_path) %>
 	<ul id="bottomNav">
-		<li><%= link_to 'Members Home', members_path %></li>
-		<li><%= link_to 'Jobs And Internships', jobs_path %></li>
-		<li><%= link_to 'Brother Database', members_path %></li>
-		<li><%= link_to 'The KD Room', '#' %></li>
-		<li><%= link_to 'The Dagger', '#' %></li>
-		<li><%= link_to 'Events', events_path %></li>
-		<li><%= link_to 'My Account', '#' %></li>
+		<li><%= nav_link 'Members Home', root_path %></li>
+		<li><%= nav_link 'Jobs And Internships', jobs_path %></li>
+		<li><%= nav_link 'Brother Database', members_path %></li>
+		<li><%= nav_link 'The KD Room', '#' %></li>
+		<li><%= nav_link 'The Dagger', '#' %></li>
+		<li><%= nav_link 'Events', events_path %></li>
+		<li><%= nav_link 'My Account', '#' %></li>
 	</ul>
+	<div style="color: #FFFFFF; position: absolute; right: 20px; top: 15px;">
 	<% if signed_in? %>
-		<div style="color: black;">HEY YOU IN MAN</div><br />
+		DEFINITELY SIGNED IN
 	<% else  %>
-		<div style="color: black;">NOT SIGNED IN</div> <br />
+		NOT SIGNED IN
 	<% end  %>
-
+	</div>
 </header>

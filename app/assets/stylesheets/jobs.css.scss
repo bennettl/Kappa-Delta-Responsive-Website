@@ -2,21 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#basicInfo{
-	li{
-		clear: both;
-		height: 26px;
-	}
-	div{
-		float: left;
-		width: 100px;
-	}
+#basicInfo, #detailInfo{
+	float: left;
 }
 
-.title{
-	text-transform: uppercase;
-	border-bottom: 1px solid gray;
-	padding-bottom: 5px;
+#detailInfo{
+	width: 70%;
+}
+
+#basicInfo{
+	margin-right: 60px;
+    width: 280px;
+	ul{
+		li{
+			clear: both;
+			height: 22px;
+		}
+		div{
+			float: left;
+			width: 100px;
+		}
+	}
 }
 
 .content{

@@ -9,8 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
+
+// Remove  *= require_tree . because we don't want to include all css files
 
  @mixin transition($time){
 	    transition: background $time ease-in-out;
@@ -27,7 +28,7 @@
 html, body, ul{
 	margin: 0;
 	padding: 0;
-	font: 12px Helvetica, sans-serif;
+	font: 12.5px helvetica neue,sans-serif;
 }
 li{
 	list-style-type: none;
@@ -35,6 +36,28 @@ li{
 a {
 	color: #000000;
 	text-decoration: none;
+	&:hover{
+		color: #096baa;
+	}
+	#back{
+		display: block;
+	    padding: 7px 0;
+	    text-align: center;
+	    width: 66px;
+	    @include border-radius(3px);
+	    margin-bottom: 10px;
+	    color: #818181;
+	    cursor: pointer;
+	    &:hover{
+	    	color: #000000;
+	    }
+	}
+	.remove{
+		color: #AD3E3E;
+	    display: block;
+	    margin: 10px 10px;
+	    float: left;
+	}
 }
 
 /* Inputs */
@@ -67,7 +90,7 @@ header{
 			padding: 5px 20px;
 			display: block;
 			@include transition(0.25s);
-			&:hover{
+			&:hover, &.current{
 				background: #232B4D;
 				color: #FFFFFF;
 			}
@@ -79,7 +102,7 @@ header{
 	background: none repeat scroll 0 0 #F7F7F7;
     height: 20px;
     margin: 0 auto;
-    padding: 12px 13%;
+    padding: 12px 155px;
 	text-transform: uppercase;
 
 	li{
@@ -87,7 +110,7 @@ header{
 		a{
 			padding: 5px 20px;
 			@include transition(0.25s);
-			&:hover{
+			&:hover, &.current{
 				background: #232B4D;
 				color: #FFFFFF;
 			}
@@ -108,13 +131,21 @@ footer{
 /* Body */
 #body{
 	width: 90%;
-	padding: 20px 0;
+	padding: 40px 0;
 	margin: 0 auto;
 	min-height: 500px;
 	clear: both;
 }
 
-/* User Listing */
+/* Listing */
+
+.listTitle{
+	font-size: 15px;
+}
+
+.listBody{
+	margin: 10px 0; 
+}
 
 .search_column{
 	text-align: center;
@@ -146,6 +177,29 @@ footer{
 	}
 }
 
+/* Content */
+.mainTitleContainer{
+	width: 100%;
+	height: 50px;
+}
+.mainTitle{
+	display: inline;
+    float: left;
+    font-size: 25px;
+    font-weight: 300;
+}
+.detailTitle{
+	text-transform: uppercase;
+	border-bottom: 1px solid gray;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+
+.detailBody{
+	margin-bottom: 20px;
+}
+
 .pagination{
 	display: block;
 	clear: both;
@@ -160,6 +214,7 @@ footer{
 	    margin: 0 7px;
 	}
 }
+
 
 /* Autocomplete */
 .ui-menu{

@@ -1,3 +1,4 @@
 <li>
-	<%= link_to("#{job.title} posted by #{job.member.name}", job_path(job)) %>
+	<div class="listTitle"><%= link_to("#{job.title} posted by #{job.member.name}", job_path(job)) %></div>
+	<div class="detailBody"><%= job.description %></div>
 </li>

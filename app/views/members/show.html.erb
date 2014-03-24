@@ -1,25 +1,55 @@
 <% provide(:title, @member.name) %>
-<div><%= image_tag @member.image %></div>
-<h1><%= @member.name %></h1>
-<h1><%= @member.user_name %></h1>
-<div><%= @member.headline %></div>
-<div><%= @member.major %></div>
-<div><%= @member.location %></div>
-<div><%= @member.class_year %></div>
-<div><%= @member.industry %></div>
-<div>Summary</div>
-<div><%= @member.summary %></div>
-<div>Resume</div>
-<div><%= @member.url_resume %></div>
-<div>Contact</div>
-<div><%= @member.location %></div>
-<div><%= @member.address %></div>
+<%= back_button(members_path) %>
 
-<div><%= @member.email %></div>
-<div><%= @member.phone %></div>
-<div>URLs</div>
-<div><%= link_to @member.url_facebook, @member.url_facebook, target: '_blank' %></div>
-<div><%= link_to @member.url_twitter, @member.url_twitter, target: '_blank' %></div>
-<div><%= link_to @member.url_linkedIn, @member.url_linkedIn, target: '_blank' %></div>
-<div><%= link_to @member.url_personal, @member.url_personal, target: '_blank' %></div>
-<%= link_to 'Remove User', @member, method: :delete %>
+<div id="profileImg">
+	<%= image_tag @member.image %>
+</div>
+<div id="basicInfo">
+	<div class="mainTitleContainer">
+		<div class="mainTitle"><%= @member.name %></div>
+		<%= link_to 'Remove User', @member, method: :delete, class: :remove %>
+	</div>
+	<!-- <div id="userName"> @member.user_name </div> <br /> -->
+	<div id="headline"><%= @member.headline %></div>
+	<ul id="infoList">
+		<li>
+			<div>Major:</div>
+			<div><%= @member.major %></div>
+		</li>
+		<li>
+			<div>Location:</div>
+			<div><%= @member.location %></div>
+		</li>
+		<li>
+			<div>Class Year:</div>
+			<div><%= @member.class_year %></div>
+		</li>
+		<li>
+			<div>Industry</div>
+			<div><%= @member.industry %></div>
+		</li>
+	</ul>
+	<div class="detailTitle">Contact</div>
+	<ul id="social">
+		<li><%= link_to image_tag('social/fb.png', class: 'socialIcon'), @member.url_facebook, target: '_blank', title: 'Facebook' %></li>
+		<li><%= link_to image_tag('social/twitter.png', class: 'socialIcon'), @member.url_twitter, target: '_blank', title: 'Twitter' %></li>
+		<li><%= link_to image_tag('social/li.png', class: 'socialIcon'), @member.url_linkedIn, target: '_blank', title: 'LinkedIn' %></li>
+		<li><%= mail_to @member.email, image_tag('social/email.png', class: 'socialIcon'), title: 'Email' %></li>
+	</ul>
+</div>
+<div id="detailInfo">
+	<div class="detailTitle">Summary</div>
+	<div class="detailBody"><%= @member.summary %></div>
+
+	<div class="detailTitle">Resume</div>
+	<div class="detailBody"><%= @member.url_resume %></div>
+
+	<div class="detailTitle">Adresss</div>
+	<div class="detailBody">
+		<div><%= @member.location %></div>
+		<div><%= @member.address %></div>
+	</div>
+</div>
+
+
+

@@ -52,7 +52,7 @@ namespace :db do
 			phone			= '(415)-812-8901'
 			url_facebook	= "http://www.facebook.com/#{user_name}"
 			url_twitter		= "http://www.twitter.com/#{user_name}"
-			url_linkedIn	= "http//:www.linkedin.com/#{user_name}"
+			url_linkedIn	= "http://www.linkedin.com/#{user_name}"
 			url_personal	= "http://www.personal.com/#{user_name}"
 			
 			# Create the member
