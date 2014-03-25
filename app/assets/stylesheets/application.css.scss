@@ -17,6 +17,10 @@
 @import "partials/footer";
 @import "partials/links";
 
+* {
+	box-sizing: border-box;
+}
+
 body, ul{
 	margin: 0;
 	padding: 0;

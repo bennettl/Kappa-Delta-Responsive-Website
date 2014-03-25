@@ -1,8 +1,8 @@
 /* Header */
-header{
+header {
 	background: #232b4d;
 }
-.logo{
+.logo {
 	display: block;
 	margin: 0 auto;
 }
@@ -14,7 +14,7 @@ header{
 	color: #FFFFFF;
 }
 
-.topNav{
+.topNav {
  position: absolute;
  top: 0;
 	left: 0;
@@ -23,7 +23,7 @@ header{
 	li{
 		float: left;
 		a {
-			@include transition(0.25s);
+			transition: all 0.25s ease;
 			display: block;
 			padding: 5px 20px;
 			&:hover, &.current{
@@ -34,7 +34,7 @@ header{
 	}
 }
 
-.mainNav{
+.mainNav {
 	@include clearfix;
  padding: 12px 0;
 	background: #F7F7F7;
@@ -45,12 +45,12 @@ header{
 		max-width: 975px;
 	}
 
-	li{
+	li {
 		float: left;
-		a{
-			@include transition(0.25s);
+		a {
+			transition: all 0.25s ease;
 			padding: 5px 20px;
-			&:hover, &.current{
+			&:hover, &.current {
 				background: #232B4D;
 				color: #FFFFFF;
 			}
