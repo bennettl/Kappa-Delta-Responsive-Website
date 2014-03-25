@@ -12,52 +12,24 @@
  */
 
 // Remove  *= require_tree . because we don't want to include all css files
+@import "bourbon";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/links";
 
- @mixin transition($time){
-	    transition: background $time ease-in-out;
-	    -webkit-transition: background $time ease-in-out;
-	    -moz-transition: background $time ease-in-out;
- }
- @mixin border-radius($radius){
- 	-webkit-border-radius: $radius;
- 	-moz-border-radius: $radius;
- 	-ms-border-radius: $radius;
-	border-radius: $radius;
- }
-
-html, body, ul{
+body, ul{
 	margin: 0;
 	padding: 0;
-	font: 12.5px helvetica neue,sans-serif;
+	font: 12.5px 'helvetica neue',sans-serif;
 }
-li{
+li {
 	list-style-type: none;
 }
-a {
-	color: #000000;
-	text-decoration: none;
-	&:hover{
-		color: #096baa;
-	}
-}
-a#back{
-	display: block;
-    padding: 7px 0;
-    text-align: center;
-    width: 66px;
-    @include border-radius(3px);
-    margin-bottom: 10px;
-    color: #818181;
-    cursor: pointer;
-    &:hover{
-    	color: #000000;
-    }
-}
-a.remove{
-	color: #AD3E3E;
-    display: block;
-    margin: 10px 10px;
-    float: left;
+
+/* Responsive Images */
+img {
+	max-width: 100%;
+	height: auto !important;
 }
 
 /* Inputs */
@@ -66,74 +38,12 @@ textarea{
 	height: 200px;
 }
 
-/* Header */
-header{
-	width: 100%;
-	height: 180px;
-	background: #232b4d;
-}
-#logo{
-	display: block;
-	width: 240px;
-	height: 180px;
-	margin: 0 auto;
-}
-#topNav{
-    position: absolute;
-	left: 0;
-    top: 0;
-	background: #e6e6e6;
-	text-transform: uppercase;
-	li{
-		float: left;
-		a {
-			padding: 5px 20px;
-			display: block;
-			@include transition(0.25s);
-			&:hover, &.current{
-				background: #232B4D;
-				color: #FFFFFF;
-			}
-		}
-	}
-}
-
-#bottomNav{
-	background: none repeat scroll 0 0 #F7F7F7;
-    height: 20px;
-    margin: 0 auto;
-    padding: 12px 155px;
-	text-transform: uppercase;
-
-	li{
-		float: left;
-		a{
-			padding: 5px 20px;
-			@include transition(0.25s);
-			&:hover, &.current{
-				background: #232B4D;
-				color: #FFFFFF;
-			}
-		}
-	}
-}
-
-/* Footer */
-
-footer{
-	clear: both;
-	margin: 130px 0 0 0;
-	text-align: center;
-	width: 100%;
-}
-
 /* Body */
-#body{
-	width: 90%;
-	padding: 40px 0;
+.container{
 	margin: 0 auto;
+	padding: 40px 0;
 	min-height: 500px;
-	clear: both;
+	width: 90%;
 }
 
 /* Listing */
@@ -147,26 +57,26 @@ footer{
 }
 
 .search_column{
-	text-align: center;
 	padding: 5px;
-	@include border-radius(5px);
 	border: 1px solid #CACACA;
+	border-radius: 5px;
+	text-align: center;
 }
 
 #membersList, #titleList{
 	li.row{
 		div.cell{
+			float: left;
+			padding: 15px 0;
 			width: 16.4%;
 			border-right: 1px solid #e5e5e5;
 			border-bottom: 1px solid #e5e5e5;
-			float: left;
-			padding: 15px 0;
 			text-align: center;
 			a {
 				display: block;
 				padding-right: 12px;
-				background-repeat: no-repeat;
 				background-position: right center;
+				background-repeat: no-repeat;
 				color: blue;
 				&.desc{
 				  background-image: url(up_arrow.gif);
@@ -187,14 +97,14 @@ footer{
 .mainTitle{
 	display: inline;
     float: left;
-    font-size: 25px;
     font-weight: 300;
+    font-size: 25px;
 }
 .detailTitle{
-	text-transform: uppercase;
-	border-bottom: 1px solid gray;
-	padding-bottom: 5px;
 	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid gray;
+	text-transform: uppercase;
 	font-size: 13px;
 }
 
@@ -223,14 +133,14 @@ footer{
 	width: 100px;
 }
 .ui-menu-item{
-	background: #FFFFFF;
-    border: 1px solid #E5E5E5;
-    color: #000000;
     padding: 10px 10px;
+    border: 1px solid #E5E5E5;
+	background: #FFFFFF;
+    color: #000000;
     cursor: pointer;
     &:hover{
-		color: white;
 		background: #d6d6d6;
+		color: white;
 	}
 }
 	

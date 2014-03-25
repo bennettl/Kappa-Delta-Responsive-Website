@@ -1,0 +1,59 @@
+/* Header */
+header{
+	background: #232b4d;
+}
+.logo{
+	display: block;
+	margin: 0 auto;
+}
+
+.loginIndicator { 
+	position: absolute; 
+	top: 15px; 
+	right: 20px;
+	color: #FFFFFF;
+}
+
+.topNav{
+ position: absolute;
+ top: 0;
+	left: 0;
+	background: #e6e6e6;
+	text-transform: uppercase;
+	li{
+		float: left;
+		a {
+			@include transition(0.25s);
+			display: block;
+			padding: 5px 20px;
+			&:hover, &.current{
+				background: #232B4D;
+				color: #FFFFFF;
+			}
+		}
+	}
+}
+
+.mainNav{
+	@include clearfix;
+ padding: 12px 0;
+	background: #F7F7F7;
+	text-transform: uppercase;
+
+	ul {
+		margin: 0 auto;
+		max-width: 975px;
+	}
+
+	li{
+		float: left;
+		a{
+			@include transition(0.25s);
+			padding: 5px 20px;
+			&:hover, &.current{
+				background: #232B4D;
+				color: #FFFFFF;
+			}
+		}
+	}
+}
