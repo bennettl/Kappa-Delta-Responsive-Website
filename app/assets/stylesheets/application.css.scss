@@ -16,6 +16,7 @@
 @import "partials/header";
 @import "partials/footer";
 @import "partials/links";
+@import "partials/typography";
 
 * {
 	box-sizing: border-box;
@@ -24,7 +25,6 @@
 body, ul{
 	margin: 0;
 	padding: 0;
-	font: 12.5px 'helvetica neue',sans-serif;
 }
 li {
 	list-style-type: none;
