@@ -13,6 +13,8 @@
 
 // Remove  *= require_tree . because we don't want to include all css files
 @import "bourbon";
+@import "partials/normalize";
+@import "partials/bits";
 @import "partials/header";
 @import "partials/footer";
 @import "partials/links";

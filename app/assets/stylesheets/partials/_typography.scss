@@ -15,3 +15,15 @@ body {
 	font-family: 'aleoregular', sans-serif;
 	font-size: 12.5px;
 }
+
+/* Font Legibility */
+
+body {
+    text-rendering: optimizeLegibility;
+}
+
+body,
+input,
+button {    
+    -webkit-font-smoothing: antialiased;
+}

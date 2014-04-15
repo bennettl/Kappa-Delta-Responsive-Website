@@ -1,6 +1,6 @@
 /* Header */
 header {
-	background: #232b4d;
+	background: $brandBlue;
 }
 .logo {
 	display: block;
@@ -40,20 +40,18 @@ header {
 	background: #F7F7F7;
 	text-transform: uppercase;
 
-	ul {
+	.innerNav {
 		margin: 0 auto;
 		max-width: 1010px;
 	}
 
-	li {
+	a {
 		float: left;
-		a {
-			transition: all 0.25s ease;
-			padding: 5px 20px;
-			&:hover, &.current {
-				background: #232B4D;
-				color: #FFFFFF;
-			}
+		padding: 5px 20px;
+		transition: all 0.25s ease;
+		&:hover {
+			background: $brandBlue;
+			color: white;
 		}
 	}
 }

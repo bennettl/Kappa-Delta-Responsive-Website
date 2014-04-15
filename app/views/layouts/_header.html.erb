@@ -7,15 +7,15 @@
 	</ul>
 	<%= link_to(image_tag('kdlogo.png', class: :logo), root_path) %>
 	<nav class="mainNav" role="navigation">
-		<ul>
-			<li><%= nav_link 'Members Home', root_path %></li>
-			<li><%= nav_link 'Jobs And Internships', jobs_path %></li>
-			<li><%= nav_link 'Brother Database', members_path %></li>
-			<li><%= nav_link 'The KD Room', '#' %></li>
-			<li><%= nav_link 'The Dagger', '#' %></li>
-			<li><%= nav_link 'Events', events_path %></li>
-			<li><%= nav_link 'My Account', '#' %></li>
-		</ul>
+		<div class="innerNav">
+			<%= nav_link 'Members Home', root_path %>
+			<%= nav_link 'Jobs And Internships', jobs_path %>
+			<%= nav_link 'Brother Database', members_path %>
+			<%= nav_link 'The KD Room', '#' %>
+			<%= nav_link 'The Dagger', '#' %>
+			<%= nav_link 'Events', events_path %>
+			<%= nav_link 'My Account', '#' %>
+		</div>
 	</nav>
 	<div class="loginIndicator">
 	<% if signed_in? %>

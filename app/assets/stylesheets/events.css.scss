@@ -1,8 +1,13 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'bourbon';
+@import "partials/bits";
+.eventsList {
+	@include clearfix;
+}
 
-#eventsList > li{
+.eventsList > li{
 	float: left;
 	margin: 2% 2% 2% 0;
 	width: 48%;
@@ -13,8 +18,8 @@
   margin-right: 15px;
   padding: 5px;
   width: 47px;
-		border-radius: 6px;
-		background: none repeat scroll 0 0 #232B4D;
+		border-radius: 5px;
+		background: $brandBlue;
   color: #FFFFFF;
   text-align: center;
   font-size: 17px;
