@@ -1,8 +1,11 @@
 .mobileNav {
+	display: none;
+	@include bp(sapling) {
+		display: block;
+	}
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	z-index: -200;
 	background: $grey;
 	nav {
 		a {
