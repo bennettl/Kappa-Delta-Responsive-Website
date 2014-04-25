@@ -19,6 +19,7 @@
 @import "partials/footer";
 @import "partials/links";
 @import "partials/typography";
+@import "partials/mobileNav";
 
 * {
 	box-sizing: border-box;
@@ -38,6 +39,15 @@ img {
 	height: auto !important;
 }
 
+/* Site Wrap */
+.siteWrap {
+	background-color: white;
+	transition: transform 0.2s ease;
+	&.menuOpen {
+		transform: translateX(240px);
+	}
+}
+
 /* Inputs */
 textarea{
 	width: 400px;
@@ -48,7 +58,7 @@ textarea{
 .container{
 	margin: 0 auto;
 	padding: 40px 0;
-	min-height: 500px;
+	min-height: 700px;
 	width: 90%;
 }
 
@@ -139,12 +149,12 @@ textarea{
 	width: 100px;
 }
 .ui-menu-item{
-    padding: 10px 10px;
-    border: 1px solid #E5E5E5;
+ padding: 10px 10px;
+ border: 1px solid #E5E5E5;
 	background: #FFFFFF;
-    color: #000000;
-    cursor: pointer;
-    &:hover{
+ color: #000000;
+ cursor: pointer;
+ &:hover{
 		background: #d6d6d6;
 		color: white;
 	}

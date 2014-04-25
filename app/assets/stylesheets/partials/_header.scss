@@ -20,6 +20,9 @@ header {
 	left: 0;
 	background: #e6e6e6;
 	text-transform: uppercase;
+	@include bp(sapling) {
+		display: none;
+	}
 	li{
 		float: left;
 		a {
@@ -36,6 +39,9 @@ header {
 
 .mainNav {
 	@include clearfix;
+	@include bp(sapling) {
+		display: none;
+	}
  padding: 12px 0;
 	background: #F7F7F7;
 	text-transform: uppercase;

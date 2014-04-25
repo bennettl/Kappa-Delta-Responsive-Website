@@ -1,2 +1,11 @@
 //Color Variable Declarations
 $brandBlue: #232B4D;
+$grey: #3C3D3D;
+$black: #1E1E1E;
+
+//Media Queries
+@mixin bp($point) {
+	@if $point == sapling {
+    @media (max-width: 800px) { @content; }
+  }
+}

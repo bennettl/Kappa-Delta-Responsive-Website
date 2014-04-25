@@ -8,6 +8,8 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
+	<%= render 'layouts/mobileNav' %>
+	<div class="siteWrap">
 	  	<%= render 'layouts/header' %>
 		<% flash.each do |key, value| %>
 			<%= content_tag :div, value, class:"alert alert-#{key}" %>
@@ -16,9 +18,9 @@
 			<%= yield %>
 		</div>
 	  	<%= render 'layouts/footer' %>
-<div style="clear: both; padding-top: 20px;">
-	<%= debug params %>
-</div>
-
+		<div style="clear: both; padding-top: 20px;">
+			<%= debug params %>
+		</div>
+	</div> <!-- /.siteWrap -->
 </body>
 </html>
