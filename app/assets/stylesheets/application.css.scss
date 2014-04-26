@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require 'forem/base'
  */
 
 // Remove  *= require_tree . because we don't want to include all css files
@@ -157,6 +158,7 @@ footer{
 	li.row{
 		div.cell{
 			width: 16.4%;
+			height: 25px;
 			border-right: 1px solid #e5e5e5;
 			border-bottom: 1px solid #e5e5e5;
 			float: left;

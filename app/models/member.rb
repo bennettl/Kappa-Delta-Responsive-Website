@@ -12,14 +12,14 @@ class Member < ActiveRecord::Base
 	validates :status, presence: true, inclusion: ['bod', 'officer', 'member']
 	validates :first_name, presence: true
 	validates :last_name, presence: true
-	validates :major, presence: true
-	validates :location, presence: true
-	validates :class_year, presence: true
-	validates :industry, presence: true
+	# validates :address, presence: true
+	# validates :class_year, presence: true
+	# validates :major, presence: true
+	# validates :industry, presence: true
 	validates :user_name,  presence: true, uniqueness: true
 	
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+	# validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 	validates :password, length: { minimum: 5 }
 
 	# Handles password 
@@ -43,7 +43,7 @@ class Member < ActiveRecord::Base
 			query.push((search[:first_name].blank?) ? '' : "first_name LIKE '%#{search[:first_name]}%'")
 			query.push((search[:last_name].blank?) ? '' : "last_name LIKE '%#{search[:last_name]}%'")
 			query.push((search[:major].blank?) ? '' : "major LIKE '%#{search[:major]}%'")
-			query.push((search[:location].blank?) ? '' : "location LIKE '%#{search[:location]}%'")
+			query.push((search[:address].blank?) ? '' : "address LIKE '%#{search[:address]}%'")
 			query.push((search[:class_year].blank?) ? '' : "class_year LIKE '%#{search[:class_year]}%'")
 			query.push((search[:industry].blank?) ? '' : "industry LIKE '%#{search[:industry]}%'")
 
@@ -60,6 +60,14 @@ class Member < ActiveRecord::Base
 	# Returns full name
 	def name
 		"#{first_name} #{last_name}"
+	end
+
+	# Forem
+	def forem_name
+		name
+	end
+	def forem_email
+		email
 	end
 
 	private

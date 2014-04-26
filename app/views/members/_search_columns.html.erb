@@ -5,7 +5,7 @@
 				first_name 	= params[:first_name]
 				last_name 	= params[:last_name]
 				major 		= params[:major]
-				location 	= params[:location]
+				address 	= params[:address]
 				class_year 	= params[:class_year]
 				industry 	= params[:industry]
 				#sorting
@@ -17,7 +17,7 @@
 			<div class="cell"><%= search_column 'First Name', 'first_name', first_name %></div>
 			<div class="cell"><%= search_column 'Last Name', 'last_name', last_name %></div>
 			<div class="cell"><%= search_column 'Major', 'major', major %></div>
-			<div class="cell"><%= search_column 'Location', 'location', location %></div>
+			<div class="cell"><%= search_column 'Address', 'address', address %></div>
 			<div class="cell"><%= search_column 'Class Year', 'class_year', class_year %></div>
 			<div class="cell"><%= search_column 'Industry', 'industry', industry %></div>
 		<% end %>

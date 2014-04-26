@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require forem
 
-// Remove //= require_tree because we don't want to include al js files
+// Remove //= require_tree because we don't want to include all javascript files
 
 jQuery(document).ready(function($) {
 

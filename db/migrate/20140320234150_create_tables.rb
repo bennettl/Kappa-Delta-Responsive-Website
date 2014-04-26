@@ -19,8 +19,10 @@ class CreateTables < ActiveRecord::Migration
 		t.text :summary
 		t.string :url_resume
 		# contact
-		t.string :location
 		t.string :address
+		t.string :state
+		t.string :city
+		t.string :zip
 		t.string :industry
 		t.string :email
 		t.string :phone

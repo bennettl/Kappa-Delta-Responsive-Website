@@ -18,7 +18,7 @@
 		</li>
 		<li>
 			<div>Location:</div>
-			<div><%= @member.location %></div>
+			<div><%= @member.address %></div>
 		</li>
 		<li>
 			<div>Class Year:</div>
@@ -46,8 +46,8 @@
 
 	<div class="detailTitle">Adresss</div>
 	<div class="detailBody">
-		<div><%= @member.location %></div>
 		<div><%= @member.address %></div>
+		<div><%= "#{@member.city}, #{@member.state} #{@member.zip}"%></div>
 	</div>
 </div>
 

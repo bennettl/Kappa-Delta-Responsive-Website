@@ -6,7 +6,7 @@ class MembersController < ApplicationController
 		params[:sort] ||= 'first_name'
 		params[:direction] ||= 'asc'
 		
-		 @members = Member.search(member_params).order(params[:sort] + ' ' + params[:direction]).paginate(per_page: 5, page: params[:page])
+		 @members = Member.search(member_params).order(params[:sort] + ' ' + params[:direction]).paginate(per_page: 10, page: params[:page])
 		#@members = Member.all.paginate(per_page: 5, page: params[:page])
 	end
 
