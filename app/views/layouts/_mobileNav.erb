@@ -1,0 +1,22 @@
+<div class="mobileNav">
+	<%= link_to(image_tag('kdlogo.png', class: :logo), root_path) %>
+	<nav role="navigation">
+		<div class="menuHeading">Menu</div>
+		<%= nav_link 'History', history_path %>
+		<%= nav_link 'News', news_index_path %>
+		<%= nav_link 'Donations', donations_path %>
+		<%= nav_link 'Contact', contact_path %>
+		<a href="#0" class="menuHeading">Members Only</a>
+		<%= nav_link 'Members Home', root_path %>
+		<%= nav_link 'Jobs And Internships', jobs_path %>
+		<%= nav_link 'Brother Database', members_path %>
+		<%= nav_link 'The KD Room', '#' %>
+		<%= nav_link 'The Dagger', '#' %>
+		<%= nav_link 'Events', events_path %>
+		<a href="#0" class="menuHeading">My Account</a>
+		<%= nav_link 'My Profile', '#' %>
+		<%= nav_link 'Edit Profile', '#' %>
+		<%= nav_link 'Account Settings', '#' %>
+		<%= nav_link 'Sign Out', '#' %>
+	</nav>
+</div>

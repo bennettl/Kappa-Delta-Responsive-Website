@@ -17,6 +17,13 @@
 
 // Remove //= require_tree because we don't want to include all javascript files
 
-jQuery(document).ready(function($) {
+// Mobile Menu Concerns go in this object
+	var mobileMenu = {
+		togglemenu : function() {
+			$('.siteWrap').toggleClass('menuOpen');
+		}
+	};
 
+jQuery(document).ready(function($) {
+$('.menuToggle').on('click', mobileMenu.togglemenu);
 });

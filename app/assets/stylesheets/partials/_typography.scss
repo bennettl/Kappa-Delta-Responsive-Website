@@ -1,0 +1,29 @@
+/* Font Declarations */
+@font-face {
+    font-family: 'aleoregular';
+    src: url('../fonts/Aleo-Regular-webfont.eot');
+    src: url('../fonts/Aleo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Aleo-Regular-webfont.woff') format('woff'),
+         url('../fonts/Aleo-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/Aleo-Regular-webfont.svg#aleoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+	font-family: 'aleoregular', sans-serif;
+	font-size: 12.5px;
+}
+
+/* Font Legibility */
+
+body {
+    text-rendering: optimizeLegibility;
+}
+
+body,
+input,
+button {    
+    -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,63 @@
+/* Header */
+header {
+	background: $brandBlue;
+}
+.logo {
+	display: block;
+	margin: 0 auto;
+}
+
+.loginIndicator { 
+	position: absolute; 
+	top: 15px; 
+	right: 20px;
+	color: #FFFFFF;
+}
+
+.topNav {
+ position: absolute;
+ top: 0;
+	left: 0;
+	background: #e6e6e6;
+	text-transform: uppercase;
+	@include bp(sapling) {
+		display: none;
+	}
+	li{
+		float: left;
+		a {
+			transition: all 0.25s ease;
+			display: block;
+			padding: 5px 20px;
+			&:hover, &.current{
+				background: #232B4D;
+				color: #FFFFFF;
+			}
+		}
+	}
+}
+
+.mainNav {
+	@include clearfix;
+	@include bp(sapling) {
+		display: none;
+	}
+ padding: 12px 0;
+	background: #F7F7F7;
+	text-transform: uppercase;
+
+	.innerNav {
+		margin: 0 auto;
+		max-width: 1010px;
+	}
+
+	a {
+		float: left;
+		padding: 5px 20px;
+		transition: all 0.25s ease;
+		&:hover {
+			background: $brandBlue;
+			color: white;
+		}
+	}
+}
