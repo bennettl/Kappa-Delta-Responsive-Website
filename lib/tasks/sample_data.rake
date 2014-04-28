@@ -30,13 +30,14 @@ namespace :db do
 					industry: 'Software',
 					email: 'bennettl908@yahoo.com',
 					phone: '800-123-4567',
+					forem_admin: true,
 					url_facebook: "http://www.facebook.com/",
 					url_twitter: "http://www.twitter.com/",
 					url_linkedIn: "http://www.linkedin.com/",
 					url_personal: "http://www.personal.com/")
 
 	end
-	
+
 	def populate_members_csv
 		require 'csv'    
 

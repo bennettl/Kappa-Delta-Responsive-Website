@@ -13,7 +13,6 @@ KappaDelta::Application.routes.draw do
   # Static pages
   match 'history', to: 'static_pages#history', via: 'get'
   match 'contact', to: 'static_pages#contact', via: 'get'
-  match 'donations', to: 'static_pages#donations', via: 'get'
 
   # Sessions
   match 'signin', to: 'sessions#new', via: 'get'
@@ -27,6 +26,7 @@ KappaDelta::Application.routes.draw do
   resources :events
   resources :news
   resources :sessions, only: [:new, :create, :destroy]
+  resources :donations, only: [:index, :new, :create, :update]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

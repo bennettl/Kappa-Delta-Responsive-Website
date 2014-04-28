@@ -1,0 +1,6 @@
+<% if donation.visible %>
+<li>
+	<% amount = number_to_currency(donation.amount, precision: 0) %>
+	<%= "#{donation.first_name} #{donation.last_name} has donated #{amount}" %>
+</li>
+<% end %>

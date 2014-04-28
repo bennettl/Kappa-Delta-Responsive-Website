@@ -1,0 +1,81 @@
+/*
+ *= require "forem-bootstrap"
+*/
+
+a{
+	color: #000000;
+}
+
+a:focus, a:hover{
+	text-decoration: none;
+}
+
+body{
+	font-size: 12.5px;
+	margin: 0;
+}
+
+.btn-primary{
+	margin-bottom: 10px;
+}
+
+.category {
+	padding: 10px 0;
+
+	.title{
+		font-size: 24px;
+	}
+}	
+
+#forum{
+	.title{
+		font-size: 24px;
+	}
+	#description{
+		margin: 10px 0;
+	}
+}
+
+label{
+	width: 100px;
+}
+abbr[title="required"]{
+	color: red;
+}
+
+.forums thead th, .table > thead > tr > th{
+	background: #a9c9d6;
+}
+
+.table > thead > tr > th, .forums thead th{
+	border: none;
+}
+
+#new_topic{
+	width: 500px;
+
+	.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
+		float: none;
+	}
+
+	.btn-primary{
+		margin-top: 10px;
+		float: right;
+	}
+	textarea{
+		width: 400px;
+	}
+}
+
+/* Edit menu */
+.group.row{
+	margin: 0;	
+}
+
+
+footer#admin_link{
+	a{
+		color: #ffffff;
+	}
+	background: none repeat scroll 0 0 #a9c9d6;
+}

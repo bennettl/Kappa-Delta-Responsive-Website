@@ -4,8 +4,9 @@
 	<title><%= full_title(yield(:title)) %></title>
 	<% # Include application and controller specific stylesheets/javascripts %>
 	<%= stylesheet_link_tag    "application", params[:controller] ,media: "all", "data-turbolinks-track" => true %>
-	<%= javascript_include_tag "application", params[:controller] ,"data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "https://js.stripe.com/v2/", params[:controller] ,"data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
+	<%= tag :meta, name: 'strip_key', content: STRIPE_PUBLIC_KEY %>
 </head>
 <body>
 	<%= render 'layouts/mobileNav' %>

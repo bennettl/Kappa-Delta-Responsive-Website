@@ -1,0 +1,39 @@
+// Place all the styles related to the Donations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.column{
+    border-right: 1px solid #D3D3D3;
+    float: left;
+    height: 300px;
+    width: 375px;
+    text-align: center;
+    &:last-child {
+	    border-right: none;
+	}
+}
+
+.title{
+	text-transform: uppercase;
+    font-weight: 300;
+	font-size: 25px;
+}
+
+#amountList{
+	margin-top: 20px;
+	li{
+		font-size: 20px;
+	    height: 37px;
+	    margin: 0 auto;
+	    width: 100px;
+	}
+	div{
+		width: 30px;
+		float: left;
+	}
+}
+
+#amount_custom{
+	margin-top: 0;
+    width: 120px;
+}
