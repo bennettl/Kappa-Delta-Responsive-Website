@@ -1,8 +1,8 @@
 require 'stripe'
 
 class DonationsController < ApplicationController
-	force_ssl
-
+	force_ssl unless Rails.env.development?
+	
 	def index
 		@donations = Donation.all
 	end
