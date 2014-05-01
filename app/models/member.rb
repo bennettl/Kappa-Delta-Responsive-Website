@@ -40,12 +40,14 @@ class Member < ActiveRecord::Base
 		if search
 			# Parameters
 			query 	= []
-			query.push((search[:first_name].blank?) ? '' : "first_name LIKE '%#{search[:first_name]}%'")
-			query.push((search[:last_name].blank?) ? '' : "last_name LIKE '%#{search[:last_name]}%'")
-			query.push((search[:major].blank?) ? '' : "major LIKE '%#{search[:major]}%'")
-			query.push((search[:city].blank?) ? '' : "city LIKE '%#{search[:city]}%'")
-			query.push((search[:class_year].blank?) ? '' : "class_year LIKE '%#{search[:class_year]}%'")
-			query.push((search[:industry].blank?) ? '' : "industry LIKE '%#{search[:industry]}%'")
+			like 	= Rails.env.development? ? 'LIKE' : 'ILIKE' ; #case insensitive for postgres
+
+			query.push((search[:first_name].blank?) ? '' : "first_name #{like} '%#{search[:first_name]}%'")
+			query.push((search[:last_name].blank?) ? '' : "last_name #{like} '%#{search[:last_name]}%'")
+			query.push((search[:major].blank?) ? '' : "major #{like} '%#{search[:major]}%'")
+			query.push((search[:city].blank?) ? '' : "city #{like} '%#{search[:city]}%'")
+			query.push((search[:class_year].blank?) ? '' : "class_year #{like} '%#{search[:class_year]}%'")
+			query.push((search[:industry].blank?) ? '' : "industry #{like} '%#{search[:industry]}%'")
 
 			query.reject! {|q| q.empty? }
 
