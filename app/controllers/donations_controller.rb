@@ -1,6 +1,8 @@
 require 'stripe'
 
 class DonationsController < ApplicationController
+	force_ssl
+
 	def index
 		@donations = Donation.all
 	end

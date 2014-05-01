@@ -60,7 +60,7 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (1.1.20140410)
+    autoprefixer-rails (1.1.20140430)
       execjs
     bcrypt-ruby (3.1.2)
     bootstrap-sass (3.1.1.1)
@@ -118,7 +118,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.3)
     minitest (5.3.3)
-    multi_json (1.9.2)
+    multi_json (1.9.3)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     pg (0.15.1)
