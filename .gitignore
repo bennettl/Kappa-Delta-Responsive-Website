@@ -16,6 +16,6 @@
 /tmp
 
 # Ignore stripe rb
-/config/initializers/stripe.rb
+#/config/initializers/stripe.rb
 
 .DS_Store
