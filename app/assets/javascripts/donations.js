@@ -35,10 +35,20 @@ $(document).ready(function(){
 			}
 		}
 
+		// Email validations
+		var email = $('#donation_email').val();
+		var reg2 = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+     	if (!reg2.test(email)){
+			$('.error').text('Invalid email');
+			return false;
+     	} 
+
 		Stripe.card.createToken(cardData, stripeResponseHandler);
 
 		return false;
 	});
+
 
 	// Append toke to donation form and resubmit
 	function stripeResponseHandler(status, response) {

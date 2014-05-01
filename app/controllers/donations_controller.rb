@@ -2,7 +2,7 @@ require 'stripe'
 
 class DonationsController < ApplicationController
 	force_ssl unless Rails.env.development?
-	
+
 	def index
 		@donations = Donation.all
 	end
@@ -30,7 +30,7 @@ class DonationsController < ApplicationController
 			if @donation.save
 				flash.now[:success] = "Donation of #{currency} received"
 			else
-				flash.now[:error] = "Something went wrong with create action"
+				#flash.now[:error] = "Something went wrong with create action"
 			end
 		end
 

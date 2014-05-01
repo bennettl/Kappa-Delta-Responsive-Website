@@ -74,10 +74,10 @@ class MembersController < ApplicationController
 	private
 		
 		def member_params_post
-			params.require(:member).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :location, :class_year, :industry, :password, :password_confirmation)
+			params.require(:member).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :city, :class_year, :industry, :password, :password_confirmation)
 		end
 
 		def member_params
-			params.permit(:first_name, :last_name, :major, :location, :class_year, :industry, :password, :password_confirmation)
+			params.permit(:first_name, :last_name, :city, :industry, :major, :class_year, :password, :password_confirmation)
 		end
 end

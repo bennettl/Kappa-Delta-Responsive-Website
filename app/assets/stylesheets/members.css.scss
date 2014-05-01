@@ -2,6 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+input[type="text"]{
+	width: 140px;
+	margin: 0;
+}
+
+/* Listing */
+
+.listTitle{
+	font-size: 18px;
+}
+
+.listBody{
+	margin: 10px 0; 
+}
+
+.search_column{
+	padding: 5px;
+	border: 1px solid #CACACA;
+	border-radius: 5px;
+	text-align: center;
+}
+
+#membersList, #titleList{
+	li.row{
+		clear: both;
+		div.cell{
+			border-bottom: 1px solid #E5E5E5;
+		    border-right: 1px solid #E5E5E5;
+		    float: left;
+		    height: 42px;
+		    padding-top: 11px;
+		    text-align: center;
+		    width: 16.6%;
+		}
+	}
+}
+
+#titleList{
+	margin-bottom: 0;
+}
+#titleList li.row div.cell{
+	height: 52px;
+}
+
+/* Profiles */
+
 #profileImg, #basicInfo, #detailInfo{
 	float: left;
 }

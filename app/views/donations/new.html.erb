@@ -1,7 +1,10 @@
 <!-- <h2>Donation</h2> -->
-<% if @donation.first_name.nil? %>
+<% if flash.now[:success].nil? %>
 	<%= form_for @donation, html: {autocomplete: 'off'} do |f| %>
 		<%= hidden_field_tag :stripe_card_name %>
+		<%= # Display error messages
+			render 'shared/error_messages', object: f.object 
+		%>
 		<div class="error"></div>
 		<div class="column">
 			<div class="title">Contribution</div>

@@ -43,7 +43,7 @@ class Member < ActiveRecord::Base
 			query.push((search[:first_name].blank?) ? '' : "first_name LIKE '%#{search[:first_name]}%'")
 			query.push((search[:last_name].blank?) ? '' : "last_name LIKE '%#{search[:last_name]}%'")
 			query.push((search[:major].blank?) ? '' : "major LIKE '%#{search[:major]}%'")
-			query.push((search[:address].blank?) ? '' : "address LIKE '%#{search[:address]}%'")
+			query.push((search[:city].blank?) ? '' : "city LIKE '%#{search[:city]}%'")
 			query.push((search[:class_year].blank?) ? '' : "class_year LIKE '%#{search[:class_year]}%'")
 			query.push((search[:industry].blank?) ? '' : "industry LIKE '%#{search[:industry]}%'")
 
