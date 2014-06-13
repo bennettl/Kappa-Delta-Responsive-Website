@@ -1,10 +1,9 @@
+<div class="button text-center" style="margin-bottom: 20px;">
+  <% if forem_admin? %>
+    <%= link_to t("area", :scope => "forem.admin"), forem.admin_root_path %>
+  <% end %>
+ </div>
 <div id='forums_container'>
   <!-- <div id='forums_title'><%= t('.title') %></div> -->
   <%= render @categories %>
 </div>
-<br>
-<footer id='admin_link' class="button">
-  <% if forem_admin? %>
-    <%= link_to t("area", :scope => "forem.admin"), forem.admin_root_path %>
-  <% end %>
-</footer>

@@ -19,6 +19,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
 
 # Image File uploads
 gem 'paperclip', github: 'thoughtbot/paperclip'
+# gem 'paperclip-aws', '~> 1.6.8'
 
 # forum
 gem 'forem', :github => "radar/forem", :branch => "rails4"
