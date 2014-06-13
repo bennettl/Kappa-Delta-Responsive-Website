@@ -1,64 +1,104 @@
-<%= back_button(jobs_path) %>
-<div class="mainTitleContainer">
-	<div class="mainTitle"><%= @job.title %></div>
-	<%= link_to 'Remove', @job, method: :delete, class: :remove %>
+<div class="mainTitle">Jobs And Internships</div>
+
+<div class="profile col-md-10 col-md-offset-1">
+	<div class="row">
+		<div class="col-xs-12">
+			<span class="title"><%= @job.title %></span>
+			<%= link_to 'Remove', @job, method: :delete, class: :remove %>
+		</div>
+	</div>
+	<div class="row">
+		<div id="basicInfo" class="col-md-4 col-sm-5">
+			<div class="detailTitle">Basic Info</div>
+			<table id="info" class="content">
+				<tr>
+					<th>
+						<span class="glyphicon glyphicon-user"></span>
+						<span>Posted By</span>
+					</th>
+					<td><%= @job.member.first_name %></td>
+				</tr>
+				<tr>
+					<th>
+						<span class="glyphicon glyphicon-briefcase"></span>
+						<span>Company</span>
+					</th>
+					<td><%= @job.company %></td>
+				</tr>
+				<tr>
+					<th>
+						<span class="glyphicon glyphicon-globe"></span>
+						<span>Industry</span>
+					</th>
+					<td><%= @job.industry %></td>
+				</tr>
+				<tr>
+					<th>
+						<span class="glyphicon glyphicon-list-alt"></span>
+						<span>Job Type</span>
+					</th>
+					<td><%= @job.job_type %></td>
+				</tr>
+				<tr>
+					<th>
+						<span class="glyphicon glyphicon-map-marker"></span>
+						<span>Location</span>
+					</th>
+					<td><%= @job.location %></td>
+				</tr>
+				<tr>
+					<th>
+						<span class="glyphicon glyphicon-time"></span>
+						<span>Start Date</span>
+					</th>
+					<td><%= @job.start_date.strftime("%B %d, %Y") %></td>
+				</tr>
+				<tr>
+					<th>
+						<span class="glyphicon glyphicon-time"></span>
+						<span>Deadline</span>
+					</th>
+					<td><%= @job.deadline.strftime("%B %d, %Y") %></td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-8 col-sm-7">
+			<div class="detailTitle">
+				<span class="glyphicon glyphicon-align-left"></span>
+				<span>Description</span>
+			</div>
+			<div class="content">
+				<%= @job.description %>
+			</div>
+
+			<div class="detailTitle">
+				<span class="glyphicon glyphicon-align-left"></span>
+				<span>Qualification</span>
+			</div>
+			<div class="content">
+				<%= @job.qualification %>
+			</div>
+
+			<div class="detailTitle">
+				<span class="glyphicon glyphicon-align-left"></span>
+				<span>Compensation</span>
+			</div>
+			<div class="content">
+				<%= @job.compensation %>
+			</div>
+
+			<div class="detailTitle">
+				<span class="glyphicon glyphicon-align-left"></span>
+				<span>How To Apply</span>
+			</div>
+			<div class="content">
+				<%= @job.how_to_apply %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<%= back_button jobs_path %>
+		<%= edit_button 'Edit Job', edit_job_path(@job)%>
+
+	</div>
 </div>
-
-<div id="basicInfo">
-	<div class="detailTitle">Basic Info</div>
-	<ul id="info" class="content">
-		<li>
-			<div>Posted By</div>
-			<div><%= @job.member.first_name %></div>
-		</li>
-		<li>
-			<div>Company</div>
-			<div><%= @job.company %></div>
-		</li>
-		<li>
-			<div>Industry</div>
-			<div><%= @job.industry %></div>
-		</li>
-		<li>
-			<div>Job Type</div>
-			<div><%= @job.job_type %></div>
-		</li>
-		<li>
-			<div>Location</div>
-			<div><%= @job.location %></div>
-		</li>
-		<li>
-			<div>Start Date</div>
-			<div><%= @job.start_date %></div>
-		</li>
-		<li>
-			<div>Deadline</div>
-			<div><%= @job.deadline %></div>
-		</li>
-	</ul>
-</div>
-
-<div id="detailInfo">
-	<div class="detailTitle">Description</div>
-	<div class="content">
-		<%= @job.description %>
-	</div>
-
-	<div class="detailTitle">Qualification</div>
-	<div class="content">
-		<%= @job.qualification %>
-	</div>
-
-	<div class="detailTitle">Compensation</div>
-	<div class="content">
-		<%= @job.compensation %>
-	</div>
-
-	<div class="detailTitle">How To Apply</div>
-	<div class="content">
-		<%= @job.how_to_apply %>
-	</div>
-
-</div>
-
-

@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140427234117) do
+ActiveRecord::Schema.define(version: 20140609225333) do
+
+  create_table "daggers", force: true do |t|
+    t.string   "title"
+    t.date     "dagger_date"
+    t.string   "author"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "donations", force: true do |t|
     t.string   "email"
@@ -177,6 +189,14 @@ ActiveRecord::Schema.define(version: 20140427234117) do
     t.boolean  "forem_admin",          default: false
     t.string   "forem_state",          default: "pending_review"
     t.boolean  "forem_auto_subscribe", default: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
   end
 
   create_table "news", force: true do |t|
@@ -187,6 +207,10 @@ ActiveRecord::Schema.define(version: 20140427234117) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

@@ -1,17 +1,19 @@
-<li>
-	<div class="listTitle"><%= link_to event.title, event %></div>
+<li class="event col-sm-6">
 	<div class="listBody">
 		<div class="dateBox">
 			<div class="month"><%= event.start_time.strftime("%b") %></div>
 			<div class="date"><%= event.start_time.strftime("%e") %></div>
 		</div>
 		<ul class="basicInfo">
+			<li> 
+				<div class="title"><%= link_to event.title, event %></div>
+			</li>
 			<li>
-				<%= image_tag 'icons/time.png' %>
+				<span class="glyphicon glyphicon-time"></span>
 				<%= event.start_time.strftime("%l:%M %P") + " - " + event.end_time.strftime("%l:%M %P")%>
 			</li>
 			<li>
-				<%= image_tag 'icons/location.png' %>
+				<span class="glyphicon glyphicon-map-marker"></span>
 				<%= event.location %>
 			</li>
 		</ul>

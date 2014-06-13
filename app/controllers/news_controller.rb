@@ -2,7 +2,7 @@ class NewsController < ApplicationController
 	
 	# Display list of all news
 	def index
-		@news = News.all
+		@news = News.all.paginate(per_page: 5, page: params[:page])
 	end
 
 	# Display an individual news
@@ -57,7 +57,7 @@ class NewsController < ApplicationController
 
 		# Strong paramters
 		def news_params
-			params.require(:news).permit(:title, :images, :summary, :body)
+			params.require(:news).permit(:title, :image, :summary, :body)
 		end
 
 end

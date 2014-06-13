@@ -1,13 +1,34 @@
-<%= simple_form_for [forem, :admin, @topic.forum, @topic] do |f| %>
-  <%= f.input :subject %>
-  <%= f.association :forum , :label => "Forum" %>
-  <%= f.label :locked %>
-  <%= f.check_box :locked %>
-  <%= f.label :pinned %>
-  <%= f.check_box :pinned %>
-  <%= f.label :hidden %>
-  <%= f.check_box :hidden %>
-
+<%= simple_form_for [forem, :admin, @topic.forum, @topic], html: { class: 'form-horizontal' }  do |f| %>
+    <div class="form-group">
+        <%= f.label :subject,  class: "col-sm-2 control-label" %>
+        <div class="col-sm-5">
+            <%= f.input_field :subject, class: 'form-control' %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :forum,  class: "col-sm-2 control-label" %>
+        <div class="col-sm-5">
+            <%= f.association :forum, :label => "Select One" %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :locked, class: "col-sm-2 control-label" %>
+        <div class="col-sm-5">
+            <%= f.check_box :locked %>
+        </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :pinned, class: "col-sm-2 control-label" %>
+        <div class="col-sm-5">
+            <%= f.check_box :pinned %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :hidden, class: "col-sm-2 control-label" %>
+        <div class="col-sm-5">
+            <%= f.check_box :hidden %>
+        </div>
+    </div>
   <br />
-  <%= f.submit :class => "btn btn-primary" %>
+  <%= f.submit :class => "button pull-right" %>
 <% end %>

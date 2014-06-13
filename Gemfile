@@ -3,18 +3,28 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.1.0'
-gem 'bootstrap-sass', '~> 3.1'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.2.0'
 gem 'will_paginate', '3.0.4'
-gem 'bootstrap-will_paginate', '0.0.9'
 gem "autoprefixer-rails"
 gem 'bourbon'
+
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.1'
+gem 'bootstrap-will_paginate', '0.0.9'
+
+# Date picker
+gem 'momentjs-rails', '~> 2.5.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
+
+# Image File uploads
+gem 'paperclip', github: 'thoughtbot/paperclip'
 
 # forum
 gem 'forem', :github => "radar/forem", :branch => "rails4"
 gem 'forem-theme-base', :github => 'radar/forem-theme-base'
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
+
 # payment
 gem 'stripe'
 

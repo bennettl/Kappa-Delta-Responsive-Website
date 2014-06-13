@@ -1,29 +1,3 @@
-<h1>New User Form</h1>
-<%= form_for @member do |f| %>
-  	<%= render 'shared/error_messages', object: f.object  %>
-  	<%= f.label 'Member Type' %>
-  	<%= f.select 'member_type', [['Super Admin', 'super admin'],['Admin', 'admin'], ['Normal', 'normal']] %> <br />
-  	<%= f.label :Status %>
-  	<%= f.select :status, [['Board of Directors', 'bod'], ['Officer', 'Officer'], ['Member', 'member']] %> <br />
-	<%= f.label :first_name %>
-	<%= f.text_field :first_name, value: @member.first_name, autocomplete: :off %> <br />
-	<%= f.label :last_name %>	 
-	<%= f.text_field :last_name, value: @member.last_name, autocomplete: :off %> <br />
-	<%= f.label 'User Name' %>
-	<%= f.text_field :user_name, value: @member.user_name, autocomplete: :off %> <br />
-	<%= f.label :Email %>
-	<%= f.text_field :email, value: @member.email, autocomplete: :off %> <br />
-	<%= f.label :major %> 		 
-	<%= f.text_field :major, value: @member.major, autocomplete: :off %> <br />
-	<%= f.label :location %>	 
-	<%= f.text_field :location, value: @member.location, autocomplete: :off %> <br />
-	<%= f.label :class_year %>
-	<%= f.text_field :class_year, value: @member.class_year, autocomplete: :off %> <br />
-	<%= f.label :industry %>	 
-	<%= f.text_field :industry, value: @member.industry, autocomplete: :off %> <br />
-	<%= f.label :Password %>	 
-	<%= f.password_field :password %> <br />
-	<%= f.label 'Password Confirmation' %>	 
-	<%= f.password_field :password_confirmation %> <br />
-	<%= f.submit 'Submit' %>
-<% end %>
+<div class="mainTitle">New Member</div>
+
+<%= render 'form', object: 'Post' %>

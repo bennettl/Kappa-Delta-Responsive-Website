@@ -15,6 +15,9 @@ body{
 	margin: 0;
 }
 
+.post .contents{
+	padding: 10px;
+}
 .btn-primary{
 	margin-bottom: 10px;
 }
@@ -51,8 +54,11 @@ abbr[title="required"]{
 	border: none;
 }
 
+.btn-group > a{
+	margin-top: 10px;
+}
 #new_topic{
-	width: 500px;
+	// width: 500px;
 
 	.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
 		float: none;
@@ -67,15 +73,10 @@ abbr[title="required"]{
 	}
 }
 
+#admin_link{
+	//background: #ffffff;
+}
 /* Edit menu */
 .group.row{
 	margin: 0;	
-}
-
-
-footer#admin_link{
-	a{
-		color: #ffffff;
-	}
-	background: none repeat scroll 0 0 #a9c9d6;
 }

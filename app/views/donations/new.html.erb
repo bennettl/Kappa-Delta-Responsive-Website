@@ -1,60 +1,74 @@
-<!-- <h2>Donation</h2> -->
-<% if flash.now[:success].nil? %>
-	<%= form_for @donation, html: {autocomplete: 'off'} do |f| %>
-		<%= hidden_field_tag :stripe_card_name %>
-		<%= # Display error messages
-			render 'shared/error_messages', object: f.object 
-		%>
-		<div class="error"></div>
-		<div class="column">
-			<div class="title">Contribution</div>
-			<ul id="amountList">
-			<% [10000,5000, 1000, 500, 100].each do |amount| %>
-				<li>
-					<div><%= f.radio_button :amount, amount, required: true %></div>
-					<div><%= number_to_currency(amount, precision: 0) %></div>
-				</li>
-			<% end %>
-				<li>
-					<div><%= f.radio_button :amount, 0, required: true %></div>
-					<div><%= number_field_tag :amount_custom, nil, placeholder: 'Custom', in: 1...10  %></div>
-				</li>
-			</ul>
-		</div>
-		<div class="column">
-			<div class="title">Personal Info</div>
-			<div class="field">
-				<%= f.text_field :email, placeholder: 'Email', required: true %>
+<div class="mainTitle">Donations</div>
+<div class="text-center" style="padding-bottom: 20px; font-size: 13px;">Looking to donate to the fraternity or pay your dues? You’ve come to the right place!</div>
+<div class="col-sm-10 col-sm-offset-1 col-xs-12 profile">
+
+	<% if flash.now[:success].nil? %>
+		<%= form_for @donation, html: {autocomplete: 'off'} do |f| %>
+			<%= hidden_field_tag :stripe_card_name %>
+			<%= # Display error messages
+				render 'shared/error_messages', object: f.object 
+			%>
+			<div class="error"></div>
+			<div class="row">
+				<!-- Contribution  -->
+				<div class="column col-sm-4">
+					<div class="title">Contribution</div>
+					<ul id="amountList">
+					<% [10000,5000, 1000, 500, 100].each do |amount| %>
+						<li>
+							<div><%= f.radio_button :amount, amount, required: true %></div>
+							<div><%= number_to_currency(amount, precision: 0) %></div>
+						</li>
+					<% end %>
+						<li>
+							<div><%= f.radio_button :amount, 0, required: true %></div>
+							<div><%= text_field_tag :amount_custom, nil, placeholder: 'Custom', class: 'form-control'  %></div>
+						</li>
+					</ul>
+				</div>
+				<!-- Contribution  -->
+				<!-- Personal Info  -->
+				<div class="column col-sm-4">
+					<div class="title">Personal</div>
+					<div class="field">
+						<%= f.text_field :email, placeholder: 'Email', required: true, class: 'form-control' %>
+					</div>
+					<div class="field">
+						<%= f.text_field :first_name, placeholder: 'First Name', required: true, class: 'form-control' %>
+					</div>
+					<div class="field">
+						<%= f.text_field :last_name, placeholder: 'Last Name', required: true, class: 'form-control' %>
+					</div>
+					<div class="field">
+						<%= f.check_box :visible, checked: true %>
+						<%= f.label :visible, 'Visible' %>
+			  		</div>
+				</div>
+				<!-- Personal Info  -->
+				<!-- Card Info  -->
+				<div class="column col-sm-4">
+					<div class="title">Card</div>
+					<div class="field">
+						<%= text_field_tag :number, nil, placeholder: "Credit Card Number", required: true, class: 'form-control' %>
+					</div>
+					<div class="field">
+						<%= text_field_tag :cvc, nil, placeholder: "Security Code on Card (CVC)", required: true, class: 'form-control' %>
+					</div>
+					<div class="field">
+						<%= label_tag :card_month, 'Card Expiration' %>
+						<%= select_month nil, {add_month_number: true}, {name: 'exp_month', id: 'exp_month'} %>
+						<%= select_year Date.today, {start_year:Date.today.year, end_year:Date.today.year + 15}, {name: 'exp_year', id: 'exp_year'} %>
+					</div>	
+				</div>
+				<!-- Card Info -->
 			</div>
-			<div class="field">
-				<%= f.text_field :first_name, placeholder: 'First Name', required: true %>
+			<div class="row">
+				<div class="col-xs-2 col-md-offset-5 col-xs-offset-4">
+					<%= submit_tag 'Donate', class: 'button' %>
+				</div>
 			</div>
-			<div class="field">
-				<%= f.text_field :last_name, placeholder: 'Last Name', required: true %>
-			</div>
-			<div class="field">
-				<%= f.check_box :visible, checked: true %>
-				<%= f.label :visible, 'Visible' %>
-	  		</div>
-	  		<div class="field">
-				<%= submit_tag 'Donate', class: 'button' %>
-			</div>
-		</div>
-		<div class="column">
-			<div class="title">Card Info</div>
-			<div class="field">
-				<%= text_field_tag :number, nil, placeholder: "Credit Card Number", required: true %>
-			</div>
-			<div class="field">
-				<%= text_field_tag :cvc, nil, placeholder: "Security Code on Card (CVC)", required: true %>
-			</div>
-			<div class="field">
-				<%= label_tag :card_month, 'Card Expiration' %>
-				<%= select_month nil, {add_month_number: true}, {name: 'exp_month', id: 'exp_month'} %>
-				<%= select_year Date.today, {start_year:Date.today.year, end_year:Date.today.year + 15}, {name: 'exp_year', id: 'exp_year'} %>
-			</div>	
-		</div>
+		<% end %>
+	<% else %>
+		<div class="title" style="text-align: center;">Thank you <%= @donation.first_name %> for your donation!</div>
 	<% end %>
-<% else %>
-	<div class="title" style="text-align: center;">Thank you <%= @donation.first_name %> for your donation!</div>
-<% end %>
+</div>

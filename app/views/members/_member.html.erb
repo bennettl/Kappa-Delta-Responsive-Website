@@ -1,10 +1,10 @@
 <li class="row">
 	<a href="<%= member_path(member.id) %>">
-		<div class="cell"><%= member.first_name %></div> 
-		<div class="cell"><%= member.last_name %></div>
-		<div class="cell"><%= member.city %></div>
-		<div class="cell"><%= member.industry %></div>
-		<div class="cell"><%= member.major %></div>
-		<div class="cell"><%= member.class_year %></div>
+		<div class="cell col-md-2 col-sm-3 col-xs-6"><%= member.first_name %></div> 
+		<div class="cell col-md-2 col-sm-3 col-xs-6"><%= member.last_name %></div>
+		<div class="cell col-md-2 col-sm-3 hidden-xs"><%= member.city %></div>
+		<div class="cell col-md-2 hidden-sm hidden-xs"><%= member.industry %></div>
+		<div class="cell col-md-2 hidden-sm hidden-xs"><%= member.major %></div>
+		<div class="cell col-md-2 col-sm-3 hidden-xs"><%= member.class_year %></div>
 	</a>
 </li>

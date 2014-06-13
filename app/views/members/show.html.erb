@@ -1,55 +1,61 @@
 <% provide(:title, @member.name) %>
-<%= back_button(members_path) %>
 
-<div id="profileImg">
-	<%= image_tag @member.image %>
-</div>
-<div id="basicInfo">
-	<div class="mainTitleContainer">
-		<div class="mainTitle"><%= @member.name %></div>
-		<%= link_to 'Remove User', @member, method: :delete, class: :remove %>
+<div class="mainTitle">Profile</div>
+
+<div class="profile col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+	<div class="row">
+		<div class="col-xs-4">
+			<%= image_tag @member.avatar.url(:medium), id: "memberImg" %>
+		</div>
+		<div id="basicInfo" class="col-xs-8">
+			<span class="title">
+				<%= @member.name %>
+			</span>
+			<%= link_to 'Remove User', @member, method: :delete, class: 'remove' %>
+			<% if !@member.headline.nil? %>
+				<div id="headline">
+					<%= @member.headline %>
+				</div>
+			<% end %>
+				<div id="location">			
+					<span class="glyphicon glyphicon-map-marker"></span>
+					<span><%= "#{@member.city}, #{@member.state}" %></span>
+				</div>
+			<% if !@member.class_year.nil? %>
+				<div id="year"> 
+					<span class="glyphicon glyphicon-calendar"></span>
+					<span><%= "Class Of #{@member.class_year}" %></span>
+				</div>
+			<% end %>
+			<% if !@member.major.empty? %>
+				<div id="major"> 
+					<span class="glyphicon glyphicon-pencil"></span>
+					<span><%= "Major In #{@member.major}" %></span>
+				</div>
+			<% end %>
+		</div>
 	</div>
-	<!-- <div id="userName"> @member.user_name </div> <br /> -->
-	<div id="headline"><%= @member.headline %></div>
-	<ul id="infoList">
-		<li>
-			<div>Major:</div>
-			<div><%= @member.major %></div>
-		</li>
-		<li>
-			<div>Location:</div>
-			<div><%= @member.address %></div>
-		</li>
-		<li>
-			<div>Class Year:</div>
-			<div><%= @member.class_year %></div>
-		</li>
-		<li>
-			<div>Industry</div>
-			<div><%= @member.industry %></div>
-		</li>
-	</ul>
-	<div class="detailTitle">Contact</div>
-	<ul id="social">
+
+	<ul id="social" class="row">
 		<li><%= link_to image_tag('social/fb.png', class: 'socialIcon'), @member.url_facebook, target: '_blank', title: 'Facebook' %></li>
 		<li><%= link_to image_tag('social/twitter.png', class: 'socialIcon'), @member.url_twitter, target: '_blank', title: 'Twitter' %></li>
 		<li><%= link_to image_tag('social/li.png', class: 'socialIcon'), @member.url_linkedIn, target: '_blank', title: 'LinkedIn' %></li>
 		<li><%= mail_to @member.email, image_tag('social/email.png', class: 'socialIcon'), title: 'Email' %></li>
 	</ul>
-</div>
-<div id="detailInfo">
-	<div class="detailTitle">Summary</div>
-	<div class="detailBody"><%= @member.summary %></div>
 
-	<div class="detailTitle">Resume</div>
-	<div class="detailBody"><%= @member.url_resume %></div>
-
-	<div class="detailTitle">Adresss</div>
-	<div class="detailBody">
-		<div><%= @member.address %></div>
-		<div><%= "#{@member.city}, #{@member.state} #{@member.zip}"%></div>
+	<div id="detailInfo" class="row" style="margin: 12px;">
+		<div class="detailTitle">
+			<span class="glyphicon glyphicon-align-left"></span>
+			<span>Summary</span>
+		</div>
+		<p><%= @member.summary.empty? ? 'N/A' : @member.summary %></p>
+		<p><%= @member.url_resume ||  'Resume N/A'%></p>
 	</div>
+
+	<div class="row">
+		<%= back_button members_path %>
+		<%= edit_button 'Edit Member', edit_member_path(@member) %>
+	</div>
+
+
 </div>
-
-
-

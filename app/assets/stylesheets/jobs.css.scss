@@ -1,27 +1,54 @@
+/*
 // Place all the styles related to the Jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+@import 'bootstrap-datetimepicker';
 
-#basicInfo, #detailInfo{
-	float: left;
+#searchColumn{
+	background: #A9C9D6; 
+	padding-bottom: 20px;
 }
 
-#detailInfo{
-	width: 70%;
+@media (max-width: 768px){
+	.cell{
+		margin: 10px 0;
+	}
 }
 
-#basicInfo{
-	margin-right: 60px;
-    width: 280px;
-	ul{
-		li{
-			clear: both;
-			height: 22px;
-		}
-		div{
-			float: left;
-			width: 100px;
-		}
+tr{
+	height: 50px;
+}
+.row{
+	margin: 0;
+}
+
+input[type="text"]{
+	width: 100%;
+}
+label{
+	width: 0;
+}
+textarea.form-control{
+	width: 100%;
+	height: 200px;
+}
+
+#jobList .job{
+	border-top: 1px solid gray;
+	padding: 20px 0;
+}
+
+.listSubTitle{
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.listLabel{
+	text-transform: uppercase;
+}
+#basicInfo{	
+	th, td{
+		width: 135px;
 	}
 }
 

@@ -1,0 +1,21 @@
+<div class="mainTitle">
+	<div class="col-xs-12">
+		<%= new_button 'New', new_dagger_path %>
+	</div>
+	<div class="col-xs-12">
+		<span>Daggers</span>
+	</div>
+</div>
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Date</th>
+			<th>Author</th>
+			<th>File</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render @daggers %>
+	</tbody>
+</table>

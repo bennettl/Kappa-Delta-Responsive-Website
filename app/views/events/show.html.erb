@@ -1,5 +1,48 @@
-<div class="mainTitleContainer">
-	<div class="mainTitle"><%= @event.title %></div>
-	<%= link_to 'Remove', @event, method: :delete, class: :remove %>
+<% provide(:title, @event.title) %>
+
+<div class="mainTitle">Event</div>
+
+<div class="profile col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+	<div class="row">
+		<div class="title col-xs-12"><%= @event.title %></div>
+		<div class="col-xs-12"><%= link_to 'Remove', @event, method: :delete, class: :remove %></div>
+	</div>
+	<table style="margin: 10px 0;">
+		<tr>
+			<th>
+				<span class="glyphicon glyphicon-time"></span> 
+				<span>Start: </span>
+			</th>
+			<td><%= @event.start_time.strftime("%B %d, %Y %l:%M %P")%></td>
+		</div>
+		</tr>
+			<th>
+				<span class="glyphicon glyphicon-time"></span> 
+				<span>End: </span>
+			</th>
+			<td><%= @event.end_time.strftime("%B %d, %Y %l:%M %P")%></td>
+		</div>
+		<tr>
+			<th>
+				<span class="glyphicon glyphicon-map-marker"></span>
+				<span>Location: </span>
+			</th>
+			<td><%= @event.location %></td>
+		</tr>
+	</table>
+	<div class="row" style="margin: 20px 0;">
+		<div class="detailTitle">
+			<span class="glyphicon glyphicon-align-left"></span>
+			<span>Description</span>
+		</div>
+		<div>
+			<%= @event.description ||  'No Description'%>
+		</div>
+	</div>
+	<div class="row">
+		<%= back_button events_path %>
+		<%= edit_button 'Edit Event', edit_event_path(@event)%>
+	</div>
 </div>
-<div><%= @event.description %></div>
+
+

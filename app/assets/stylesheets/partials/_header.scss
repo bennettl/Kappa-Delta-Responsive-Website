@@ -55,7 +55,7 @@ header {
 		float: left;
 		padding: 5px 20px;
 		transition: all 0.25s ease;
-		&:hover {
+		&:hover, &.current {
 			background: $brandBlue;
 			color: white;
 		}

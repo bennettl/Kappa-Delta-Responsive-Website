@@ -6,7 +6,7 @@ class MembersController < ApplicationController
 		params[:sort] ||= 'first_name'
 		params[:direction] ||= 'asc'
 		
-		 @members = Member.search(member_params).order(params[:sort] + ' ' + params[:direction]).paginate(per_page: 10, page: params[:page])
+		@members = Member.search(member_params_search).order(params[:sort] + ' ' + params[:direction]).paginate(per_page: 10, page: params[:page])
 		#@members = Member.all.paginate(per_page: 5, page: params[:page])
 	end
 
@@ -22,7 +22,7 @@ class MembersController < ApplicationController
 
 	# Create a new member
 	def create
-		@member = Member.new(member_params_post)
+		@member = Member.new(member_params)
 		if @member.save
 			flash[:success] = "User Sucessfully Created"
 			redirect_to new_member_path
@@ -41,10 +41,11 @@ class MembersController < ApplicationController
 		@member = Member.find(params[:id])
 		
 		# If update is sucessful, redirect to member page, else render edit page
-		if @member.update_attributes(member_params_post)
+		if @member.update_attributes(member_params_update)
 			flash[:success] = "Update is sucessful"
 			redirect_to @member
 		else
+
 			render 'edit'
 		end
 	end
@@ -72,12 +73,23 @@ class MembersController < ApplicationController
 	end
 
 	private
-		
-		def member_params_post
-			params.require(:member).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :city, :class_year, :industry, :password, :password_confirmation)
-		end
+
+		# Strong parameters
+
+		# If password is blank, don't include it
+		def member_params_update
+			if params[:member][:password].blank?
+				params.require(:member).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :city, :class_year, :industry, :avatar, :resume)
+			else
+				member_params
+			end
+		end		
 
 		def member_params
+			params.require(:member).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :city, :class_year, :industry, :password, :password_confirmation, :avatar, :resume)
+		end
+
+		def member_params_search
 			params.permit(:first_name, :last_name, :city, :industry, :major, :class_year, :password, :password_confirmation)
 		end
 end

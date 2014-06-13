@@ -1,4 +1,5 @@
 class CreateTables < ActiveRecord::Migration
+	# RAILS_ENV=production bundle exec rake assets:precompile, do this after pushing to heroku
   def change
   	# Members
     create_table :members do |t|
@@ -9,6 +10,8 @@ class CreateTables < ActiveRecord::Migration
 		# session
 		t.string :remember_token
 		# basic info
+		# t.attachment :avatar
+		# t.attachment :resume
 		t.string :image #profile image
 		t.string :headline
 		t.string :first_name

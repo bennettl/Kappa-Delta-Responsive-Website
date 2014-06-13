@@ -1,0 +1,46 @@
+<div class="col-sm-8 col-sm-offset-2 profile">
+	<%= form_for @dagger do |f| %>
+		<%= render 'shared/error_messages', object: f.object  %>
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-5">
+				<span class="glyphicon glyphicon-pencil"></span>
+				<%= f.label 'Title' %>
+			</div>
+			<div class="col-md-8 col-sm-7 col-xs-6">
+				<%= f.text_field :title, value: @dagger.title, placeholder: "Dagger Fall '14 ", autocomplete: 'off', required: "required", class: 'form-control' %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-5">
+				<span class="glyphicon glyphicon-file"></span>
+				<%= f.label 'PDF' %>
+			</div>
+			<div class="col-md-8 col-sm-7 col-xs-6">
+				<%= f.file_field :pdf %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-5">
+				<span class="glyphicon glyphicon-time"></span>
+				<%= f.label 'Creation Date' %>
+			</div>
+			<div class="col-md-8 col-sm-7 col-xs-6">
+				<%= f.text_field :dagger_date, value: @dagger.dagger_date, placeholder: '2014-2-14', autocomplete: 'off', required: 'required', class: 'datetimepicker form-control' %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-5">
+				<span class="glyphicon glyphicon-user"></span>
+				<%= f.label 'Author' %>
+			</div>
+			<div class="col-md-8 col-sm-7 col-xs-6">
+				<%= f.text_field :author, value: @dagger.author, placeholder: 'John Smith', autocomplete: 'off', required: 'required', class: 'form-control' %>
+			</div>
+		</div>
+
+		<% # Object is the filler text %>
+		<%= f.submit object, class: 'button pull-right' %>
+	<% end %>
+
+	<%= back_button @dagger %>
+</div>

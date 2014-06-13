@@ -1,4 +1,34 @@
-<li>
-	<div class="listTitle"><%= link_to("#{job.title} posted by #{job.member.name}", job_path(job)) %></div>
-	<div class="detailBody"><%= job.description %></div>
+<li class="job">
+	<div class="row">
+		<div class="title col-sm-4"><%= job.title %></div>
+		<div class="col-sm-2 visible-xs">
+			<span class="visible-xs listLabel col-xs-5">company</span>
+			<span class="col-sm-12 col-xs-6 col-xs-offset-1"><%= job.company %></span>
+		</div>
+		<div class="col-sm-2">
+			<span class="visible-xs listLabel col-xs-5">location</span>
+			<span class="col-sm-12 col-xs-6 col-xs-offset-1"><%= job.location %></span>
+		</div>
+		<div class="col-sm-2">
+			<span class="visible-xs listLabel col-xs-5">industry</span>
+			<span class="col-sm-12 col-xs-6 col-xs-offset-1"><%= job.industry %></span>
+		</div>
+		<div class="col-sm-2">
+			<span class="visible-xs listLabel col-xs-5">job type</span>
+			<span class="col-sm-12 col-xs-6 col-xs-offset-1"><%= job.job_type %></span>
+		</div>
+		<div class="col-sm-2">
+			<span class="visible-xs listLabel col-xs-5">deadline </span>
+			<span class="col-sm-12 col-xs-6 col-xs-offset-1"><%= job.deadline.strftime("%B %d, %Y") %></span>
+		</div>
+	</div>
+	<div class="row hidden-xs">
+		<div class="listSubTitle col-xs-12"><%= job.company %></div>
+	</div>
+	<div class="row" style="margin-top: 10px;">
+		<div class="detailBody col-xs-12"><%= job.description %></div>
+	</div>
+	<div class="row">
+		<%= link_to 'VIEW & APPLY', job_path(job), class: 'button pull-right' %>
+	</div>
 </li>

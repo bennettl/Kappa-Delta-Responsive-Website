@@ -1,0 +1,51 @@
+<div class="col-sm-10 col-sm-offset-1 profile">
+	<%= form_for @news do |f| %>
+		<%= render 'shared/error_messages', object: f.object  %>
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-5">
+				<span class="glyphicon glyphicon-pencil"></span>
+				<%= f.label 'Title' %>
+			</div>
+			<div class="col-md-8 col-sm-7 col-xs-6">
+				<%= f.text_field :title, placeholder: 'First Place In Intramural Basketball!', value: @news.title, required: "required", class: 'form-control' %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-5">
+				<span class="glyphicon glyphicon-picture"></span>
+				<%= f.label 'Image' %>
+			</div>
+			<div class="col-md-8 col-sm-7 col-xs-6">
+				<%= f.file_field :image %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-sm-7 col-xs-6 col-md-offset-3 col-sm-offset-4 col-xs-offset-5">
+				<%= image_tag @news.image.url unless @news.image.blank? %>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-xs-12">
+				<div class="detailTitle">
+					<span class="glyphicon glyphicon-align-left"></span>
+					<span>Summary</span>
+				</div>
+				<%= f.text_area :summary, placeholder: 'A short summary about the news', value: @news.summary, required: "required", class: 'form-control' %>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-xs-12">
+				<div class="detailTitle">
+					<span class="glyphicon glyphicon-align-left"></span>
+					<span>Body</span>
+				</div>
+				<%= f.text_area :body, placeholder: 'The entire details about the news', value: @news.body, required: "required" ,class: 'form-control' %>
+			</div>
+		</div>
+		<% # Object is the filler text %>
+		<%= f.submit object, class: 'button pull-right' %>
+	<% end %>
+
+	<%= back_button @news %>
+</div>

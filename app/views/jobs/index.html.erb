@@ -1,7 +1,12 @@
-<div class="mainTitleContainer">
-	<div class="mainTitle">Jobs And Internships</div>
+<div class="mainTitle" style="background: white; padding-bottom: 15px;">
+	<div class="col-xs-12">
+		<%= new_button 'New', new_job_path %>
+	</div>
+	<div class="col-xs-12">
+		<span>Jobs And Internships</span>
+	</div>
 </div>
-<% #render 'search_columns' %>
+<%= render 'search_columns' %>
 <div id="jobs">
 	<%= render 'jobs_list' %>
 </div>

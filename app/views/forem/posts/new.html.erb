@@ -1,6 +1,8 @@
+<div class="profile col-xs-6 col-xs-offset-3">
+
 <%= render :partial => 'forem/forums/head', :locals => { :forum => @topic.forum } %>
 
-<div class="title">
+<!-- <div class="title">
   <%= t("forem.post.new") %>
   <% if @reply_to_post %>
     <%= render 'reply_to_post', :post => @reply_to_post %>
@@ -8,8 +10,10 @@
     <em><%= @topic.subject %></em>
   <% end %>
 </div>
-
-<%= simple_form_for [forem, @topic.forum, @topic, @post] do |f| %>
+ -->
+<%= simple_form_for [forem, @topic.forum, @topic, @post], html: { class: 'form-horizontal' } do |f| %>
   <%= render :partial => "form", :locals => { :f => f } %>
-  <%= f.submit t("forem.post.buttons.reply"), :class => "btn btn-primary" %>
+  <%= f.submit t("forem.post.buttons.reply"), :class => "button pull-right" %>
+<%= forem_back_button(@topic.forum) %>
 <% end %>
+</div>

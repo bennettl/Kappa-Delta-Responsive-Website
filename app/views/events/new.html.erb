@@ -1,10 +1,4 @@
-<h2>Post Event</h2>
-<%= form_for @event do |f| %>
-	<%= render 'shared/error_messages', object: f.object  %>
-	<%= f.text_field :title, placeholder: :Title, value: @event.title %> <br />
-	<%= f.text_field :location, placeholder: :Location, value: @event.title %> <br />
-	<%= f.date_field :start_time, placeholder: 'Start Time', value: @event.start_time %> <br />
-	<%= f.date_field :end_time, placeholder: 'End Time', value: @event.end_time %> <br />
-	<%= f.text_area :description, placeholder: :Description, value: @event.description %> <br />
-	<%= f.submit 'Post' %>
-<% end %>
+<div class="mainTitle">New Event</div>
+
+<%= render 'form', object: 'Post' %>
+

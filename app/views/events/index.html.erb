@@ -1,6 +1,17 @@
-<div class="mainTitleContainer">
-	<div class="mainTitle">Events</div>
+<div class="mainTitle indexMainTitle row">
+	<div class="col-xs-10 col-xs-offset-1">
+		<div class="col-xs-12">
+			<%= new_button 'New', new_event_path %>
+		</div>
+		<div class="col-xs-12">
+			<span>Events</span>
+		</div>
+	</div>
 </div>
-<ul class="eventsList">
-	<%= render @events %>
-</ul>
+<div class="row">
+	<ul id="eventsList" class="col-md-10 col-md-offset-1 col-xs-12">
+		<%= render @events %>
+	</ul>
+</div>
+
+<%= will_paginate @events %>

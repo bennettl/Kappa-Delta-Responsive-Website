@@ -7,6 +7,19 @@ class Member < ActiveRecord::Base
 	has_many :events, dependent: :destroy
 	has_many :news, dependent: :destroy
 
+	# Attachments (avatar/resume)
+	has_attached_file :avatar, 
+						:styles => { :medium => "200x200>", :thumb => "100x100>" }, 
+						:default_url => "/images/member/:style/profile.png", 
+						:url => "/assets/members/avatar/:id/:style/:basename.:extension",
+						:path => ":rails_root/public/assets/members/avatar/:id/:style/:basename.:extension"
+	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+	has_attached_file :resume,
+	                    :url  => "/assets/members/resume/:id/:style/:basename.:extension",
+	                    :path => ":rails_root/public/assets/members/resume/:id/:style/:basename.:extension"
+ 	validates_attachment_content_type :resume, :content_type => ['application/pdf', 'application/msword', 'text/plain'], :if => :resume_attached?
+
 	# Validation
 	validates :member_type, presence: true, inclusion: ['super admin', 'admin', 'normal']
 	validates :status, presence: true, inclusion: ['bod', 'officer', 'member']
@@ -20,7 +33,7 @@ class Member < ActiveRecord::Base
 	
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	# validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-	validates :password, length: { minimum: 5 }
+	# validates :password, length: { minimum: 5 }
 
 	# Handles password 
 	has_secure_password
@@ -70,6 +83,10 @@ class Member < ActiveRecord::Base
 	end
 	def forem_email
 		email
+	end
+
+	def resume_attached?
+		self.resume.file?
 	end
 
 	private

@@ -11,9 +11,11 @@ KappaDelta::Application.routes.draw do
   root 'static_pages#home'
 
   # Static pages
-  match 'history', to: 'static_pages#history', via: 'get'
+  match 'about', to: 'static_pages#about', via: 'get'
   match 'contact', to: 'static_pages#contact', via: 'get'
-
+  match 'contact_send', to: 'static_pages#contact_send', via: 'post'
+  match 'charity', to: 'static_pages#charity', via: 'get'
+  
   # Sessions
   match 'signin', to: 'sessions#new', via: 'get'
   match 'signout', to: 'sessions#destroy', via: 'delete'
@@ -25,6 +27,7 @@ KappaDelta::Application.routes.draw do
   resources :jobs
   resources :events
   resources :news
+  resources :daggers
   resources :sessions, only: [:new, :create, :destroy]
   resources :donations, only: [:index, :new, :create, :update]
 

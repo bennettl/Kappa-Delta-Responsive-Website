@@ -2,21 +2,24 @@
 	<%= link_to(image_tag('kdlogo.png', class: :logo), root_path) %>
 	<nav role="navigation">
 		<div class="menuHeading">Menu</div>
-		<%= nav_link 'History', main_app.history_path %>
+		<%= nav_link 'About', main_app.about_path %>
 		<%= nav_link 'News', main_app.news_index_path %>
+		<%= nav_link 'Charity', main_app.charity_path %>
 		<%= nav_link 'Donations', main_app.donations_path %>
 		<%= nav_link 'Contact', main_app.contact_path %>
-		<a href="#0" class="menuHeading">Members Only</a>
-		<%= nav_link 'Members Home', main_app.root_path %>
-		<%= nav_link 'Jobs And Internships', main_app.jobs_path %>
-		<%= nav_link 'Brother Database', main_app.members_path %>
-		<%= nav_link 'The KD Room', '#' %>
-		<%= nav_link 'The Dagger', '#' %>
-		<%= nav_link 'Events', main_app.events_path %>
-		<a href="#0" class="menuHeading">My Account</a>
-		<%= nav_link 'My Profile', '#' %>
-		<%= nav_link 'Edit Profile', '#' %>
-		<%= nav_link 'Account Settings', '#' %>
-		<%= nav_link 'Sign Out', '#' %>
+		<% # Only display this if user is signed in %>
+		<% if signed_in? %>
+			<a href="#0" class="menuHeading">Members Only</a>
+			<%= nav_link 'Members Home', main_app.root_path %>
+			<%= nav_link 'Jobs And Internships', main_app.jobs_path %>
+			<%= nav_link 'Brother Database', main_app.members_path %>
+			<%= nav_link 'The KD Room', '#' %>
+			<%= nav_link 'The Dagger', main_app.daggers_path %>
+			<%= nav_link 'Events', main_app.events_path %>
+			<a href="#0" class="menuHeading">My Account</a>
+			<%= nav_link 'My Profile', 'current_member' %>
+			<%= nav_link 'My Acount', main_app.edit_member_path(current_member) %>
+			<%= nav_link 'Sign Out', main_app.signout_path %>
+		<% end %>
 	</nav>
 </div>

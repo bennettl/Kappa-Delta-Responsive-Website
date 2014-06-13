@@ -1,6 +1,8 @@
-<h3><%= t("forem.admin.category.index") %></h3>
-<%= link_to t('back_to_admin', :scope => "forem.admin"), forem.admin_root_path %><br><br>
-<%= link_to t("forem.admin.category.new_link"), forem.new_admin_category_path, :class => "btn btn-primary" %><br><br>
+<div class="mainTitle"><%= t("forem.admin.category.index") %></div>
+<%= link_to t('back_to_admin', :scope => "forem.admin"), forem.admin_root_path, :class => "button pull-left" %><br><br>
+<%= link_to t("forem.admin.category.new_link"), forem.new_admin_category_path, :class => "button pull-right" %><br><br>
+
+<div style="padding-top: 20px; clear: both;"></div>
 
 <table id='forums' class='forums table-striped table' cellspacing='0'>
   <thead>
@@ -25,5 +27,5 @@
   </tbody>
 </table>
 
-<%= link_to t('forem.admin.forum.index'), forem.admin_forums_path %>
+<% # link_to t('forem.admin.forum.index'), forem.admin_forums_path, :class => "button pull-left" %>
 

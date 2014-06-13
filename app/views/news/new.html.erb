@@ -1,8 +1,3 @@
-<h2>Posts News</h2>
-<%= form_for @news do |f| %>
-  	<%= render 'shared/error_messages', object: f.object  %>
-	<%= f.text_field :title, placeholder: :Title, value: @news.title %> <br />
-	<%= f.text_area :summary, placeholder: :Summary, value: @news.summary %> <br />
-	<%= f.text_area :body, placeholder: :Body, value: @news.body %> <br />
-	<%= f.submit :Post %>
-<% end %>
+<div class="mainTitle">Post News</div>
+
+<%= render 'form', object: 'Post' %>

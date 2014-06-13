@@ -1,3 +1,33 @@
 // Place all the styles related to the News controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mainTitle{
+	padding: 0;
+}
+.profile .row{
+	padding: 0 15px;
+}
+#info{
+	margin-bottom: 20px;
+}
+
+#newsList{
+	height: auto;
+}
+#newsList .news{
+	padding: 20px;
+	height: auto;
+	border: 1px solid #a0a0a0; 
+	.summary{
+		padding: 15px;
+	}
+}
+
+.button{
+	margin-right: 30px;
+}
+
+#news_summary, #news_body{
+	min-height: 300px;
+}

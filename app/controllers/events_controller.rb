@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 	
 	# Display list of all events
 	def index
-		@events = Event.order('start_time DESC')
+		@events = Event.order('start_time DESC').paginate(per_page: 6, page: params[:page])
 	end
 
 	# Display an existing event
@@ -37,8 +37,13 @@ class EventsController < ApplicationController
 	def update
 		@event = Event.find(params[:id])
 
+		# event_params_formatted_date contains the formatted start_time/end_time appropriate for update_attributes
+		event_params_formatted_date = event_params
+		event_params_formatted_date[:start_time] = DateTime.parse(event_params[:start_time])
+		event_params_formatted_date[:end_time] = DateTime.parse(event_params[:end_time])
+
 		# If update is successful, redirect to event page, else re-render edit page
-		if @event.update_attributes(event_params)
+		if @event.update_attributes(event_params_formatted_date)
 			flash[:success] = "Event successfully updated"
 			redirect_to @event
 		else

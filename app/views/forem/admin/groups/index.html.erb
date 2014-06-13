@@ -1,7 +1,7 @@
-<h3><%= t('forem.admin.group.index') %></h3>
-<%= link_to t('back_to_admin', :scope => "forem.admin"), forem.admin_root_path %><br><br>
-<%= link_to t('forem.admin.group.new'), forem.new_admin_group_path, :class => "btn btn-primary" %>
-
+<div class="mainTitle"><%= t('forem.admin.group.index') %></div>
+<%= link_to t('back_to_admin', :scope => "forem.admin"), forem.admin_root_path, :class => "button pull-left" %>
+<%= link_to t('forem.admin.group.new'), forem.new_admin_group_path, :class => "button pull-right" %>
+<div style="padding-top: 20px; clear: both;"></div>
 <table id='groups' class='index table table-striped' cellspacing='0'>
   <thead>
     <tr>
@@ -14,10 +14,10 @@
     <% @groups.each do |group| %>
       <tr>
         <td>
-          <%= link_to t('edit', :scope => 'forem.admin.groups'), forem.admin_group_path(group) %>
+          <%= link_to t('edit', :scope => 'forem.admin.groups'), forem.admin_group_path(group), :class => "btn btn-info" %>
         </td>
         <td>
-          <%= link_to t('delete', :scope => 'forem.admin.groups'), forem.admin_group_path(group), :method => :delete %>
+          <%= link_to t('delete', :scope => 'forem.admin.groups'), forem.admin_group_path(group), :method => :delete, :class => "btn btn-danger" %>
         </td>
         <td>
           <%= link_to forem_emojify(group.name), forem.admin_group_path(group) %>

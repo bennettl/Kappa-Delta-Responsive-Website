@@ -1,4 +1,21 @@
-<%= simple_form_for([forem, :admin, @group]) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit :class => "btn btn-primary" %>
+<%= simple_form_for([forem, :admin, @group], html: { class: 'form-horizontal' }) do |f| %>
+	<div class="form-group">
+		<%= f.label 'Name', class: "col-sm-2 control-label" %>
+	    <div class="col-sm-10">
+			<%= f.input_field :name, placeholder: "Group Name",  class: "form-control" %>
+		</div>
+	</div>
+	<%= f.submit :class => "button pull-right" %>
 <% end %>
+
+<!-- 
+
+<label class="string required" for="group_name"><abbr title="required">*</abbr> Name</label>
+ 
+<input aria-required="true" autocomplete="off" class="string required form-control" id="group_name" maxlength="255" name="group[name]" placeholder="Username" required="required" size="255" type="text">
+
+
+<label for="group_name" class="string required"><abbr title="required">*</abbr> Name</label>
+
+<input type="text" size="255" required="required" placeholder="Enter Username" name="group[name]" maxlength="255" id="group_name" class="string required form-control" aria-required="true">
+

@@ -1,0 +1,61 @@
+<%= form_for @event do |f| %>
+  	<%= render 'shared/error_messages', object: f.object  %>
+	<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 profile">
+		<div class="row">
+	        <div class="group col-xs-12">
+				<div class="col-sm-3">
+					<span class="glyphicon glyphicon-pencil"></span>
+					<%= f.label 'Title' %>
+				</div>
+				<div class="col-sm-8">
+					<%= f.text_field :title, placeholder: :Title, value: @event.title, placeholder: 'Annual Register Party', required: "required", class: 'form-control' %>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin: 10px 0;">
+	        <div class="group col-xs-12">
+				<div class="col-sm-3">
+					<span class="glyphicon glyphicon-time"></span>
+					<%= f.label 'Start Time' %>
+				</div>
+				<div class="col-sm-8">
+					<% start_time  = @event.start_time.nil? ? '' : @event.start_time.strftime("%m/%d/%Y %l:%M %p") %>
+					<%= f.text_field :start_time, value: start_time, placeholder: '05/10/2014 10:00 PM', required: "required", class: 'form-control datetimepicker' %>
+				</div>
+			</div>
+			<div class="group col-xs-12">
+				<div class="col-sm-3">
+					<span class="glyphicon glyphicon-time"></span>
+					<%= f.label 'End Time' %>
+				</div>
+				<div class="col-sm-8">
+					<% end_time  = @event.end_time.nil? ? '' : @event.end_time.strftime("%m/%d/%Y %l:%M %p") %>
+					<%= f.text_field :end_time, value: end_time, placeholder: '05/11/2014 2:00 AM', required: "required", class: 'form-control datetimepicker' %>
+				</div>
+			</div>
+			<div class="group col-xs-12">
+				<div class="col-sm-3">
+					<span class="glyphicon glyphicon-map-marker"></span>
+					<%= f.label 'Location' %>
+				</div>
+				<div class="col-sm-8">
+					<%= f.text_field :location, value: @event.location, placeholder: '711 W 27th Street', required: "required", class: 'form-control' %>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="group col-xs-12" style="padding: 0 10px;">
+				<div class="detailTitle">
+					<span class="glyphicon glyphicon-align-left"></span>
+					<span>Description</span>
+				</div>
+				<%= f.text_area :description, placeholder: 'A little bit about the event...' , value: @event.description, required: "required", class: 'form-control' %>
+			</div>
+		</div>
+		<div class="row">
+			<%= back_button events_path %>
+			<% # Object is the filler text for submit button %>
+			<%= f.submit object, class: 'button pull-right' %>
+		</div>
+	</div>
+<% end %>

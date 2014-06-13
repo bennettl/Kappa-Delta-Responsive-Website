@@ -2,14 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.field{
+	margin: 15px 0;
+}
+
 .column{
     border-right: 1px solid #D3D3D3;
-    float: left;
-    height: 300px;
-    width: 375px;
     text-align: center;
+    min-height: 300px;
     &:last-child {
 	    border-right: none;
+	}
+}
+
+@media (max-width:768px){
+	.column{
+		border-right: none;
+		min-height: 0;
+		margin-bottom: 32px;
 	}
 }
 
@@ -17,6 +27,7 @@
 	text-transform: uppercase;
     font-weight: 300;
 	font-size: 25px;
+	padding-bottom: 15px;
 }
 
 #amountList{

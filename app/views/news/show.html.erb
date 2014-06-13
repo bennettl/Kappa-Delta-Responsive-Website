@@ -1,3 +1,33 @@
-<h2><%= @news.title %></h2>
-<div><%= simple_format(@news.body) %></div>
-<%= link_to 'Remove', @news, method: :delete %>
+<div class="mainTitle">News</div>
+
+<div class="profile col-sm-10 col-sm-offset-1 ">
+	<div class="title row">
+		<div class="col-xs-12">
+			<%= @news.title %>
+		</div>
+	</div>
+	<div id="info" class="row">
+		<div id="date" class="col-xs-12">
+			<span class="glyphicon glyphicon-time"></span>
+			<span><%= @news.created_at.strftime("%B %d, %Y") %></span>
+		</div> 
+		<div id="author" class="col-xs-12">
+			<span class="glyphicon glyphicon-user"></span>
+			<span><%= @news.member.name %></span>
+		</div>
+	</div>
+	<div class="image row">
+		<%= image_tag @news.image.url unless @news.image.blank? %>
+	</div>
+
+	<div class="row" style="padding-top: 20px;">
+		<div class="col-xs-12">
+			<p><%= simple_format(@news.body) %></p>
+		</div>
+	</div>
+
+	<%= back_button news_index_path %>
+	<%= edit_button 'Edit News', edit_news_path(@news) %>
+</div>
+<% #link_to 'Remove', @news, method: :delete %>
+

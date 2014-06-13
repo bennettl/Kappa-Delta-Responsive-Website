@@ -1,0 +1,27 @@
+<div class="mainTitle">Dagger</div>
+
+<div class="col-sm-8 col-sm-offset-2 profile">
+	<div class="title row">
+		<div class="col-xs-12">
+			<%= @dagger.title %>
+		</div>
+	</div>
+	<div id="info" class="row">
+		<div id="date" class="col-xs-12">
+			<span class="glyphicon glyphicon-time"></span>
+			<span><%= @dagger.dagger_date.strftime("%B %d, %Y") %></span>
+		</div> 
+		<div id="author" class="col-xs-12">
+			<span class="glyphicon glyphicon-user"></span>
+			<span><%= @dagger.author %></span>
+		</div>
+	</div>
+	<div id="pdf" class="col-xs-12">
+			<span class="glyphicon glyphicon-file"></span>
+		<%= link_to @dagger.pdf.original_filename, @dagger.pdf.url %>
+	</div>
+
+	<%= back_button daggers_path %>
+	<%= edit_button 'Edit Dagger', edit_dagger_path(@dagger) %>
+</div>
+<% #link_to 'Remove', @dagger, method: :delete %>

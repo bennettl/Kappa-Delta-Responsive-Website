@@ -1,4 +1,9 @@
-<%= f.input :text, :input_html => { :class => "field col-md-12" } %>
+<div class="form-group">
+	<%= f.label :text, class: 'control-label col-sm-2'  %>
+	<div class="col-sm-10">
+		<%= f.input_field :text, class: 'form-control' %>
+	</div>
+</div>
 
 <% if params[:reply_to_id] %>
   <%= f.hidden_field :reply_to_id, :value => params[:reply_to_id] %>

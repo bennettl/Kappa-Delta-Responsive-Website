@@ -1,9 +1,19 @@
-<%= simple_form_for [forem, :admin, @forum] do |f| %>
-  <%= f.association :category, :include_blank => false %>
-  <%= f.input :title %>
-  <%= f.input :description, :as => :text %>
-
-  <h3><%= t('forem.admin.forum.moderator_groups') %></h3>
-  <%= f.association :moderators, :as => :check_boxes %>
-  <%= f.submit :class => "btn btn-primary" %>
+<%= simple_form_for [forem, :admin, @forum], html: { class: 'form-horizontal' } do |f| %>
+	<%= f.association :category, :include_blank => false %>
+	<div class="form-group">
+		<%= f.label 'Title', class: "col-sm-2 control-label" %>
+		<div class="col-sm-10">
+			<%= f.input_field :title, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="form-group">
+		<%= f.label 'Description', class: "col-sm-2 control-label" %>
+		<div class="col-sm-10">
+			<%= f.input_field :description, :as => :text, class: 'form-control' %>
+		</div>
+	</div>
+  <div class="mainTitle"><%= t('forem.admin.forum.moderator_groups') %></div>
+  
+  <div class="col-xs-12"><%= f.association :moderators, :as => :check_boxes %></div>
+  <%= f.submit :class => "button pull-right" %>
 <% end %>

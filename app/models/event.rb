@@ -1,5 +1,8 @@
 class Event < ActiveRecord::Base
 	
+	# Association
+	belongs_to :member
+
 	# Validation
 	validates :title, presence: true
 	validates :location, presence: true
