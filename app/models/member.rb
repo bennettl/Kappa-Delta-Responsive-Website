@@ -1,5 +1,7 @@
 class Member < ActiveRecord::Base
-	before_save { self.email = email.downcase }
+	# commented out because memberes from excel file are not guarantee to have email
+	# before_save { self.email = email.downcase }
+	before_save { self.user_name = user_name.downcase }
 	before_create :create_remember_token
 
 	# Association
@@ -25,13 +27,9 @@ class Member < ActiveRecord::Base
 	validates :status, presence: true, inclusion: ['bod', 'officer', 'member']
 	validates :first_name, presence: true
 	validates :last_name, presence: true
-	# validates :address, presence: true
-	# validates :class_year, presence: true
-	# validates :major, presence: true
-	# validates :industry, presence: true
 	validates :user_name,  presence: true, uniqueness: true
 	
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	# VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	# validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 	# validates :password, length: { minimum: 5 }
 
@@ -72,6 +70,81 @@ class Member < ActiveRecord::Base
 		end
 	end
 
+	# Handles importing an excel file and updating the members database with it
+	def self.import(file)
+		spreadsheet = open_spreadsheet(file)
+		header = spreadsheet.row(1)
+		
+		updated = [] # members that were updated
+		created = [] # members that were created
+
+		# Go throuh every row of spreadsheet
+		(2..spreadsheet.last_row).each do |i|
+			# Convert the array of values with header as the key and transform it into a hash
+		    row 			= Hash[[header, spreadsheet.row(i)].transpose]
+			user_name 		= row['User ID']
+			first_name 		= row['First Name']
+			last_name 		= row['Last Name']
+			class_year 		= row['Class Year']
+			major 			= row['major']
+			phone 			= row['Phone']
+			email			= row['Email']
+			address			= row['Address']
+			city			= row['City']
+			state 			= row['State']
+			zip 			= row['Zip']
+
+			member 			= Member.find_by({user_name: user_name})
+
+			# If member exist
+			if !member.nil?
+				# Update attributes of existing member
+				attributes 		= { user_name: user_name, first_name: first_name, last_name: last_name, class_year: class_year, major: major, 
+								phone: phone, email: email, address: address, city: city, state: state, zip: zip }
+				member.update_attributes(attributes)
+				updated.push(member.name)
+			else
+				# Otherwise, create a new member
+				member = Member.create!(member_type: 'normal',
+										status: 'member',
+										password: 'qwerty',
+										password_confirmation: 'qwerty',
+										first_name: first_name,
+										last_name: last_name,
+										user_name: user_name,
+										class_year: class_year,
+										major: major,
+										email: email,
+										phone: phone,
+										address: address,
+										state: state,
+										city: city,
+										zip: zip,
+										headline: '',
+										summary: '',
+										url_resume: '',
+										industry: '',
+										url_facebook: '',
+										url_twitter: '',
+										url_linkedIn: '',
+										url_personal: '')
+				created.push(member.name)
+			end
+		end
+
+		# Return the information on members that were updated/created
+		members_info = {updated: updated, created: created}
+	end
+
+	# Opens a spreadsheet file, helper function for self.import
+	def self.open_spreadsheet(file)
+		case File.extname(file.original_filename)
+			when ".csv" then Roo::Csv.new(file.path, nil, :ignore)
+			when ".xls" then Roo::Excel.new(file.path, nil, :ignore)
+			when ".xlsx" then Roo::Excelx.new(file.path, nil, :ignore)
+			else raise "Unknown file type: #{file.original_filename}"
+		end
+	end
 	# Returns full name
 	def name
 		"#{first_name} #{last_name}"

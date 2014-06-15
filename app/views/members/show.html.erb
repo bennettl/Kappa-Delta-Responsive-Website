@@ -27,7 +27,7 @@
 					<span><%= "Class Of #{@member.class_year}" %></span>
 				</div>
 			<% end %>
-			<% if !@member.major.empty? %>
+			<% if !@member.major.nil? %>
 				<div id="major"> 
 					<span class="glyphicon glyphicon-pencil"></span>
 					<span><%= "Major In #{@member.major}" %></span>

@@ -23,6 +23,8 @@ KappaDelta::Application.routes.draw do
   # Resources
   resources :members do
     get :autocomplete, :on => :collection
+    get :import_form, :on => :collection
+    post :import, :on => :collection
   end
   resources :jobs
   resources :events

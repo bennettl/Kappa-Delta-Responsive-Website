@@ -72,6 +72,17 @@ class MembersController < ApplicationController
 		render json: result
 	end
 
+	
+	def import_form
+	end
+
+	# Handles importing an excel file and updating the members database with it
+	def import
+		members_info = Member.import(params[:file])
+		flash[:success] = "Brother's Database Sucessfully Updated!" 
+		redirect_to members_path(members_info: members_info)
+	end
+
 	private
 
 		# Strong parameters

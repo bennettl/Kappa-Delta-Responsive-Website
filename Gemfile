@@ -29,6 +29,10 @@ gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 # payment
 gem 'stripe'
 
+# Importing excel file
+gem 'roo', '~> 1.13.2'
+gem 'iconv'
+
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'

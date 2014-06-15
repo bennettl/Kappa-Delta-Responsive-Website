@@ -14,7 +14,6 @@ namespace :db do
 					status: 'officer',
 					password: 'qwerty2',
 					password_confirmation: 'qwerty2',
-					image: 'profile.png',
 					headline: Faker::Lorem.sentences(1).join("\n\n"),
 					first_name: 'Bennett',
 					last_name: 'Lee',
@@ -49,13 +48,12 @@ namespace :db do
 
 			member_type 	= 'normal' # super admin, admin, normal
 			status 			= 'member' # member, officer, board of directors
-			image 			= 'default.png'
 			headline 		= ''
 			first_name 		= csv['SALUT']
 			last_name 		= csv['LASTNAME']
 			class_year 		= csv['Class']
 			class_prefix 	= csv['Class'] || '9999'
-			user_name 		= first_name[0..1] + last_name[0..2] + class_prefix[2..3]
+			user_name 		= first_name[0...1] + last_name[0...3] + class_prefix[2..3]
 			major 			= ''
 			summary 		= ''
 			url_resume		= '' 
@@ -109,7 +107,7 @@ namespace :db do
 			headline 		= Faker::Lorem.sentences(3).join(' ')
 			first_name 		= Faker::Name.first_name
 			last_name 		= Faker::Name.last_name
-			user_name 		= first_name[0..1] + last_name[0..2] + '14' 
+			user_name 		= first_name[0...1] + last_name[0...3] + '14' 
 			class_year 		= '201' + Faker::Number.digit
 			major 			= random_major
 			summary 		= Faker::Lorem.paragraphs(5).join(' ')
@@ -155,7 +153,7 @@ namespace :db do
 	end
 
 	def populate_jobs
-		members 	= Member.find([*1..3])
+		members 	= Member.find([*1324..1327])
 
 		# Create 20 differnt types of jobs
 		20.times do |n|
@@ -191,7 +189,7 @@ namespace :db do
 	end
 
 	def populate_events
-		member 	= Member.find(1)
+		member 	= Member.find(1324)
 
 		# Member will create 10 events 
 		10.times do |n|
@@ -205,7 +203,7 @@ namespace :db do
 	end
 
 	def populate_news
-		member 	= Member.find(2)
+		member 	= Member.find(1324)
 
 		# Member will create 10 news 
 		10.times do |n|

@@ -1,5 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
+# Importing excel file for brother's database
+require 'csv'
+require 'iconv'
+
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems

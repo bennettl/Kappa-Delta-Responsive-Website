@@ -1,0 +1,14 @@
+
+<div class="mainTitle">Import Brothers</div>
+
+<div class="profile col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+<%= form_tag import_members_path, multipart: true,  html: {class: 'form-horizontal'} do  %>
+	<div class="form-group">
+		<%= label_tag :file, "Excel File", class: "label-control col-sm-3" %>
+	    <div class="col-sm-9">
+			<%= file_field_tag :file %>
+		</div>
+	</div>
+	<%= submit_tag "Import", class: "button", style: "width: 100%; clear: both; margin-top: 35px;" %>
+<% end %>
+</div>
