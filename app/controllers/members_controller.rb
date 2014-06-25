@@ -90,14 +90,14 @@ class MembersController < ApplicationController
 		# If password is blank, don't include it
 		def member_params_update
 			if params[:member][:password].blank?
-				params.require(:member).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :city, :class_year, :industry, :avatar, :resume)
+				params.require(:member).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :city, :zip, :country, :class_year, :industry, :avatar, :resume)
 			else
 				member_params
 			end
 		end		
 
 		def member_params
-			params.require(:member).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :city, :class_year, :industry, :password, :password_confirmation, :avatar, :resume)
+			params.require(:member).permit(:member_type, :status, :email, :user_name, :first_name, :last_name, :major, :city, :zip, :country, :class_year, :industry, :password, :password_confirmation, :avatar, :resume)
 		end
 
 		def member_params_search

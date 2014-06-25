@@ -28,6 +28,14 @@
 	margin-right: 30px;
 }
 
+/* Fixes issue when screen is too small and button jumps out of container */
+@media (max-width:768px){
+
+	.button{
+		margin-right: 0;
+	}
+}
+
 #news_summary, #news_body{
 	min-height: 300px;
 }

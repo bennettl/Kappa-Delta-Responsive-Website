@@ -12,8 +12,8 @@ namespace :db do
 		# Create Bennett
 		Member.create!(member_type: 'admin',
 					status: 'officer',
-					password: 'qwerty2',
-					password_confirmation: 'qwerty2',
+					password: 'thekds',
+					password_confirmation: 'thekds',
 					headline: Faker::Lorem.sentences(1).join("\n\n"),
 					first_name: 'Bennett',
 					last_name: 'Lee',
@@ -56,11 +56,12 @@ namespace :db do
 			user_name 		= first_name[0...1] + last_name[0...3] + class_prefix[2..3]
 			major 			= ''
 			summary 		= ''
-			url_resume		= '' 
+			url_resume		= ''
 			address			= csv['ADDRLINE1']
 			state 			= csv['STATE']
 			city			= csv['CITY_NAME']
 			zip 			= csv['ZIP']
+			country 		= "United States" 
 			industry		= ''
 			email			= csv['EMAIL'] || ''
 			phone			= csv['PHONE']
@@ -74,7 +75,6 @@ namespace :db do
 						status: status,
 						password: 'qwerty2',
 						password_confirmation: 'qwerty2',
-						image: image,
 						headline: headline,
 						first_name: first_name,
 						last_name: last_name,
@@ -87,6 +87,7 @@ namespace :db do
 						state: state,
 						city: city,
 						zip: zip,
+						country: country,
 						industry: industry,
 						email: email,
 						phone: phone,
@@ -94,7 +95,7 @@ namespace :db do
 						url_twitter: url_twitter,
 						url_linkedIn: url_linkedIn,
 						url_personal: url_personal)
-			puts "#{member.id} created"
+			#puts "#{member.id} created"
 		end
 	end
 
@@ -103,7 +104,6 @@ namespace :db do
 		40.times do |n|
 			member_type 	= 'normal'
 			status 			= 'member' # member, officer, board of directors
-			image 			= 'profile.png'
 			headline 		= Faker::Lorem.sentences(3).join(' ')
 			first_name 		= Faker::Name.first_name
 			last_name 		= Faker::Name.last_name
@@ -153,7 +153,7 @@ namespace :db do
 	end
 
 	def populate_jobs
-		members 	= Member.find([*1324..1327])
+		members 	= Member.limit(4)
 
 		# Create 20 differnt types of jobs
 		20.times do |n|
@@ -189,7 +189,7 @@ namespace :db do
 	end
 
 	def populate_events
-		member 	= Member.find(1324)
+		member 	= Member.first
 
 		# Member will create 10 events 
 		10.times do |n|
@@ -203,7 +203,7 @@ namespace :db do
 	end
 
 	def populate_news
-		member 	= Member.find(1324)
+		member 	= Member.first
 
 		# Member will create 10 news 
 		10.times do |n|

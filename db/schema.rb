@@ -177,6 +177,7 @@ ActiveRecord::Schema.define(version: 20140609225333) do
     t.string   "state"
     t.string   "city"
     t.string   "zip"
+    t.string   "country"
     t.string   "industry"
     t.string   "email"
     t.string   "phone"

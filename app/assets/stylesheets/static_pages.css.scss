@@ -15,6 +15,30 @@
 	}
 }
 
+// Home 
+.home_member{
+	.list{
+		background: #2e3a60;
+		height: 200px;
+		padding: 15px 0;
+		border-right: 2px solid #ffffff;
+		margin-bottom: 20px;
+		&:hover{
+			background: #3d4c79;
+		}
+		.title{
+			color: #ffffff;
+			text-align: center;
+		}
+		.logo{
+			color: #ffffff;
+			font-size: 100px;
+			margin-top: 25px;
+			text-align: center;
+			width: 100%;
+		}
+	}
+}
 
 // Contact
 .contact-box{

@@ -1,0 +1,40 @@
+<div class="profile home_member">
+	<div class="mainTitle" style="margin-bottom: 20px;"><%=  "Welcome Brother #{current_member.first_name.upcase}!" unless current_member.nil? %> </div>
+	<div class="list col-md-4 col-sm-6 col-xs-12">
+	<%= link_to(jobs_path) do %>
+		<div class="title">Jobs And Internships</div>
+		<div class="logo glyphicon glyphicon-briefcase"></div>
+	<% end %>
+	</div>
+	<div class="list col-md-4 col-sm-6 col-xs-12">
+	<%= link_to(members_path) do %>
+		<div class="title">Brothers Database</div>
+		<div class="logo glyphicon glyphicon-list-alt"></div>
+	<% end %>
+	</div>
+	<div class="list col-md-4 col-sm-6 col-xs-12">
+	<%= link_to(forem_path) do %>
+		<div class="title">The KD Room</div>
+		<div class="logo glyphicon glyphicon-user"></div>
+	<% end %>
+	</div>
+	<div class="list col-md-4 col-sm-6 col-xs-12">
+	<%= link_to(daggers_path) do %>
+		<div class="title">The Dagger</div>
+		<div class="logo glyphicon glyphicon-file"></div>
+	<% end %>
+	</div>
+	<div class="list col-md-4 col-sm-6 col-xs-12">
+	<%= link_to(events_path) do %>
+		<div class="title" style="margin-left: -10px;">Events</div>
+		<div class="logo glyphicon glyphicon-calendar"></div>
+	<% end %>
+	</div>
+	<div class="list col-md-4 col-sm-6 col-xs-12">
+	<%= link_to(edit_member_path(current_member)) do %>
+		<div class="title">Account</div>
+		<div class="logo glyphicon glyphicon-th-large"></div>
+	<% end %>
+	</div>
+
+</div>

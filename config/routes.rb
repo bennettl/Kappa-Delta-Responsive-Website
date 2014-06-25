@@ -26,10 +26,14 @@ KappaDelta::Application.routes.draw do
     get :import_form, :on => :collection
     post :import, :on => :collection
   end
+
   resources :jobs
   resources :events
   resources :news
   resources :daggers
+
+  match 'the-dagger', to: 'daggers#index', via: 'get'
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :donations, only: [:index, :new, :create, :update]
 

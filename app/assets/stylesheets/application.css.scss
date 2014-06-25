@@ -58,6 +58,16 @@ img {
 	font-size: 3em;
 	color: #FFFFFF;
 	cursor: pointer;
+	position: absolute;
+}
+
+@media (max-width:960px){
+	.menuToggle{
+		display: block;
+	}
+	.mainNav, .topNav{
+		display: none;
+	}
 }
 
 /* Inputs */

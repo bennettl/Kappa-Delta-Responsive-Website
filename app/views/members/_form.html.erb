@@ -100,6 +100,10 @@
 				label = f.label 'Zip'
 				input = f.text_field :zip, value: @member.zip, autocomplete: :off, placeholder: '90007', class: 'form-control'
 				%>
+				<%
+				label = f.label 'Country'
+				input = f.text_field :country, value: @member.country, autocomplete: :off, placeholder: 'United States', class: 'form-control'
+				%>
 				<%= row label,input %>
 			</div>
 			<!-- LOCATION -->

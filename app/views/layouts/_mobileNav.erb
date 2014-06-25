@@ -19,7 +19,9 @@
 			<a href="#0" class="menuHeading">My Account</a>
 			<%= nav_link 'My Profile', 'current_member' %>
 			<%= nav_link 'My Acount', main_app.edit_member_path(current_member) %>
-			<%= nav_link 'Sign Out', main_app.signout_path %>
+			<%= link_to 'Sign Out', main_app.signout_path, method: :delete %>
+		<% else %>
+			<%= nav_link 'Sign in ', main_app.signin_path %>
 		<% end %>
 	</nav>
 </div>

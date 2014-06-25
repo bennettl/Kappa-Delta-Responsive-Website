@@ -26,6 +26,7 @@ class CreateTables < ActiveRecord::Migration
 		t.string :state
 		t.string :city
 		t.string :zip
+		t.string :country
 		t.string :industry
 		t.string :email
 		t.string :phone

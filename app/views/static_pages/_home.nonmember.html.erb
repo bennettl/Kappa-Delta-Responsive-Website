@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="col-md-7 col-sm-12" style="min-height: 200px;background: #ffffff; text-align: center; vertical-align: middle">
+		<%= image_tag 'home.png', class: 'img-responsive' %>
+	</div>
+	<div class="col-md-5 col-sm-6">
+		<div id="aboutWidget" class="detailTitle">About</div>
+		<p>Founded in 1902, Kappa Delta is Pomona College’s oldest and largest fraternity with over 1,000 living members. Kappa Delta organizes and runs a number of different events on the Pomona campus that are open to the student body, and the brothers are active in a number of philanthropic pursuits in the greater Claremont area.</p>
+	</div>
+	<div class="visible-md visible-lg" style="clear: left;"></div>
+	<% @news.each do |n| %>
+		<div class="col-md-4 col-sm-6" style="margin: 25px 0;">
+			<div class="detailTitle"><%= link_to n.title, n %></div>
+			<div class="summary">
+				<%= n.summary %>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<%= link_to 'Donate', new_donation_path, class: "button", style: "width:100%; display: block; text-align: center;" %>
+	</div>
+</div>
