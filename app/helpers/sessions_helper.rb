@@ -29,6 +29,11 @@ module SessionsHelper
 		@current_member = member
 	end
 
+	# is the current member admin
+	def is_admin?
+		(current_member.status == 'admin')
+	end
+
 	# When retriving current member, grab session token from cookie and see if member exists in database
 	def current_member
 		encrypted_remember_token = Member.encrypt(cookies[:remember_token])
