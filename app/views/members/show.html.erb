@@ -17,10 +17,12 @@
 					<%= @member.headline %>
 				</div>
 			<% end %>
+				<% if !@member.city.empty? && !@member.state.empty? %>
 				<div id="location">			
 					<span class="glyphicon glyphicon-map-marker"></span>
 					<span><%= "#{@member.city}, #{@member.state}" %></span>
 				</div>
+				<% end %>
 			<% if !@member.class_year.nil? %>
 				<div id="year"> 
 					<span class="glyphicon glyphicon-calendar"></span>
@@ -54,7 +56,9 @@
 
 	<div class="row">
 		<%= back_button members_path %>
-		<%= edit_button 'Edit Member', edit_member_path(@member) %>
+		<% if current_member = @member %>
+			<%= edit_button 'Edit Member', edit_member_path(@member) %>
+		<% end %>}
 	</div>
 
 
