@@ -86,13 +86,14 @@ class Member < ActiveRecord::Base
 			first_name 		= row['First Name']
 			last_name 		= row['Last Name']
 			class_year 		= row['Class Year']
-			major 			= row['major']
+			major 			= row['Major']
 			phone 			= row['Phone']
 			email			= row['Email']
 			address			= row['Address']
 			city			= row['City']
 			state 			= row['State']
 			zip 			= row['Zip']
+			country 		= row['Country']
 
 			member 			= Member.find_by({user_name: user_name})
 
@@ -100,7 +101,7 @@ class Member < ActiveRecord::Base
 			if !member.nil?
 				# Update attributes of existing member
 				attributes 		= { user_name: user_name, first_name: first_name, last_name: last_name, class_year: class_year, major: major, 
-								phone: phone, email: email, address: address, city: city, state: state, zip: zip }
+								phone: phone, email: email, address: address, city: city, state: state, zip: zip, country: country }
 				member.update_attributes(attributes)
 				updated.push(member.name)
 			else
@@ -120,6 +121,7 @@ class Member < ActiveRecord::Base
 										state: state,
 										city: city,
 										zip: zip,
+										country: country,
 										headline: '',
 										summary: '',
 										url_resume: '',
