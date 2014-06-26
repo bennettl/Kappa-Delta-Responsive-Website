@@ -17,7 +17,7 @@
 					<%= @member.headline %>
 				</div>
 			<% end %>
-				<% if !@member.city.empty? && !@member.state.empty? %>
+				<% if !@member.city.nil? && !@member.state.nil? %>
 				<div id="location">			
 					<span class="glyphicon glyphicon-map-marker"></span>
 					<span><%= "#{@member.city}, #{@member.state}" %></span>
