@@ -56,9 +56,9 @@
 
 	<div class="row">
 		<%= back_button members_path %>
-		<% if current_member = @member || is_admin? %>
+		<% if current_member == @member || is_admin? %>
 			<%= edit_button 'Edit Member', edit_member_path(@member) %>
-		<% end %>}
+		<% end %>
 	</div>
 
 
