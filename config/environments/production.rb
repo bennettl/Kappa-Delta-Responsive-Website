@@ -10,6 +10,8 @@ KappaDelta::Application.configure do
   #     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   #   }
   # }
+  # Force ssl
+  config.force_ssl = true
 
   # Code is not reloaded between requests.
   config.cache_classes = true
