@@ -1,11 +1,12 @@
 namespace :db do
 	desc 'Fill database with sample data' 
 	task populate: :environment do
-		populate_admin
-		populate_members_csv
-		populate_jobs
-		populate_events
-		populate_news
+		# populate_admin
+		# populate_members_csv
+		# populate_jobs
+		# populate_events
+		# populate_news
+		populate_forums
 	end	
 
 	def populate_admin
@@ -213,6 +214,33 @@ namespace :db do
 			body 		= Faker::Lorem.paragraphs(10).join("\n\n")
 			member.news.create!(title: title, images: images, summary: summary, body: body)
 		end
+	end
+
+	def populate_forums
+		cat_gen = Forem::Category.create!(name: "General")
+		cat_gen.forums.create!(name: "Pub", description: "This is the main forum area. If you're not sure where to post, start here.")
+		cat_gen.forums.create!(name: "On Campus", description: "For all discussions regarding actives and on campus happenings.")
+		cat_gen.forums.create!(name: "Professional", description: "For all discussions related to careers, business, jobs, and internships.")
+
+		cat_geo = Forem::Category.create!(name: "Geographical")
+		cat_geo.forums.create!(name: Los Angeles, description: "Discussions related to the greater Los Angeles area.")
+		cat_geo.forums.create!(name: San Francisco, description: "Discussions related to the greater Bay Area.")
+		cat_geo.forums.create!(name: New York, description: "Discussions related to the greater New York City area.")
+		cat_geo.forums.create!(name: San Diego, description: "Discussions related to the greater San Diego area.")
+		cat_geo.forums.create!(name: Seattle, description: "Discussions related to the greater Seattle area.")
+		cat_geo.forums.create!(name: Chicago, description: "Discussions related to the greater Chicago area.")
+		cat_geo.forums.create!(name: Washington DC, description: "Discussions related to the greater DC area.")
+		cat_geo.forums.create!(name: Boston, description: "Discussions related to the greater Boston area.")
+		cat_geo.forums.create!(name: Everywhere Else, description: "geographically-anchored discussions for the rest of the world.")
+
+		cat_dec = Forem::Category.create!(name: "By Decade")
+		cat_dec.forums.create!(name: 2010s, description: "Discussions specific to the 2010s classes.")
+		cat_dec.forums.create!(name: 2000s, description: "Discussions specific to the 2000s classes.")
+		cat_dec.forums.create!(name: 1990s, description: "Discussions specific to the 1990s classes.")
+		cat_dec.forums.create!(name: 1980s, description: "Discussions specific to the 1980s classes.")
+		cat_dec.forums.create!(name: 1970s, description: "Discussions specific to the 1970s classes.")
+		cat_dec.forums.create!(name: 1960s, description: "Discussions specific to the 1960s classes.")
+		cat_dec.forums.create!(name: 1950s, description: "Discussions specific to the 1950s classes.")
 	end
 
 	def random_date
