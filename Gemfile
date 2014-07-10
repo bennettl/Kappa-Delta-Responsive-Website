@@ -33,10 +33,11 @@ gem 'stripe'
 gem 'roo', '~> 1.13.2'
 gem 'iconv'
 
+gem 'hirb', '0.7.1'
+
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
-  gem 'hirb', '0.7.1'
   gem 'annotate', ">=2.6.0"
 end
 
