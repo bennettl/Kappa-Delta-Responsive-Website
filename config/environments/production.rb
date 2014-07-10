@@ -11,7 +11,7 @@ KappaDelta::Application.configure do
   #   }
   # }
   # Force ssl
-  config.force_ssl = true
+  # config.force_ssl = true
 
   # Code is not reloaded between requests.
   config.cache_classes = true
