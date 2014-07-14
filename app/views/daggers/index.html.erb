@@ -1,7 +1,9 @@
 <div class="mainTitle">
-	<div class="col-xs-12">
-		<%= new_button 'New', new_dagger_path %>
-	</div>
+	<% if is_admin? %>
+		<div class="col-xs-12">
+			<%= new_button 'New', new_dagger_path %>
+		</div>
+	<% end %>
 	<div class="col-xs-12">
 		<span>The Dagger</span>
 	</div>

@@ -5,7 +5,9 @@
 <div class="profile col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
 	<div class="row">
 		<div class="title col-xs-12"><%= @event.title %></div>
-		<div class="col-xs-12"><%= link_to 'Remove', @event, method: :delete, class: :remove %></div>
+		<% if is_admin? %>
+			<div class="col-xs-12"><%= link_to 'Remove', @event, method: :delete, class: :remove %></div>
+		<% end %>
 	</div>
 	<table style="margin: 10px 0;">
 		<tr>

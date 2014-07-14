@@ -1,18 +1,18 @@
 namespace :db do
 	desc 'Fill database with sample data' 
 	task populate: :environment do
-		# populate_admin
-		# populate_members_csv
-		# populate_jobs
-		# populate_events
-		# populate_news
+		populate_admin
+		populate_members_csv
+		populate_jobs
+		populate_events
+		populate_news
 		populate_forums
 	end	
 
 	def populate_admin
 		# Create Bennett
 		Member.create!(member_type: 'admin',
-					status: 'officer',
+					status: 'admin',
 					password: 'thekds',
 					password_confirmation: 'thekds',
 					headline: Faker::Lorem.sentences(1).join("\n\n"),
@@ -38,6 +38,7 @@ namespace :db do
 
 	end
 
+	# Populate members through alumni list csv file
 	def populate_members_csv
 		require 'csv'    
 
@@ -45,37 +46,38 @@ namespace :db do
 			csv = row.to_hash
 
 			# skip if row is nil, first or last name is empty
-			next if csv.nil? || csv['SALUT'].empty? || csv['LASTNAME'].empty?
+			next if csv.nil? || csv['First Name'].empty? || csv['Last Name'].empty?
 
 			member_type 	= 'normal' # super admin, admin, normal
 			status 			= 'member' # member, officer, board of directors
 			headline 		= ''
-			first_name 		= csv['SALUT']
-			last_name 		= csv['LASTNAME']
-			class_year 		= csv['Class']
-			class_prefix 	= csv['Class'] || '9999'
-			user_name 		= first_name[0...1] + last_name[0...3] + class_prefix[2..3]
-			major 			= ''
+			first_name 		= csv['First Name']
+			last_name 		= csv['Last Name']
+			class_year 		= csv['Class Year']
+			user_name		= csv['User ID'] # first_name[0...1] + last_name[0...3] + class_prefix[2..3]
+			major 			= csv['Major']
 			summary 		= ''
 			url_resume		= ''
-			address			= csv['ADDRLINE1']
-			state 			= csv['STATE']
-			city			= csv['CITY_NAME']
-			zip 			= csv['ZIP']
+			address			= csv['Address']
+			state 			= csv['State']
+			city			= csv['City']
+			zip 			= csv['Zip']
 			country 		= "United States" 
 			industry		= ''
-			email			= csv['EMAIL'] || ''
-			phone			= csv['PHONE']
+			email			= csv['Email'] || ''
+			phone			= csv['Phone']
 			url_facebook	= ''
 			url_twitter		= ''
 			url_linkedIn	= ''
 			url_personal	= ''
 
-			# Create the member
-			member = Member.create!(member_type: member_type,
+			# Find or intialize member
+			member = Member.find_or_initialize_by(user_name: user_name)
+			# Update member attributes
+			member.update_attributes(member_type: member_type,
 						status: status,
-						password: 'qwerty2',
-						password_confirmation: 'qwerty2',
+						password: 'thekds',
+						password_confirmation: 'thekds',
 						headline: headline,
 						first_name: first_name,
 						last_name: last_name,
@@ -96,7 +98,6 @@ namespace :db do
 						url_twitter: url_twitter,
 						url_linkedIn: url_linkedIn,
 						url_personal: url_personal)
-			#puts "#{member.id} created"
 		end
 	end
 

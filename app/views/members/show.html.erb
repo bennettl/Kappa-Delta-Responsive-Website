@@ -11,7 +11,9 @@
 			<span class="title">
 				<%= @member.name %>
 			</span>
-			<%= link_to 'Remove User', @member, method: :delete, class: 'remove' %>
+			<% if is_admin? %>
+				<%= link_to 'Remove User', @member, method: :delete, class: 'remove' %>
+			<% end %>
 			<% if !@member.headline.nil? %>
 				<div id="headline">
 					<%= @member.headline %>
@@ -20,7 +22,7 @@
 				<% if !@member.city.nil? && !@member.state.nil? %>
 				<div id="location">			
 					<span class="glyphicon glyphicon-map-marker"></span>
-					<span><%= "#{@member.city}, #{@member.state}" %></span>
+					<span><%= "#{@member.address} #{@member.city}, #{@member.state}" %></span> <br />
 				</div>
 				<% end %>
 			<% if !@member.class_year.nil? %>
@@ -38,10 +40,10 @@
 		</div>
 	</div>
 
-	<ul id="social" class="row">
-		<li><%= link_to image_tag('social/fb.png', class: 'socialIcon'), @member.url_facebook, target: '_blank', title: 'Facebook' %></li>
-		<li><%= link_to image_tag('social/twitter.png', class: 'socialIcon'), @member.url_twitter, target: '_blank', title: 'Twitter' %></li>
-		<li><%= link_to image_tag('social/li.png', class: 'socialIcon'), @member.url_linkedIn, target: '_blank', title: 'LinkedIn' %></li>
+	<ul id="social" class="row" style="padding: 0 15px;">
+		<li><%= link_to image_tag('social/fb.png', class: 'socialIcon'), @member.url_facebook, target: '_blank', title: 'Facebook' unless @member.url_facebook.empty? %></li>
+		<li><%= link_to image_tag('social/twitter.png', class: 'socialIcon'), @member.url_twitter, target: '_blank', title: 'Twitter' unless @member.url_twitter.empty?%></li>
+		<li><%= link_to image_tag('social/li.png', class: 'socialIcon'), @member.url_linkedIn, target: '_blank', title: 'LinkedIn' unless @member.url_linkedIn.empty? %></li>
 		<li><%= mail_to @member.email, image_tag('social/email.png', class: 'socialIcon'), title: 'Email' %></li>
 	</ul>
 

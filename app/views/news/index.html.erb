@@ -1,11 +1,12 @@
 <div class="mainTitle col-sm-10 col-sm-offset-1">
-	<div class="col-xs-12">
-		<%= new_button 'New', new_news_path %>
-	</div>
+	<% if is_admin? %>
+		<div class="col-xs-12">
+			<%= new_button 'New', new_news_path %>
+		</div>
+	<% end %>
 	<div class="col-xs-12">
 		<span>News</span>
 	</div>
-
 </div>
 <ul id="newsList">
 	<%= render @news %>

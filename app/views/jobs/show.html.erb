@@ -4,7 +4,9 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<span class="title"><%= @job.title %></span>
-			<%= link_to 'Remove', @job, method: :delete, class: :remove %>
+			<% if is_admin? %>
+				<%= link_to 'Remove', @job, method: :delete, class: :remove %>
+			<% end %>
 		</div>
 	</div>
 	<div class="row">

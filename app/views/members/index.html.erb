@@ -1,7 +1,9 @@
 <div class="mainTitle">
 	<span>Brothers Database</span>
-	<%= new_button 'New', new_member_path %>
-	<%= link_to 'Import', import_form_members_path, class: "button pull-right" %>
+	<% if is_admin? %>
+		<%= new_button 'New', new_member_path %>
+		<%= link_to 'Import', import_form_members_path, class: "button pull-right" %>
+	<% end %>
 </div>
 <%= render 'search_columns' %>
 <div id="members">
