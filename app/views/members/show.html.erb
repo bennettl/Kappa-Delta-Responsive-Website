@@ -37,6 +37,12 @@
 					<span><%= "Major In #{@member.major}" %></span>
 				</div>
 			<% end %>
+				<% if !@member.phone.nil? %>
+				<div id="major"> 
+					<span class="glyphicon glyphicon-earphone"></span>
+					<span><%= "#{@member.phone}" %></span>
+				</div>
+			<% end %>
 		</div>
 	</div>
 

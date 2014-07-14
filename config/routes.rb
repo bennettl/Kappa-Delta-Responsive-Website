@@ -11,7 +11,7 @@ KappaDelta::Application.routes.draw do
   root 'static_pages#home'
 
   # Static pages
-  match 'home_member',    to: 'static_pages#home_member', via: 'get'
+  match 'member-home',    to: 'static_pages#home_member', via: 'get'
   match 'about',          to: 'static_pages#about', via: 'get'
   match 'contact',        to: 'static_pages#contact', via: 'get'
   match 'contact_send',   to: 'static_pages#contact_send', via: 'post'

@@ -10,6 +10,7 @@ Rails.application.config.to_prepare do
 	# wrapping forum and admin area in application layout
 	Forem::ApplicationController.layout "application"
 	Forem::Admin::BaseController.layout "application"
+	Forem.moderate_first_post = false
 #   If you want to add your own cancan Abilities to Forem, uncomment and customize the next line:
 #   Forem::Ability.register_ability(Ability)
 end

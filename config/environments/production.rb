@@ -2,14 +2,14 @@ KappaDelta::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Paperclip with AWS
-  # config.paperclip_defaults = {
-  #   :storage => :s3,
-  #   :s3_credentials => {
-  #     :bucket => ENV['S3_BUCKET_NAME'],
-  #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-  #     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-  #   }
-  # }
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => "kd-assets", # ENV['S3_BUCKET_NAME'],
+      :access_key_id => "AKIAJXZGNWDXI3PKT34Q", #ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => "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" # ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
   # Force ssl
   # config.force_ssl = true
 
