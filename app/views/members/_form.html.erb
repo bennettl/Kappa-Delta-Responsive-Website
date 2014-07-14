@@ -90,11 +90,11 @@
 				label = f.label 'City'
 				input =  f.text_field :city, value: @member.city, autocomplete: :off, placeholder: 'Los Angeles', required: "required", class: 'form-control'
 				%>
+				<%= row label,input %>
 				<%
 				label = f.label 'State'
 				input =   f.text_field :state, value: @member.state, autocomplete: :off, placeholder: 'CA', class: 'form-control'
 				%>
-				<%= row label,input %>
 				<%= row label,input %>
 				<%
 				label = f.label 'Zip'
