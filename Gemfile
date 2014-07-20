@@ -19,7 +19,6 @@ gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
 
 # Image File uploads
 gem 'paperclip', github: 'thoughtbot/paperclip'
-gem 'aws-s3'
 gem 'aws-sdk'
 # gem 'paperclip-aws', '~> 1.6.8'
 
