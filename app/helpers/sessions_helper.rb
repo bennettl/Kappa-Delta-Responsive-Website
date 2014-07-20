@@ -31,7 +31,7 @@ module SessionsHelper
 
 	# is the current member admin
 	def is_admin?
-		(current_member.status == 'admin')
+		(current_member.member_type == 'admin')
 	end
 
 	# When retriving current member, grab session token from cookie and see if member exists in database

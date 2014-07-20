@@ -12,7 +12,7 @@ namespace :db do
 	def populate_admin
 		# Create Bennett
 		Member.create!(member_type: 'admin',
-					status: 'admin',
+					status: 'officer',
 					password: 'thekds',
 					password_confirmation: 'thekds',
 					headline: Faker::Lorem.sentences(1).join("\n\n"),
