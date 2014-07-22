@@ -16,7 +16,8 @@ KappaDelta::Application.routes.draw do
   match 'contact',        to: 'static_pages#contact', via: 'get'
   match 'contact_send',   to: 'static_pages#contact_send', via: 'post'
   match 'charity',        to: 'static_pages#charity', via: 'get'
-  
+  match 'donations',      to: 'donations#new', via: 'get'
+
   # Sessions
   match 'signin', to: 'sessions#new', via: 'get'
   match 'signout', to: 'sessions#destroy', via: 'delete'
