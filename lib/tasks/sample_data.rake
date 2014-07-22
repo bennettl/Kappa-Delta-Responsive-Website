@@ -48,7 +48,7 @@ namespace :db do
 			# skip if row is nil, first or last name is empty
 			next if csv.nil? || csv['First Name'].empty? || csv['Last Name'].empty?
 
-			member_type 	= 'normal' # super admin, admin, normal
+			member_type 	= csv['Admin'] == 'TRUE' ? 'admin' : 'normal' # super admin, admin, normal
 			status 			= 'member' # member, officer, board of directors
 			headline 		= ''
 			first_name 		= csv['First Name']
