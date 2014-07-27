@@ -10,6 +10,7 @@ KappaDelta::Application.configure do
       :secret_access_key => "LoDFAudjK+q7LpbK8E3GY8kLMXuyHsRbPS6oGmy0" # ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
+  
   # Force ssl
   config.force_ssl = true
 

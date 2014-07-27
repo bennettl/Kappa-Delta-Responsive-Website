@@ -82,7 +82,7 @@
 					<span>Description</span>
 				</div>
 				<div class="content">
-					<%= f.text_area :description, placeholder: 'We\'re looking for bright and motivated recent graduates', value: @job.description, class: "form-control" %>
+					<%= f.bootsy_area :description, placeholder: 'We\'re looking for bright and motivated recent graduates', value: @job.description, class: "form-control" %>
 				</div>
 
 				<div class="detailTitle">
@@ -90,7 +90,7 @@
 					<span>Qualification</span>
 				</div>
 				<div class="content">
-					<%= f.text_area :qualification, placeholder: 'B.S. in Computer Science, 3+ years with HTML/CSS', value: @job.qualification, class: "form-control" %>
+					<%= f.bootsy_area :qualification, placeholder: 'B.S. in Computer Science, 3+ years with HTML/CSS', value: @job.qualification, class: "form-control" %>
 				</div>
 
 				<div class="detailTitle">
@@ -98,14 +98,14 @@
 					<span>Compensation</span>
 				</div>
 				<div class="content">
-					<%= f.text_area :compensation, placeholder: 'Paid internship, depending on experience', value: @job.compensation, class: "form-control" %>
+					<%= f.bootsy_area :compensation, placeholder: 'Paid internship, depending on experience', value: @job.compensation, class: "form-control" %>
 				</div>
 				<div class="detailTitle">
 					<span class="glyphicon glyphicon-align-left"></span>
 					<span>How To Apply</span>
 				</div>
 				<div class="content">
-					<%= f.text_area :how_to_apply, placeholder: 'Send your resume to Sarah Mitchell: sara@fb.com', value: @job.how_to_apply, class: "form-control" %>
+					<%= f.bootsy_area :how_to_apply, placeholder: 'Send your resume to Sarah Mitchell: sara@fb.com', value: @job.how_to_apply, class: "form-control" %>
 				</div>
 			</div>
 		</div>
