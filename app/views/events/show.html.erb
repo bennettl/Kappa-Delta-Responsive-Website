@@ -38,7 +38,7 @@
 			<span>Description</span>
 		</div>
 		<div>
-			<%= @event.description ||  'No Description'%>
+			<%= @event.description.html_safe ||  'No Description'%>
 		</div>
 	</div>
 	<div class="row">

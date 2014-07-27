@@ -3,7 +3,7 @@ namespace :db do
 	task populate: :environment do
 		populate_admin
 		populate_members_csv
-		populate_jobs
+		# populate_jobs
 		populate_events
 		populate_news
 		populate_forums

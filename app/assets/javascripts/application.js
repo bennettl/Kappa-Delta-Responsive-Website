@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootsy
 //= require turbolinks
 //= require forem
 
@@ -20,10 +21,12 @@
 // Mobile Menu Concerns go in this object
 var mobileMenu = {
 	togglemenu : function() {
-		$('.siteWrap').toggleClass('menuOpen');
+		jQuery('.siteWrap').toggleClass('menuOpen');
 	}
 };
 
 jQuery(document).ready(function($) {
-	$('.menuToggle').on('click', mobileMenu.togglemenu);
+	jQuery('.menuToggle').on('click', mobileMenu.togglemenu);
+	// alert('hey');
 });
+

@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 
 	# Create a new event
 	def create
-		@event = Event.new(event_params)
+		@event = current_member.events.build(event_params)
 
 		# If save is successful, redirect to event page, else re-render new page
 		if @event.save

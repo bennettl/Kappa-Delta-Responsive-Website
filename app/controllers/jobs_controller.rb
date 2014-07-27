@@ -17,7 +17,6 @@ class JobsController < ApplicationController
 
 	# Creating a new job
 	def create
-		current_member = Member.first # needs to be replace with current member
 		@job = current_member.jobs_created.new(job_params)
 		if @job.save
 			redirect_to @job

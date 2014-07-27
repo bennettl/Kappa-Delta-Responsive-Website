@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 			# Sign user in and redirect user to profile page
 			sign_in(member)
 		    # Redirect the user back to a page previously saved in store_location if it exists
-            redirect_back_or(member)
+            redirect_to member_home_path
    		else
 			# Display error message
 			flash.now[:error] = 'Invalid Email/Password Combination'

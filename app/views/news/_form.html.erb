@@ -31,7 +31,7 @@
 					<span class="glyphicon glyphicon-align-left"></span>
 					<span>Summary</span>
 				</div>
-				<%= f.text_area :summary, placeholder: 'A short summary about the news', value: @news.summary, required: "required", class: 'form-control' %>
+				<%= f.bootsy_area :summary, placeholder: 'A short summary about the news', value: @news.summary, required: "required", class: 'form-control' %>
 			</div>
 		</div>
 		<div class="row" style="margin-top: 20px;">
@@ -40,7 +40,7 @@
 					<span class="glyphicon glyphicon-align-left"></span>
 					<span>Body</span>
 				</div>
-				<%= f.text_area :body, placeholder: 'The entire details about the news', value: @news.body, required: "required" ,class: 'form-control' %>
+				<%= f.bootsy_area :body, placeholder: 'The entire details about the news', value: @news.body, required: "required" ,class: 'form-control' %>
 			</div>
 		</div>
 		<% # Object is the filler text %>

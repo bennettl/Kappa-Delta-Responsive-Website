@@ -27,8 +27,11 @@ gem 'forem', :github => "radar/forem", :branch => "rails4"
 gem 'forem-theme-base', :github => 'radar/forem-theme-base'
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 
-# payment
+# Payment
 gem 'stripe'
+
+# Rich text editor
+gem 'bootsy', '~> 2.0.9'
 
 # Importing excel file
 gem 'roo', '~> 1.13.2'

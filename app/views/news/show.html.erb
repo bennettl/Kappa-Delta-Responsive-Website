@@ -22,7 +22,7 @@
 
 	<div class="row" style="padding-top: 20px;">
 		<div class="col-xs-12">
-			<p><%= simple_format(@news.body) %></p>
+			<p><%= @news.body.simple_format %></p>
 		</div>
 	</div>
 
@@ -30,4 +30,3 @@
 	<%= edit_button 'Edit News', edit_news_path(@news) %>
 </div>
 <% #link_to 'Remove', @news, method: :delete %>
-

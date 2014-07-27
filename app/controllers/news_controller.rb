@@ -17,7 +17,7 @@ class NewsController < ApplicationController
 
 	# Create a new news
 	def create
-		@news = News.new(news_params)
+		@news = current_member.news.build(news_params)
 
 		if @news.save
 			flash[:success] = "News successfully created"

@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org/
 //= require moment
+//= require bootstrap
 //= require bootstrap-datetimepicker
 
 // Datetimepicker - http://eonasdan.github.io/bootstrap-datetimepicker/#example6

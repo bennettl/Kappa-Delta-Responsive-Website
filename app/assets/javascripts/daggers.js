@@ -3,6 +3,7 @@
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
 //= require moment
+//= require bootstrap
 //= require bootstrap-datetimepicker
 
 

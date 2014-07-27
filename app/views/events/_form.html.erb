@@ -20,7 +20,7 @@
 				</div>
 				<div class="col-sm-8">
 					<% start_time  = @event.start_time.nil? ? '' : @event.start_time.strftime("%m/%d/%Y %l:%M %p") %>
-					<%= f.text_field :start_time, value: start_time, placeholder: '05/10/2014 10:00 PM', required: "required", class: 'form-control datetimepicker' %>
+					<%= f.text_field :start_time, value: start_time, placeholder: '05/10/2014 10:00 PM', required: "required", data: { date_format: "YYYY/MM/DD h:mm A" } ,class: 'form-control datetimepicker' %>
 				</div>
 			</div>
 			<div class="group col-xs-12">
@@ -30,7 +30,7 @@
 				</div>
 				<div class="col-sm-8">
 					<% end_time  = @event.end_time.nil? ? '' : @event.end_time.strftime("%m/%d/%Y %l:%M %p") %>
-					<%= f.text_field :end_time, value: end_time, placeholder: '05/11/2014 2:00 AM', required: "required", class: 'form-control datetimepicker' %>
+					<%= f.text_field :end_time, value: end_time, placeholder: '06/10/2014 2:00 AM',  data: { date_format: "YYYY/MM/DD h:mm A" }, required: "required", class: 'form-control datetimepicker' %>
 				</div>
 			</div>
 			<div class="group col-xs-12">
@@ -49,7 +49,7 @@
 					<span class="glyphicon glyphicon-align-left"></span>
 					<span>Description</span>
 				</div>
-				<%= f.text_area :description, placeholder: 'A little bit about the event...' , value: @event.description, required: "required", class: 'form-control' %>
+				<%= f.bootsy_area :description, placeholder: 'A little bit about the event...' , value: @event.description, required: "required", class: 'form-control' %>
 			</div>
 		</div>
 		<div class="row">

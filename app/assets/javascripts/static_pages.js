@@ -1,4 +1,19 @@
-jQuery(document).ready(function(){
+var mobileMenu = {
+	togglemenu : function() {
+		$('.siteWrap').toggleClass('menuOpen');
+	}
+};
+
+jQuery(document).ready(function() {
+	initStaticPages();
+});
+
+jQuery(document).on('page:change, page:load', initStaticPages);
+
+
+function initStaticPages(){
+	jQuery('.menuToggle').on('click', mobileMenu.togglemenu);
+
 	jQuery('.contact-box').on('click', function(event) {
 		// Toggle current class
 		jQuery('.contact-box.current').removeClass('current');
@@ -12,5 +27,4 @@ jQuery(document).ready(function(){
 		
 		return false;
 	});
-
-});
+}

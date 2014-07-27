@@ -1,4 +1,5 @@
 class News < ActiveRecord::Base
+
 	# Serialize images
 	serialize :images, JSON
 
