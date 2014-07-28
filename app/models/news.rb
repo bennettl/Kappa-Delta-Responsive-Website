@@ -11,7 +11,7 @@ class News < ActiveRecord::Base
 						:styles => { :medium => "500x500>", :thumb => "150x150>" }, 
 						:url => "/assets/news/:id/:style/:basename.:extension",
 						:path => ":rails_root/public/assets/news/:id/:style/:basename.:extension"
-	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/, url: ":s3_domain_url"
 
 	# Validation
 	validates :title, presence: true
