@@ -1,6 +1,6 @@
 var mobileMenu = {
 	togglemenu : function() {
-		$('.siteWrap').toggleClass('menuOpen');
+		jQuery('.siteWrap').toggleClass('menuOpen');
 	}
 };
 
