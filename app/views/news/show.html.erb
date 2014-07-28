@@ -22,7 +22,7 @@
 
 	<div class="row" style="padding-top: 20px;">
 		<div class="col-xs-12">
-			<p><%= @news.body.simple_format %></p>
+			<p><%= simple_format(@news.body) %></p>
 		</div>
 	</div>
 
