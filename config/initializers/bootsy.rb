@@ -4,12 +4,12 @@ Bootsy.setup do |config|
   # You can override them locally by passing an editor_options hash to bootsy_area
   config.editor_options = {
     image: false,
+    html: false,
+    color: false
   #   font_styles: true,
   #   emphasis: true,
   #   lists: true,
-  #   html: false,
   #   link: true,
-  #   color: true
   }
 
   # Image versions available
