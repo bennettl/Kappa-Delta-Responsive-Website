@@ -31,11 +31,11 @@ module SessionsHelper
 
 	# is the current member admin
 	def is_admin?
-		if signed_in? {
+		if signed_in?
 			(current_member.member_type == 'admin')
-		} else{
-			return false;
-		}
+		else
+			false
+		end
 
 	end
 
