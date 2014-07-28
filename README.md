@@ -1,4 +1,4 @@
-== Kappa Delta
+# Kappa Delta
 
 ## Summary
 
