@@ -1,5 +1,5 @@
 .mobileNav {
-	display: none;
+	/* display: none; */
 	@include bp(sapling) {
 		display: block;
 	}

@@ -1,9 +1,3 @@
-var mobileMenu = {
-	togglemenu : function() {
-		jQuery('.siteWrap').toggleClass('menuOpen');
-	}
-};
-
 jQuery(document).ready(function() {
 	initStaticPages();
 });
@@ -12,7 +6,18 @@ jQuery(document).on('page:change, page:load', initStaticPages);
 
 
 function initStaticPages(){
-	jQuery('.menuToggle').on('click', mobileMenu.togglemenu);
+	var mobileMenu = {
+		togglemenu : function() {
+			var siteWrap = jQuery('.siteWrap').eq(0);
+			if (siteWrap.hasClass('menuOpen')){
+				siteWrap.addClass('menuOpen');
+			} else{
+				siteWrap.removeClass('menuOpen');
+			}
+		}
+	};
+
+	jQuery('body').on('click', '.menuToggle', mobileMenu.togglemenu);
 
 	jQuery('.contact-box').on('click', function(event) {
 		// Toggle current class
@@ -23,7 +28,7 @@ function initStaticPages(){
 		var email_from = jQuery(this).attr('href').substr(1);
 		jQuery('input[name="email_to"]').val(email_from);
 
-		console.log(email_from);
+		// console.log(email_from);
 		
 		return false;
 	});
