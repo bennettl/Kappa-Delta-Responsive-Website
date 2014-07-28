@@ -4,9 +4,9 @@ KappaDelta::Application.configure do
   # Paperclip with AWS
   config.paperclip_defaults = {
     :storage => :s3,
-    :s3_host_name => 's3-us-west-2.amazonaws.com',
+    :s3_host_name => 's3.amazonaws.com',
     :s3_credentials => {
-      :bucket => "kd-assets", # ENV['S3_BUCKET_NAME'],
+      :bucket => "kd-assets2", # ENV['S3_BUCKET_NAME'],
       :access_key_id => "AKIAJXZGNWDXI3PKT34Q", #ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => "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" # ENV['AWS_SECRET_ACCESS_KEY']
     }
