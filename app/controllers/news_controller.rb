@@ -2,7 +2,7 @@ class NewsController < ApplicationController
 	
 	# Display list of all news
 	def index
-		@news = News.all.paginate(per_page: 5, page: params[:page])
+		@news = News.order("created_at DESC").paginate(per_page: 5, page: params[:page])
 	end
 
 	# Display an individual news
