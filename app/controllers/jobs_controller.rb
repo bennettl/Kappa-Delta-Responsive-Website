@@ -81,7 +81,7 @@ class JobsController < ApplicationController
 
 	# Strong parameters
 	def job_params
-		params.require(:job).permit(:hidden, :title, :company, :job_type, :location, :start_date, :deadline, :industry, :description, :qualification, :compensation, :how_to_apply)
+		params.require(:job).permit(:hidden, :title, :company, :job_type, :location, :start_date, :deadline, :industry, :description, :qualification, :compensation, :how_to_apply, :bootsy_image_gallery_id)
 	end
 
 	# Without the require

@@ -57,7 +57,7 @@ class NewsController < ApplicationController
 
 		# Strong paramters
 		def news_params
-			params.require(:news).permit(:title, :image, :summary, :body)
+			params.require(:news).permit(:title, :image, :summary, :body, :bootsy_image_gallery_id)
 		end
 
 end
