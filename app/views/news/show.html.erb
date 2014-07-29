@@ -16,15 +16,13 @@
 		</div>
 	</div>
 	<div class="image row">
-		<%= image_tag @news.image.url unless @news.image.blank? %>
+		<%= image_tag @news.image.url, style: 'padding-top: 20px;' unless @news.image.blank? %>
 	</div>
-
-	<div class="row" style="padding-top: 20px;">
+	<div class="row">
 		<div class="col-xs-12">
-			<p><%= simple_format @news.body %></p>
+			<p class="summary"><%= simple_format @news.body %></p>
 		</div>
 	</div>
-
 	<%= back_button news_index_path %>
 	<%= edit_button 'Edit News', edit_news_path(@news) %>
 </div>

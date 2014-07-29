@@ -1,7 +1,7 @@
 <li class="news col-sm-10 col-sm-offset-1">
 	<div class="title"><%= news.title %></div>
 	<div class="image"><%= image_tag news.image.url unless news.image.blank? %></div>
-	<div class="summary"><%= news.summary %></div>
+	<div class="summary"><%= simple_format news.summary %></div>
 	<div class="row">
 		<%= link_to 'View More', news, class: 'button pull-right' %>
 	</div>

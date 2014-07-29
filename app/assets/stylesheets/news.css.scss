@@ -29,7 +29,7 @@
 }
 
 .button{
-	margin-right: 30px;
+	margin: 20px;
 }
 
 /* Fixes issue when screen is too small and button jumps out of container */
@@ -41,5 +41,5 @@
 }
 
 #news_summary, #news_body{
-	min-height: 300px;
+	min-height: 200px;
 }

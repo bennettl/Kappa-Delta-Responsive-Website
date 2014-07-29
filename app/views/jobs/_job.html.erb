@@ -26,7 +26,7 @@
 		<div class="listSubTitle col-xs-12"><%= job.company %></div>
 	</div>
 	<div class="row" style="margin-top: 10px;">
-		<div class="detailBody col-xs-12"><%= job.description %></div>
+		<div class="detailBody col-xs-12"><%= simple_format job.description %></div>
 	</div>
 	<div class="row">
 		<%= link_to 'VIEW & APPLY', job_path(job), class: 'button pull-right' %>

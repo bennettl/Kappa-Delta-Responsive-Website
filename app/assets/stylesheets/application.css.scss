@@ -107,9 +107,10 @@ textarea.form-control{
 .wysihtml5-toolbar .btn.btn-default{
 	margin-top: 0;
 } 
-.wysihtml5-editor{
+.wysihtml5-editor, .summary, .content, .detailBody{
 	li{
 		list-style-type: disc;
+		margin-left: 10px;
 	}
 }
 

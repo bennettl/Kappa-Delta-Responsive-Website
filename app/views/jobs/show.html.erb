@@ -70,7 +70,7 @@
 				<span>Description</span>
 			</div>
 			<div class="content">
-				<%= @job.description %>
+				<%= simple_format @job.description %>
 			</div>
 
 			<div class="detailTitle">
@@ -78,7 +78,7 @@
 				<span>Qualification</span>
 			</div>
 			<div class="content">
-				<%= @job.qualification %>
+				<%=simple_format @job.qualification %>
 			</div>
 
 			<div class="detailTitle">
@@ -86,7 +86,7 @@
 				<span>Compensation</span>
 			</div>
 			<div class="content">
-				<%= @job.compensation %>
+				<%= simple_format @job.compensation %>
 			</div>
 
 			<div class="detailTitle">
@@ -94,7 +94,7 @@
 				<span>How To Apply</span>
 			</div>
 			<div class="content">
-				<%= @job.how_to_apply %>
+				<%= simple_format @job.how_to_apply %>
 			</div>
 		</div>
 	</div>

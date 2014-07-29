@@ -6,7 +6,7 @@
 				<span class="glyphicon glyphicon-pencil"></span>
 				<%= f.label 'Title' %>
 			</div>
-			<div class="col-md-8 col-sm-7 col-xs-6">
+			<div class="col-md-9 col-sm-8 col-xs-7">
 				<%= f.text_field :title, value: @dagger.title, placeholder: "Dagger Fall '14 ", required: "required", class: 'form-control' %>
 			</div>
 		</div>
@@ -15,7 +15,7 @@
 				<span class="glyphicon glyphicon-file"></span>
 				<%= f.label 'PDF' %>
 			</div>
-			<div class="col-md-8 col-sm-7 col-xs-6">
+			<div class="col-md-9 col-sm-8 col-xs-7">
 				<%= f.file_field :pdf %>
 			</div>
 		</div>
@@ -24,7 +24,7 @@
 				<span class="glyphicon glyphicon-time"></span>
 				<%= f.label 'Creation Date' %>
 			</div>
-			<div class="col-md-8 col-sm-7 col-xs-6">
+			<div class="col-md-9 col-sm-8 col-xs-7">
 				<%= f.text_field :dagger_date, value: @dagger.dagger_date, placeholder: '2014/2/14', required: 'required', data: { date_format: "YYYY/MM/DD" }, class: 'datetimepicker form-control' %>
 			</div>
 		</div>
@@ -33,7 +33,7 @@
 				<span class="glyphicon glyphicon-user"></span>
 				<%= f.label 'Author' %>
 			</div>
-			<div class="col-md-8 col-sm-7 col-xs-6">
+			<div class="col-md-9 col-sm-8 col-xs-7">
 				<%= f.text_field :author, value: @dagger.author, placeholder: 'John Smith', required: 'required', class: 'form-control' %>
 			</div>
 		</div>

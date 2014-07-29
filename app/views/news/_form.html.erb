@@ -6,16 +6,16 @@
 				<span class="glyphicon glyphicon-pencil"></span>
 				<%= f.label 'Title' %>
 			</div>
-			<div class="col-md-8 col-sm-7 col-xs-6">
+			<div class="col-md-8 col-sm-8 col-xs-7">
 				<%= f.text_field :title, placeholder: 'First Place In Intramural Basketball!', value: @news.title, required: "required", class: 'form-control' %>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" style="margin-top: 18px;">
 			<div class="col-md-3 col-sm-4 col-xs-5">
 				<span class="glyphicon glyphicon-picture"></span>
 				<%= f.label 'Image' %>
 			</div>
-			<div class="col-md-8 col-sm-7 col-xs-6">
+			<div class="col-md-8 col-sm-8 col-xs-7">
 				<%= f.file_field :image %>
 			</div>
 		</div>

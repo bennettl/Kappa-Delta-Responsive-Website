@@ -37,7 +37,7 @@
 					<span><%= "Major In #{@member.major}" %></span>
 				</div>
 			<% end %>
-				<% if !@member.phone.nil? %>
+				<% if !@member.phone.nil? && !@member.phone.empty? %>
 				<div id="major"> 
 					<span class="glyphicon glyphicon-earphone"></span>
 					<span><%= "#{@member.phone}" %></span>
@@ -53,12 +53,12 @@
 		<li><%= mail_to @member.email, image_tag('social/email.png', class: 'socialIcon'), title: 'Email' %></li>
 	</ul>
 
-	<div id="detailInfo" class="row" style="margin: 12px;">
+	<div id="detailInfo" class="row summary" style="margin: 12px;">
 		<div class="detailTitle">
 			<span class="glyphicon glyphicon-align-left"></span>
 			<span>Summary</span>
 		</div>
-		<p><%= @member.summary.empty? ? 'N/A' : @member.summary %></p>
+		<p><%= @member.summary.empty? ? 'N/A' : simple_format(@member.summary) %></p>
 		<p><%= @member.url_resume ||  'Resume N/A'%></p>
 	</div>
 
