@@ -11,7 +11,7 @@
 		<div class="col-md-4 col-sm-6" style="margin: 25px 0;">
 			<div class="detailTitle"><%= link_to n.title, n %></div>
 			<div class="summary">
-				<%= simple_format n.summary %>
+				<%= n.summary.html_safe %>
 			</div>
 		</div>
 	<% end %>
