@@ -31,6 +31,7 @@ gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'stripe'
 
 # Rich text editor
+gem 'bootstrap-wysihtml5-rails', '~> 0.3.2.100'
 gem 'bootsy', '~> 2.0.9'
 
 # Importing excel file
