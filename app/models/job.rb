@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
 	# WYSIWYG editor
-	include Bootsy::Container
+	# include Bootsy::Container
 
 	# Association
 	belongs_to :member
