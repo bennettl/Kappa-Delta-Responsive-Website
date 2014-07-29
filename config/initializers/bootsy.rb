@@ -6,15 +6,15 @@ Bootsy.setup do |config|
     image: false,
     html: false,
     color: false
+  }
   #   font_styles: true,
   #   emphasis: true,
   #   lists: true,
   #   link: true,
-  }
 
   # Image versions available
   # Possible values: :small, :medium, :large and/or :original
-  config.image_versions_available = [:small, :medium, :large, :original]
+  # config.image_versions_available = [:small, :medium, :large, :original]
 
 
   # SMALL IMAGES
