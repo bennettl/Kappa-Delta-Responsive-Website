@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/Nerian/bootstrap-wysihtml5-rails.git
+  revision: 3d75c784ece3d6218ea544f59a12fa9555446c30
+  specs:
+    bootstrap-wysihtml5-rails (0.3.2.100)
+      railties (>= 3.0)
+
+GIT
   remote: git://github.com/radar/forem-bootstrap.git
   revision: 10be50afc1d0a22af1306076e41624c55fc585be
   specs:
@@ -80,8 +87,6 @@ GEM
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
       will_paginate
-    bootstrap-wysihtml5-rails (0.3.2.100)
-      railties (>= 3.0)
     bootstrap3-datetimepicker-rails (3.0.0.1)
       momentjs-rails (~> 2.5.0)
     bootsy (2.0.9)
@@ -271,7 +276,7 @@ DEPENDENCIES
   bcrypt-ruby (= 3.1.2)
   bootstrap-sass (~> 3.1)
   bootstrap-will_paginate (= 0.0.9)
-  bootstrap-wysihtml5-rails (~> 0.3.2.100)
+  bootstrap-wysihtml5-rails!
   bootstrap3-datetimepicker-rails (~> 3.0.0)
   bootsy (~> 2.0.9)
   bourbon

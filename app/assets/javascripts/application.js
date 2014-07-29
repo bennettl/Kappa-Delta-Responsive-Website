@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require turbolinks
 //= require forem
+//= require bootstrap-wysihtml5
 //= require bootsy
 
 // Remove //= require_tree because we don't want to include all javascript files
