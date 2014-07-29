@@ -107,6 +107,11 @@ textarea.form-control{
 .wysihtml5-toolbar .btn.btn-default{
 	margin-top: 0;
 } 
+.wysihtml5-editor{
+	li{
+		list-style-type: disc;
+	}
+}
 
 .alert{
 	text-align: center;
