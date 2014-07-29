@@ -1,6 +1,6 @@
 class News < ActiveRecord::Base
 	# WYSIWYG editor
-	include Bootsy::Container
+	# include Bootsy::Container
 	
 	# Serialize images
 	serialize :images, JSON

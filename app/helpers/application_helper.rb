@@ -1,4 +1,9 @@
 module ApplicationHelper
+	# Use for bootsy
+	def refresh_btn
+		""
+	end
+
 	# Return the full title of page
 	def full_title(page_title)
 		base_title = "Kappa Delta"
