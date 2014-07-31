@@ -2,7 +2,7 @@ module MembersHelper
 
 	# Use for edit and new
 	def row(label, input)
-		"<div class=\"group col-xs-12\">
+		"<div class=\"group row\">
 			<div class=\"col-md-4 col-sm-5\">
 				#{label}
 			</div>
