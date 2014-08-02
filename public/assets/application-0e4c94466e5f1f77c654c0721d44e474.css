@@ -8507,6 +8507,8 @@ button {
 /* line 11, /Users/bennettl/Desktop/kd/kappa-delta/app/assets/stylesheets/partials/_mobileNav.scss */
 .mobileNav nav a {
   display: block;
+  background: #3c3d3d;
+  min-height: 100%;
   padding: 5px 15px;
   color: white;
   text-transform: uppercase;
