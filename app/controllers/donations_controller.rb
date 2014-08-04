@@ -23,37 +23,41 @@ class DonationsController < ApplicationController
 			token 		= params[:stripeToken]
 			currency	= helpers.number_to_currency @donation.amount, precision: 0
 			email		= params[:donation][:email]
+			reoccur		= params[:donation][:reoccur]
 
-			# Create a Customer
-			customer = Stripe::Customer.create(
-			  :card => token,
-			  :description => email,
-			  :email => email
-			)
-
-			# Charge the Customer instead of the card
-			Stripe::Charge.create(
-			    :amount => @donation.amount * 100, # in cents
-			    :currency => "usd",
-			    :customer => customer.id
-			)
-	
-			# Save a new donation record
-			if @donation.save
-				flash.now[:success] = "Donation of #{currency} received"
-
-				# save the customer ID in your database so you can use it later
-				@donation.update_attribute(:stripe_customer_id, customer.id)
-
-				# If user is signed in, update the donation member_id attribute to include current_user
-				if signed_in?
-					puts "user is signed in"
-					@donation.update_attribute(:member_id, current_member.id)			
-				end
+			# Only signed in users can make reocurring donations
+			if !signed_in? && reoccur == '1'
+				flash.now[:error] = "Only signed in users can make reocurring donations"
 			else
-				flash.now[:error] = "Something went wrong with donation creation"
+				# Create a Customer
+				customer = Stripe::Customer.create(
+				  :card => token,
+				  :description => email,
+				  :email => email
+				)
+
+				# Charge the Customer instead of the card
+				Stripe::Charge.create(
+				    :amount => @donation.amount * 100, # in cents
+				    :currency => "usd",
+				    :customer => customer.id
+				)
+		
+				# Save a new donation record
+				if @donation.save
+					flash.now[:success] = "Donation of #{currency} received"
+
+					# save the customer ID in your database so you can use it later
+					@donation.update_attribute(:stripe_customer_id, customer.id)
+
+					# If user is signed in, update the donation member_id attribute to include current_user
+					if signed_in?
+						@donation.update_attribute(:member_id, current_member.id)			
+					end
+				else
+					flash.now[:error] = "Something went wrong with donation creation"
+				end
 			end
-			
 		end
 
 		render 'new'
@@ -88,8 +92,6 @@ class DonationsController < ApplicationController
 	
 	# Base on the stripe token and donation object, charge the customer
 	def charge_customer(token, donation)
-		
-
 		# See if the user has
 	end
 
