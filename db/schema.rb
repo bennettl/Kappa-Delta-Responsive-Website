@@ -40,11 +40,15 @@ ActiveRecord::Schema.define(version: 20140728214829) do
   end
 
   create_table "donations", force: true do |t|
+    t.integer  "member_id"
     t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "amount"
-    t.boolean  "visible"
+    t.string   "stripe_customer_id"
+    t.boolean  "visible",            default: true
+    t.boolean  "reoccur",            default: false
+    t.string   "frequency"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

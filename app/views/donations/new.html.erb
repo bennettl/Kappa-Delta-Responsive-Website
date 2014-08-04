@@ -34,9 +34,22 @@
 					<% end %>
 						<li>
 							<div><%= f.radio_button :amount, 0, required: true %></div>
-							<div><%= text_field_tag :amount_custom, nil, placeholder: 'Custom', class: 'form-control'  %></div>
+							<div><%= text_field_tag :amount_custom, nil, placeholder: 'Custom', class: 'form-control' %></div>
 						</li>
+						<!-- Reocurring payments -->
+				  		<li>
+				  			<div>
+								<%= f.check_box :reoccur %>
+							</div>
+							<div style="font-size: 13px; margin-top: 8px;">
+								<%= label_tag :reoccur, 'Reocurring' %> <br />
+								<%= f.select :frequency, options_for_select([ ["Every Week", 'week'], ["Every Month", 'month'], ["Every Year", 'year']] ) %>
+							</div>
+				  		</li>
 					</ul>
+			  	
+			  		<div class="field">
+					</div>
 				</div>
 				<!-- Contribution  -->
 				<!-- Personal Info  -->
@@ -52,8 +65,8 @@
 						<%= f.text_field :last_name, placeholder: 'Last Name', required: true, class: 'form-control' %>
 					</div>
 					<div class="field">
-						<%= f.check_box :visible, checked: true %>
-						<%= f.label :visible, 'Visible' %>
+						<%= f.check_box :visible, checked: true, style: "display: none;" %>
+						<%= f.label :visible, 'Visible', style: "display: none;" %>
 			  		</div>
 				</div>
 				<!-- Personal Info  -->

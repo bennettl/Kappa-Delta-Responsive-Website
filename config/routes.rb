@@ -38,8 +38,8 @@ KappaDelta::Application.routes.draw do
   match 'the-dagger', to: 'daggers#index', via: 'get'
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :donations, only: [:index, :new, :create, :update]
-
+  
+  resources :donations
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,9 +1,7 @@
 class Donation < ActiveRecord::Base
-	# t.string :email
-	# t.string :first_name
-	# t.string :last_name
-	# t.integer :amount
-	# t.boolean :visible
+	# Association
+	belongs_to :member
+	
 	# t.timestamps
 	# Validation
 	validates :email, presence: true

@@ -183,28 +183,38 @@
 			</div>
 			<!--  SOCIAL -->
 		</div>
-		<% if is_admin? %>
-			<div class="row">
-				<!-- ADMIN -->			
-				<div id="admin" class="group col-md-6">
-					<div class="detailTitle">
-						<span class="glyphicon glyphicon-stats"></span>
-						<span>Admin</span>
-					</div>
-						<%
-						label = f.label 'Type'
-						input = f.select :member_type, [['Normal', 'normal'], ['Administrator', 'admin'], ['Super Administrator', 'super admin']], class: 'form-control', selected: @member.member_type
-						%>
-						<%= row label,input %>
-						<%
-						label = f.label 'Status'
-						input = f.select :status, [['Member', 'member'], ['Officer', 'officer'], ['Board of Directors', 'bod',]], class: 'form-control', selected: @member.status 
-						%>
-						<%= row label,input %>
+		<div class="row">
+		<% unless current_member.donations.empty? %>
+			<!-- DONATIONS -->
+			<div id="admin" class="group col-md-6">
+				<div class="detailTitle">
+					<span class="glyphicon glyphicon-usd"></span>
+					<span>Donations</span>
 				</div>
-				<!-- ADMIN -->
+				<%= link_to 'Remove Reocurring Donations', donation_path(current_member.donations.first), method: :delete, class: 'remove' %>
 			</div>
 		<% end %>
+		<% if is_admin? %>
+			<!-- ADMIN -->			
+			<div id="admin" class="group col-md-6">
+				<div class="detailTitle">
+					<span class="glyphicon glyphicon-stats"></span>
+					<span>Admin</span>
+				</div>
+					<%
+					label = f.label 'Type'
+					input = f.select :member_type, [['Normal', 'normal'], ['Administrator', 'admin'], ['Super Administrator', 'super admin']], class: 'form-control', selected: @member.member_type
+					%>
+					<%= row label,input %>
+					<%
+					label = f.label 'Status'
+					input = f.select :status, [['Member', 'member'], ['Officer', 'officer'], ['Board of Directors', 'bod',]], class: 'form-control', selected: @member.status 
+					%>
+					<%= row label,input %>
+			</div>
+			<!-- ADMIN -->
+		<% end %>
+		</div>
 		<div class="row">
 			<div class="detailTitle">
 				<span class="glyphicon glyphicon-align-left"></span>

@@ -30,7 +30,7 @@ class CreateTables < ActiveRecord::Migration
 		t.string :industry
 		t.string :email
 		t.string :phone
-		# socail network urls
+		# social network urls
 		t.string :url_facebook
 		t.string :url_twitter
 		t.string :url_linkedIn
@@ -80,9 +80,20 @@ class CreateTables < ActiveRecord::Migration
     	t.timestamps
     end
 
-    # create_table :liked_jobs do |t|
-    # 	t.belongs_to :job
-    # 	t.belongs_to :member
-    # end
+    # Donations
+    create_table :donations do |t|
+    	t.belongs_to :member # member who created the news
+		t.string :email
+		t.string :first_name
+		t.string :last_name
+		t.integer :amount
+		t.string :stripe_customer_id
+		t.boolean :visible, default: true
+		# reocurring
+		t.boolean :reoccur, default: false
+		t.string :frequency # week, month, year
+		t.timestamps
+	 	# add_index :email
+    end
   end
 end

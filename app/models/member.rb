@@ -8,6 +8,7 @@ class Member < ActiveRecord::Base
 	has_many :jobs_created, class_name: 'Job', dependent: :destroy
 	has_many :events, dependent: :destroy
 	has_many :news, dependent: :destroy
+	has_many :donations, dependent: :destroy
 
 	# Attachments (avatar/resume)
 	has_attached_file :avatar, 
