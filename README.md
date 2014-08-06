@@ -1,15 +1,18 @@
 # Kappa Delta Responsive Website
 ### By Bennett Lee
 
-## Demo
-
-![Alt text](demo.gif)
 
 ## Description
 
 Sidebench Studios will design and build a fully responsively designed site for Kappa Delta. It will offer the public basic information regarding the KD fraternity (history, board members, active roster, etc.) as well as any news and upcoming events. The website will also allow for online donations to the fraternity.
 
 Fraternity members who are logged into the site via a unique login will receive exclusive access to job/internship listings, be able to browse profiles of active members, and participate in online forum discussions. The members side of the site will also archive the fraternity's twice-yearly publication "The Dagger".
+
+## Demo
+
+![Alt text](/public/images/demo1.png)
+![Alt text](/public/images/demo2.png)
+![Alt text](/public/images/demo3.png)
 
 ## Specific Services
 
