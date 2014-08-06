@@ -8,8 +8,6 @@ Sidebench Studios will design and build a fully responsively designed site for K
 
 Fraternity members who are logged into the site via a unique login will receive exclusive access to job/internship listings, be able to browse profiles of active members, and participate in online forum discussions. The members side of the site will also archive the fraternity's twice-yearly publication "The Dagger".
 
-## Demo
-
 ![Alt text](/public/images/demo/demo1.png)
 ![Alt text](/public/images/demo/demo2.png)
 ![Alt text](/public/images/demo/demo3.png)
