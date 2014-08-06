@@ -10,9 +10,9 @@ Fraternity members who are logged into the site via a unique login will receive 
 
 ## Demo
 
-![Alt text](public/images/demo1.png)
-![Alt text](public/images/demo2.png)
-![Alt text](public/images/demo3.png)
+![Alt text](/public/images/demo/demo1.png)
+![Alt text](/public/images/demo/demo2.png)
+![Alt text](/public/images/demo/demo3.png)
 
 ## Specific Services
 
