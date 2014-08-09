@@ -1,8 +1,7 @@
 # Kappa Delta Responsive Website
-### By Bennett Lee
+#### By Bennett Lee
 
-
-## Description
+### Description
 
 Sidebench Studios will design and build a fully responsively designed site for Kappa Delta. It will offer the public basic information regarding the KD fraternity (history, board members, active roster, etc.) as well as any news and upcoming events. The website will also allow for online donations to the fraternity.
 
@@ -12,7 +11,7 @@ Fraternity members who are logged into the site via a unique login will receive 
 ![Alt text](/public/images/demo/demo2.png)
 ![Alt text](/public/images/demo/demo3.png)
 
-## Specific Services
+### Specific Services
 
 Sidebench will perform the following services:
 
@@ -23,7 +22,7 @@ Sidebench will perform the following services:
 * Ensure that the member list and site can be (in part) easily managed and updated by both the actives and the KDAA
 * Test and ensure site functionality across the following modern browsers: Google Chrome versions 30-32, Mozilla Firefox versions 24-26, Internet Explorer versions 9-11, Opera versions 16-18, Safari versions 5.1-7, Android version 4.4, BlackBerry version 10.2, Windows Phone version 8
 
-## Tech Info
+### Tech Info
 
 * Front-end: HTML5/CSS3/Javascript
 * Back-end: Ruby on Rails
@@ -32,7 +31,7 @@ Sidebench will perform the following services:
 * Donation Platform: Stripe
 * Site URL: thekds.org
 
-## Site Pages & Sections
+### Site Pages & Sections
 
 * Shared (both pre & post-login) menu options -  Home (About KD, Current Officers), History (Frat History, Fred Sontag Bio, Famous Alumni), * News (Individual News Pages), Donations (Info & Appreciation, Donation Form), Contact
 * Public (pre-login) menu options - Log In
