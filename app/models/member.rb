@@ -51,15 +51,15 @@ class Member < ActiveRecord::Base
 	def self.search(search)
 		if search
 			# Parameters
-			query 	= []
-			like 	= Rails.env.development? ? 'LIKE' : 'ILIKE' ; #case insensitive for postgres
-			city 	= Rails.env.development? ? 'city' : 'CAST(city AS TEXT)'; # postgres LIKE for integer
+			query 		= []
+			like 		= Rails.env.development? ? 'LIKE' : 'ILIKE' ; #case insensitive for postgres
+			class_year 	= Rails.env.development? ? 'class_year' : 'CAST(class_year AS TEXT)'; # postgres LIKE for integer
 
 			query.push((search[:first_name].blank?) ? '' : "first_name #{like} '%#{search[:first_name]}%'")
 			query.push((search[:last_name].blank?) ? '' : "last_name #{like} '%#{search[:last_name]}%'")
 			query.push((search[:major].blank?) ? '' : "major #{like} '%#{search[:major]}%'")
-			query.push((search[:city].blank?) ? '' : "#{city} #{like} '%#{search[:city]}%'")
-			query.push((search[:class_year].blank?) ? '' : "class_year #{like} '%#{search[:class_year]}%'")
+			query.push((search[:city].blank?) ? '' : "city #{like} '%#{search[:city]}%'")
+			query.push((search[:class_year].blank?) ? '' : "#{class_year} #{like} '%#{search[:class_year]}%'")
 			query.push((search[:industry].blank?) ? '' : "industry #{like} '%#{search[:industry]}%'")
 
 			query.reject! {|q| q.empty? }
