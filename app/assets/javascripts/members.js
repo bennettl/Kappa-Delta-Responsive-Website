@@ -24,30 +24,30 @@ jQuery(document).ready(function($) {
     });
 
     // Autocompletion
-    $("input.search_column").autocomplete({
-        source: function(request, response) {
-            var inputField = $(this.element);
-            var columnType = inputField.attr('data-column-type');
+    // $("input.search_column").autocomplete({
+    //     source: function(request, response) {
+    //         var inputField = $(this.element);
+    //         var columnType = inputField.attr('data-column-type');
 
-            $.ajax({
-                url: "http://localhost:3000/members/autocomplete",
-                dataType: "json",
-                data: {
-                    value: request.term,
-                    column: columnType
-                },
-                success: function(data) {
-                    response(data);
-                    // response($.map(data, function(item) {
-                    //     return {
-                    //         label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
-                    //         value: item.name
-                    //     }
-                    // }));
-                }
-            });
-        },
-        minLength: 2,
+    //         $.ajax({
+    //             url: "https://thekds.org/members/autocomplete",
+    //             dataType: "json",
+    //             data: {
+    //                 value: request.term,
+    //                 column: columnType
+    //             },
+    //             success: function(data) {
+    //                 response(data);
+    //                 // response($.map(data, function(item) {
+    //                 //     return {
+    //                 //         label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
+    //                 //         value: item.name
+    //                 //     }
+    //                 // }));
+    //             }
+    //         });
+    //     },
+    //     minLength: 2,
         // select: function(event, ui) {
         //     log(ui.item ?
         //         "Selected: " + ui.item.label :
@@ -59,5 +59,5 @@ jQuery(document).ready(function($) {
         // close: function() {
         //     $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
         // }
-    });
+    // });
 });
