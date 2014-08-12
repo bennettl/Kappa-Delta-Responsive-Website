@@ -23,7 +23,7 @@
 			<div class="error"></div>
 			<div class="row">
 				<!-- Contribution  -->
-				<div class="column col-sm-4">
+				<div class="column col-md-4">
 					<div class="title">Contribution</div>
 					<ul id="amountList">
 					<% [10000,5000, 1000, 500, 100].each do |amount| %>
@@ -48,13 +48,13 @@
 				  		</li>
 					</ul>
 			  	
-			  		<div class="field">
+			  		<div class="field" style="padding-bottom: 35px;">
 					</div>
 				</div>
 				<!-- Contribution  -->
 				<!-- Personal Info  -->
-				<div class="column col-sm-4">
-					<div class="title">Personal</div>
+				<div id="profileColumn" class="column col-md-4">
+					<div class="title" style="clear:both; ">Personal</div>
 					<div class="field">
 						<%= f.text_field :email, placeholder: 'Email', required: true, class: 'form-control' %>
 					</div>
@@ -71,13 +71,13 @@
 				</div>
 				<!-- Personal Info  -->
 				<!-- Card Info  -->
-				<div class="column col-sm-4">
+				<div class="column col-md-4">
 					<div class="title">Card</div>
 					<div class="field">
-						<%= text_field_tag :number, nil, placeholder: "Credit Card Number", required: true, class: 'form-control' %>
+						<%= number_field_tag :number, nil, placeholder: "Credit Card Number", required: true, class: 'form-control' %>
 					</div>
 					<div class="field">
-						<%= text_field_tag :cvc, nil, placeholder: "Security Code on Card (CVC)", required: true, class: 'form-control' %>
+						<%= number_field_tag :cvc, nil, placeholder: "Security Code on Card (CVC)", required: true, class: 'form-control' %>
 					</div>
 					<div class="field">
 						<%= label_tag :card_month, 'Card Expiration' %>

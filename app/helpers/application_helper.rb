@@ -35,7 +35,7 @@ module ApplicationHelper
 
 	# Returns a back button with the path specified
 	def back_button path
-		link_to 'Back', path , class: 'button pull-left'
+		link_to 'Back', path , class: 'button pull-left', style: "margin-bottom: 15px"
 	end
 
 	def forem_back_button(forum)

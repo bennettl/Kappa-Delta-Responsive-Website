@@ -9,14 +9,14 @@
 		<%= nav_link 'Contact', main_app.contact_path %>
 		<% # Only display this if user is signed in %>
 		<% if signed_in? %>
-			<a href="#0" class="menuHeading">Members Only</a>
+			<div class="menuHeading">Members Only</div>
 			<%= nav_link 'Members Home', main_app.member_home_path %>
 			<%= nav_link 'Jobs And Internships', main_app.jobs_path %>
 			<%= nav_link 'Brother Database', main_app.members_path %>
 			<%= nav_link 'The KD Room', main_app.forem_path %>
 			<%= nav_link 'The Dagger', main_app.daggers_path %>
 			<%= nav_link 'Events', main_app.events_path %>
-			<a href="#0" class="menuHeading">My Account</a>
+			<div class="menuHeading">My Account</div>
 			<%= nav_link 'My Profile', main_app.member_path(current_member) %>
 			<%= nav_link 'My Acount', main_app.edit_member_path(current_member) %>
 			<%= link_to 'Sign Out', main_app.signout_path, method: :delete %>

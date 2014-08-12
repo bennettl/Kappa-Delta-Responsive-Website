@@ -32,6 +32,7 @@
 
 #amountList{
 	margin-top: 20px;
+	margin-left: -25px;
 	li{
 		font-size: 20px;
 	    height: 37px;
@@ -47,4 +48,16 @@
 #amount_custom{
 	margin-top: 0;
     width: 120px;
+}
+
+// Donations
+
+#profileColumn.column{
+	height: 375px;
+}
+@media (max-width:980px){
+	#profileColumn.column{
+		height: 230px;
+		margin-bottom: 0;
+	}
 }

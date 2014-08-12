@@ -176,6 +176,9 @@ li .title{
 	margin: 0;
 	z-index: 100;
 }
+#brotherdbTitle{
+	padding-left: 118px;
+}
 @media (max-width:768px){
 	.button, #new-sm{
 		text-align: center;
@@ -184,7 +187,13 @@ li .title{
 		margin: 20px 0;
 		display: block;
 	}
+	#brotherdbTitle{
+		padding-left: 0;
+	}
 }
+
+
+
 
 .mainTitle{
 	width: 100%;
@@ -195,7 +204,7 @@ li .title{
     float: left;
     font-weight: 300;
     font-size: 26px;
-    cursor: pointer;
+    cursor: default;
     position: relative;
 }
 .blueTitle{

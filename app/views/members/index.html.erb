@@ -1,5 +1,5 @@
 <div class="mainTitle">
-	<span>Brothers Database</span>
+	<span id="brotherdbTitle">Brother Database</span>
 	<% if is_admin? %>
 		<%= new_button 'New', new_member_path %>
 		<%= link_to 'Import', import_form_members_path, class: "button pull-right" %>
