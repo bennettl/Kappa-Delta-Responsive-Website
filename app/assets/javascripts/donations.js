@@ -46,6 +46,9 @@ $(document).ready(function(){
 
 		Stripe.card.createToken(cardData, stripeResponseHandler);
 
+		// Scroll to top of page
+		$('html, body').animate({ scrollTop: 0 }, 'fast');
+		
 		return false;
 	});
 
