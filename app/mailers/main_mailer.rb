@@ -8,7 +8,7 @@ class MainMailer < ActionMailer::Base
 		
 		case params[:email_to]
 			when  "webmaster"
-				to = "nathaniel.schier@gmail.com"
+				to = "bennettlee908@gmail.com"
 			when "president"
 				to = "dbs02011@mymail.pomona.edu"
 			when "board"

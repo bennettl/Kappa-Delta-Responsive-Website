@@ -2,16 +2,16 @@
 
 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 profile">
 	<div class="row" style="margin-top: 20px;">
-		<a href="webmaster" class="col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-1 contact-box current">Email Webmaster</a>
-		<a href="president" class="col-sm-4 col-sm-offset-2 col-xs-10 col-xs-offset-1 contact-box">Email President</a>
+		<a href="#webmaster" class="col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-1 contact-box current">Email Webmaster</a>
+		<a href="#president" class="col-sm-4 col-sm-offset-2 col-xs-10 col-xs-offset-1 contact-box">Email President</a>
 	</div>
 	<div class="row" style="margin-bottom: 20px;">
-		<a href="board" class="col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-1 contact-box">Email Board of Directors</a>
-		<a href="general" class="col-sm-4 col-sm-offset-2 col-xs-10 col-xs-offset-1 contact-box">General Questions</a>
+		<a href="#board" class="col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-1 contact-box">Email Board of Directors</a>
+		<a href="#general" class="col-sm-4 col-sm-offset-2 col-xs-10 col-xs-offset-1 contact-box">General Questions</a>
 	</div>
 	<div class="row">
 		<%= form_tag 'contact_send' do %>
-			<%= hidden_field_tag 'email_to' %>
+			<%= hidden_field_tag 'email_to', 'webmaster' %>
 			<div class="col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-1" style="padding: 0;">
 				<%= text_field_tag 'first_name', '', required: 'required', autocomplete: :off, placeholder: 'First Name', class: 'form-control' %>
 			</div>
