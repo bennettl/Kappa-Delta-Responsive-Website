@@ -6,9 +6,10 @@ class MainMailer < ActionMailer::Base
 		last_name 	=  params[:last_name]
 		name 		= "#{first_name} #{last_name}"
 		
+		puts "ego  #{params[:email_to]}"
 		case params[:email_to]
 			when  "webmaster"
-				to = "bennettlee908@gmail.com"
+				to = "nathaniel.schier@gmail.com"
 			when "president"
 				to = "dbs02011@mymail.pomona.edu"
 			when "board"
