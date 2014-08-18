@@ -15,7 +15,8 @@ class Member < ActiveRecord::Base
 						:styles => { :medium => "200x200>", :thumb => "100x100>" }, 
 						:default_url => "/images/member/:style/profile.png", 
 						:url => ":s3_domain_url",
-						:path => ":rails_root/public/assets/members/avatar/:id/:style/:basename.:extension"
+						:path => ":rails_root/public/assets/members/avatar/:id/:style/:basename.:extension",
+	                    :s3_protocol => :https
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 	has_attached_file :resume,

@@ -12,7 +12,9 @@ class News < ActiveRecord::Base
 	has_attached_file :image,
 						:styles => { :medium => "500x500>", :thumb => "150x150>" }, 
 						:url => ":s3_domain_url",
-						:path => ":rails_root/public/assets/news/:id/:style/:basename.:extension"
+						:path => ":rails_root/public/assets/news/:id/:style/:basename.:extension",
+	                    :s3_protocol => :https
+
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 	# Validation
