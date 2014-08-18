@@ -46,7 +46,7 @@ class DaggersController < ApplicationController
 	end
 
 	# Removes an existing dagger
-	def destory
+	def destroy
 		Dagger.delete(params[:id])
 		flash[:success] = "Dagger Sucesssfully Removed!"
 		redirect_to daggers_path

@@ -5,6 +5,13 @@
 			<%= @news.title %>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<% if is_admin? %>
+				<%= link_to 'Remove News', @news, method: :delete, class: 'remove' %>
+			<% end %>
+		</div>
+	</div>
 	<div id="info" class="row">
 		<div id="date" class="col-xs-12">
 			<span class="glyphicon glyphicon-time"></span>
@@ -16,7 +23,7 @@
 		</div>
 	</div>
 	<div class="image row">
-		<%= image_tag @news.image.url, style: 'padding-top: 20px; margin: 0 auto; display: block;' unless @news.image.blank? %>
+		<%= image_tag @news.image.url, style: 'padding-top: 20px; margin: 0 auto 10px auto; display: block;' unless @news.image.blank? %>
 	</div>
 	<div class="row">
 		<div class="col-xs-12">

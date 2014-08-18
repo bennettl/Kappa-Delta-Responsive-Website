@@ -6,6 +6,13 @@
 			<%= @dagger.title %>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<% if is_admin? %>
+				<%= link_to 'Remove Dagger', @dagger, method: :delete, class: 'remove' %>
+			<% end %>
+		</div>
+	</div>
 	<div id="info" class="row">
 		<div id="date" class="col-xs-12">
 			<span class="glyphicon glyphicon-time"></span>

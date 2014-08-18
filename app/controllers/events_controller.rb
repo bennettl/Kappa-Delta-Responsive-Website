@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 	
 	# Display list of all events
 	def index
-		@events = Event.order('start_time DESC').paginate(per_page: 6, page: params[:page])
+		@events = Event.order('start_time ASC').paginate(per_page: 6, page: params[:page])
 	end
 
 	# Display an existing event

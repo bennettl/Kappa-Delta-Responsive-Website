@@ -49,7 +49,7 @@ class NewsController < ApplicationController
 	# Remove an existing news
 	def destroy
 		News.delete(params[:id])
-		flash[:success] = "News successfully destory"
+		flash[:success] = "News successfully removed"
 		redirect_to news_index_path
 	end
 
