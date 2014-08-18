@@ -50,6 +50,7 @@ namespace :db do
 
 			member_type 	= csv['Admin'] == 'TRUE' ? 'admin' : 'normal' # super admin, admin, normal
 			status 			= 'member' # member, officer, board of directors
+			forem_admin		= csv['Admin'] == 'TRUE' ? true : false
 			headline 		= ''
 			first_name 		= csv['First Name']
 			last_name 		= csv['Last Name']
@@ -76,6 +77,7 @@ namespace :db do
 			# Update member attributes
 			member.update_attributes(member_type: member_type,
 						status: status,
+						forem_admin: forem_admin,
 						password: 'thekds',
 						password_confirmation: 'thekds',
 						headline: headline,
