@@ -17,10 +17,6 @@
 	<% if flash.now[:success].nil? %>
 		<%= form_for @donation, html: {autocomplete: 'off'} do |f| %>
 			<%= hidden_field_tag :stripe_card_name %>
-			<%= # Display error messages
-				render 'shared/error_messages', object: f.object 
-			%>
-			<div class="error"></div>
 			<div class="row">
 				<!-- Contribution  -->
 				<div class="column col-md-4">
@@ -89,6 +85,10 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-xs-offset-0">
+					<%= # Display error messages
+						render 'shared/error_messages', object: f.object 
+					%>
+					<div class="error"></div>
 					<%= submit_tag 'Donate', class: 'button', style: 'display: block; height: 40px; margin: 39px auto 0; width: 200px;' %>
 				</div>
 			</div>
